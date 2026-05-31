@@ -29,6 +29,9 @@
             .nav-links { display: none !important; }
             .nav-links.show-mobile { display: flex !important; flex-direction: column !important; }
             .dropdown { flex: none !important; width: 100%; border-top: 1px solid rgba(255,255,255,0.1); }
+            .dropdown-content { position: relative !important; min-width: 100% !important; box-shadow: inset 0 2px 5px rgba(0,0,0,0.2) !important; border-radius: 0 !important; background: #2e7d32 !important; border: none !important; }
+            .dropdown-content a { color: white !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; padding: 10px 15px !important; font-size: 0.95rem !important; }
+            .dropdown-content a:hover { background: #1b5e20 !important; }
             .hero-title { font-size: 1.8rem !important; }
             .hero-subtitle { font-size: 1rem !important; }
             .header-title { font-size: 1.1rem !important; }
@@ -38,8 +41,10 @@
         }
         @media (max-width: 768px) {
             /* Ajustes para tarjetas flash */
-            #flashcard-box { padding: 25px 15px !important; min-height: 200px !important; }
-            #card-text { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            #flashcard-box { padding: 15px 10px !important; min-height: 150px !important; }
+            #card-text { font-size: 1.05rem !important; line-height: 1.3 !important; }
+            #flash-buttons { gap: 5px !important; margin-top: 15px !important; }
+            #flash-buttons button { padding: 10px 5px !important; font-size: 0.85rem !important; flex: 1 !important; }
             
             /* Ajustes para audiolibros y contenedores principales */
             div[style*="padding: 40px;"] { padding: 15px !important; }
@@ -89,7 +94,7 @@
     
     <nav class="navbar" id="navbar" style="background: #1b5e20; padding: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 9999;">
         <div class="nav-container" style="width: 100%; max-width: 1200px; margin: 0 auto;">
-            <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('show-mobile')">☰ Menú Principal</button>
+            <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('show-mobile')">Menú Principal ☰</button>
             <div class="nav-links" id="navLinks" style="display: flex; justify-content: center; width: 100%;">
 
             <div class="dropdown" style="flex: 1; text-align: center;">
@@ -189,40 +194,40 @@
         <div class="question-block" id="q1" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">1. ¿Qué es un estilo de aprendizaje?</div>
             <div class="options">
-                <label><input type="radio" name="q1" value="a"> a) Las estrategias preferidas por el estudiante para aprender</label>
+                <label><input type="radio" name="q1" value="a"> a) La calificación del estudiante</label>
                 <label><input type="radio" name="q1" value="b"> b) La ropa que usa el estudiante</label>
                 <label><input type="radio" name="q1" value="c"> c) El horario de estudio</label>
-                <label><input type="radio" name="q1" value="d"> d) La calificación del estudiante</label>
+                <label><input type="radio" name="q1" value="d"> d) Las estrategias preferidas por el estudiante para aprender</label>
             </div>
         </div>
         
         <div class="question-block" id="q2" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">2. Según el modelo de Kolb, los estilos de aprendizaje son:</div>
             <div class="options">
-                <label><input type="radio" name="q2" value="a"> a) Divergente, Asimilador, Convergente y Acomodador</label>
-                <label><input type="radio" name="q2" value="b"> b) Visual y Auditivo</label>
-                <label><input type="radio" name="q2" value="c"> c) Rápido y Lento</label>
-                <label><input type="radio" name="q2" value="d"> d) Activo y Pasivo</label>
+                <label><input type="radio" name="q2" value="a"> a) Activo y Pasivo</label>
+                <label><input type="radio" name="q2" value="b"> b) Rápido y Lento</label>
+                <label><input type="radio" name="q2" value="c"> c) Divergente, Asimilador, Convergente y Acomodador</label>
+                <label><input type="radio" name="q2" value="d"> d) Visual y Auditivo</label>
             </div>
         </div>
         
         <div class="question-block" id="q3" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">3. Un estudiante con estilo visual aprende mejor mediante:</div>
             <div class="options">
-                <label><input type="radio" name="q3" value="a"> a) Mapas mentales, gráficos y esquemas</label>
-                <label><input type="radio" name="q3" value="b"> b) Escuchando conferencias</label>
-                <label><input type="radio" name="q3" value="c"> c) Tocando objetos</label>
-                <label><input type="radio" name="q3" value="d"> d) Repitiendo en voz alta</label>
+                <label><input type="radio" name="q3" value="a"> a) Repitiendo en voz alta</label>
+                <label><input type="radio" name="q3" value="b"> b) Mapas mentales, gráficos y esquemas</label>
+                <label><input type="radio" name="q3" value="c"> c) Escuchando conferencias</label>
+                <label><input type="radio" name="q3" value="d"> d) Tocando objetos</label>
             </div>
         </div>
         
         <div class="question-block" id="q4" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">4. El estilo de aprendizaje kinestésico se basa en:</div>
             <div class="options">
-                <label><input type="radio" name="q4" value="a"> a) El movimiento y la experimentación física</label>
-                <label><input type="radio" name="q4" value="b"> b) La lectura en silencio</label>
-                <label><input type="radio" name="q4" value="c"> c) La visualización de videos</label>
-                <label><input type="radio" name="q4" value="d"> d) El debate oral</label>
+                <label><input type="radio" name="q4" value="a"> a) La visualización de videos</label>
+                <label><input type="radio" name="q4" value="b"> b) El debate oral</label>
+                <label><input type="radio" name="q4" value="c"> c) El movimiento y la experimentación física</label>
+                <label><input type="radio" name="q4" value="d"> d) La lectura en silencio</label>
             </div>
         </div>
         
@@ -230,8 +235,8 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">5. ¿Qué son los métodos de enseñanza?</div>
             <div class="options">
                 <label><input type="radio" name="q5" value="a"> a) Los procedimientos sistemáticos para dirigir el aprendizaje</label>
-                <label><input type="radio" name="q5" value="b"> b) Las reglas de disciplina</label>
-                <label><input type="radio" name="q5" value="c"> c) Los temas del currículo</label>
+                <label><input type="radio" name="q5" value="b"> b) Los temas del currículo</label>
+                <label><input type="radio" name="q5" value="c"> c) Las reglas de disciplina</label>
                 <label><input type="radio" name="q5" value="d"> d) Los exámenes</label>
             </div>
         </div>
@@ -239,10 +244,10 @@
         <div class="question-block" id="q6" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">6. El método inductivo se caracteriza por:</div>
             <div class="options">
-                <label><input type="radio" name="q6" value="a"> a) Partir de casos particulares para llegar a una regla general</label>
-                <label><input type="radio" name="q6" value="b"> b) Partir de lo general a lo particular</label>
-                <label><input type="radio" name="q6" value="c"> c) Ignorar las reglas</label>
-                <label><input type="radio" name="q6" value="d"> d) Memorizar conceptos</label>
+                <label><input type="radio" name="q6" value="a"> a) Ignorar las reglas</label>
+                <label><input type="radio" name="q6" value="b"> b) Partir de casos particulares para llegar a una regla general</label>
+                <label><input type="radio" name="q6" value="c"> c) Memorizar conceptos</label>
+                <label><input type="radio" name="q6" value="d"> d) Partir de lo general a lo particular</label>
             </div>
         </div>
         
@@ -250,9 +255,9 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">7. El método deductivo consiste en:</div>
             <div class="options">
                 <label><input type="radio" name="q7" value="a"> a) Partir de principios generales para aplicarlos a casos particulares</label>
-                <label><input type="radio" name="q7" value="b"> b) Observar fenómenos sin hipótesis</label>
-                <label><input type="radio" name="q7" value="c"> c) Experimentar al azar</label>
-                <label><input type="radio" name="q7" value="d"> d) Evitar conclusiones</label>
+                <label><input type="radio" name="q7" value="b"> b) Evitar conclusiones</label>
+                <label><input type="radio" name="q7" value="c"> c) Observar fenómenos sin hipótesis</label>
+                <label><input type="radio" name="q7" value="d"> d) Experimentar al azar</label>
             </div>
         </div>
         
@@ -260,19 +265,19 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">8. El Aprendizaje Basado en Problemas (ABP) promueve:</div>
             <div class="options">
                 <label><input type="radio" name="q8" value="a"> a) La resolución de situaciones complejas del mundo real</label>
-                <label><input type="radio" name="q8" value="b"> b) La copia de textos</label>
+                <label><input type="radio" name="q8" value="b"> b) La memorización sin sentido</label>
                 <label><input type="radio" name="q8" value="c"> c) El silencio en el aula</label>
-                <label><input type="radio" name="q8" value="d"> d) La memorización sin sentido</label>
+                <label><input type="radio" name="q8" value="d"> d) La copia de textos</label>
             </div>
         </div>
         
         <div class="question-block" id="q9" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">9. El método heurístico se enfoca en:</div>
             <div class="options">
-                <label><input type="radio" name="q9" value="a"> a) El descubrimiento y la resolución activa por parte del alumno</label>
-                <label><input type="radio" name="q9" value="b"> b) La clase magistral del profesor</label>
-                <label><input type="radio" name="q9" value="c"> c) La repetición mecánica</label>
-                <label><input type="radio" name="q9" value="d"> d) El estudio individual</label>
+                <label><input type="radio" name="q9" value="a"> a) La repetición mecánica</label>
+                <label><input type="radio" name="q9" value="b"> b) El estudio individual</label>
+                <label><input type="radio" name="q9" value="c"> c) El descubrimiento y la resolución activa por parte del alumno</label>
+                <label><input type="radio" name="q9" value="d"> d) La clase magistral del profesor</label>
             </div>
         </div>
         
@@ -280,8 +285,8 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">10. ¿Por qué es importante conocer los estilos de aprendizaje de los alumnos?</div>
             <div class="options">
                 <label><input type="radio" name="q10" value="a"> a) Para diversificar las estrategias de enseñanza y mejorar el aprendizaje</label>
-                <label><input type="radio" name="q10" value="b"> b) Para agrupar a los estudiantes buenos y malos</label>
-                <label><input type="radio" name="q10" value="c"> c) Para darles menos tarea</label>
+                <label><input type="radio" name="q10" value="b"> b) Para darles menos tarea</label>
+                <label><input type="radio" name="q10" value="c"> c) Para agrupar a los estudiantes buenos y malos</label>
                 <label><input type="radio" name="q10" value="d"> d) Para facilitar la evaluación estandarizada</label>
             </div>
         </div>
@@ -289,9 +294,9 @@
         <div class="question-block" id="q11" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">11. En base al texto: ¿Qué es un estilo de aprendizaje?</div>
             <div class="options">
-                <label><input type="radio" name="q11" value="a"> a) Las estrategias preferidas por el estudiante para aprender</label>
-                <label><input type="radio" name="q11" value="b"> b) La ropa que usa el estudiante</label>
-                <label><input type="radio" name="q11" value="c"> c) El horario de estudio</label>
+                <label><input type="radio" name="q11" value="a"> a) El horario de estudio</label>
+                <label><input type="radio" name="q11" value="b"> b) Las estrategias preferidas por el estudiante para aprender</label>
+                <label><input type="radio" name="q11" value="c"> c) La ropa que usa el estudiante</label>
                 <label><input type="radio" name="q11" value="d"> d) La calificación del estudiante</label>
             </div>
         </div>
@@ -299,30 +304,30 @@
         <div class="question-block" id="q12" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">12. En base al texto: Según el modelo de Kolb, los estilos de aprendizaje son:</div>
             <div class="options">
-                <label><input type="radio" name="q12" value="a"> a) Divergente, Asimilador, Convergente y Acomodador</label>
-                <label><input type="radio" name="q12" value="b"> b) Visual y Auditivo</label>
+                <label><input type="radio" name="q12" value="a"> a) Activo y Pasivo</label>
+                <label><input type="radio" name="q12" value="b"> b) Divergente, Asimilador, Convergente y Acomodador</label>
                 <label><input type="radio" name="q12" value="c"> c) Rápido y Lento</label>
-                <label><input type="radio" name="q12" value="d"> d) Activo y Pasivo</label>
+                <label><input type="radio" name="q12" value="d"> d) Visual y Auditivo</label>
             </div>
         </div>
         
         <div class="question-block" id="q13" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">13. En base al texto: Un estudiante con estilo visual aprende mejor mediante:</div>
             <div class="options">
-                <label><input type="radio" name="q13" value="a"> a) Mapas mentales, gráficos y esquemas</label>
-                <label><input type="radio" name="q13" value="b"> b) Escuchando conferencias</label>
-                <label><input type="radio" name="q13" value="c"> c) Tocando objetos</label>
-                <label><input type="radio" name="q13" value="d"> d) Repitiendo en voz alta</label>
+                <label><input type="radio" name="q13" value="a"> a) Tocando objetos</label>
+                <label><input type="radio" name="q13" value="b"> b) Repitiendo en voz alta</label>
+                <label><input type="radio" name="q13" value="c"> c) Mapas mentales, gráficos y esquemas</label>
+                <label><input type="radio" name="q13" value="d"> d) Escuchando conferencias</label>
             </div>
         </div>
         
         <div class="question-block" id="q14" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">14. En base al texto: El estilo de aprendizaje kinestésico se basa en:</div>
             <div class="options">
-                <label><input type="radio" name="q14" value="a"> a) El movimiento y la experimentación física</label>
-                <label><input type="radio" name="q14" value="b"> b) La lectura en silencio</label>
-                <label><input type="radio" name="q14" value="c"> c) La visualización de videos</label>
-                <label><input type="radio" name="q14" value="d"> d) El debate oral</label>
+                <label><input type="radio" name="q14" value="a"> a) La visualización de videos</label>
+                <label><input type="radio" name="q14" value="b"> b) El movimiento y la experimentación física</label>
+                <label><input type="radio" name="q14" value="c"> c) El debate oral</label>
+                <label><input type="radio" name="q14" value="d"> d) La lectura en silencio</label>
             </div>
         </div>
         
@@ -339,20 +344,20 @@
         <div class="question-block" id="q16" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">16. En base al texto: El método inductivo se caracteriza por:</div>
             <div class="options">
-                <label><input type="radio" name="q16" value="a"> a) Partir de casos particulares para llegar a una regla general</label>
-                <label><input type="radio" name="q16" value="b"> b) Partir de lo general a lo particular</label>
-                <label><input type="radio" name="q16" value="c"> c) Ignorar las reglas</label>
-                <label><input type="radio" name="q16" value="d"> d) Memorizar conceptos</label>
+                <label><input type="radio" name="q16" value="a"> a) Ignorar las reglas</label>
+                <label><input type="radio" name="q16" value="b"> b) Partir de casos particulares para llegar a una regla general</label>
+                <label><input type="radio" name="q16" value="c"> c) Memorizar conceptos</label>
+                <label><input type="radio" name="q16" value="d"> d) Partir de lo general a lo particular</label>
             </div>
         </div>
         
         <div class="question-block" id="q17" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">17. En base al texto: El método deductivo consiste en:</div>
             <div class="options">
-                <label><input type="radio" name="q17" value="a"> a) Partir de principios generales para aplicarlos a casos particulares</label>
-                <label><input type="radio" name="q17" value="b"> b) Observar fenómenos sin hipótesis</label>
-                <label><input type="radio" name="q17" value="c"> c) Experimentar al azar</label>
-                <label><input type="radio" name="q17" value="d"> d) Evitar conclusiones</label>
+                <label><input type="radio" name="q17" value="a"> a) Evitar conclusiones</label>
+                <label><input type="radio" name="q17" value="b"> b) Partir de principios generales para aplicarlos a casos particulares</label>
+                <label><input type="radio" name="q17" value="c"> c) Observar fenómenos sin hipótesis</label>
+                <label><input type="radio" name="q17" value="d"> d) Experimentar al azar</label>
             </div>
         </div>
         
@@ -360,19 +365,19 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">18. En base al texto: El Aprendizaje Basado en Problemas (ABP) promueve:</div>
             <div class="options">
                 <label><input type="radio" name="q18" value="a"> a) La resolución de situaciones complejas del mundo real</label>
-                <label><input type="radio" name="q18" value="b"> b) La copia de textos</label>
-                <label><input type="radio" name="q18" value="c"> c) El silencio en el aula</label>
-                <label><input type="radio" name="q18" value="d"> d) La memorización sin sentido</label>
+                <label><input type="radio" name="q18" value="b"> b) La memorización sin sentido</label>
+                <label><input type="radio" name="q18" value="c"> c) La copia de textos</label>
+                <label><input type="radio" name="q18" value="d"> d) El silencio en el aula</label>
             </div>
         </div>
         
         <div class="question-block" id="q19" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">19. En base al texto: El método heurístico se enfoca en:</div>
             <div class="options">
-                <label><input type="radio" name="q19" value="a"> a) El descubrimiento y la resolución activa por parte del alumno</label>
-                <label><input type="radio" name="q19" value="b"> b) La clase magistral del profesor</label>
-                <label><input type="radio" name="q19" value="c"> c) La repetición mecánica</label>
-                <label><input type="radio" name="q19" value="d"> d) El estudio individual</label>
+                <label><input type="radio" name="q19" value="a"> a) La clase magistral del profesor</label>
+                <label><input type="radio" name="q19" value="b"> b) El estudio individual</label>
+                <label><input type="radio" name="q19" value="c"> c) El descubrimiento y la resolución activa por parte del alumno</label>
+                <label><input type="radio" name="q19" value="d"> d) La repetición mecánica</label>
             </div>
         </div>
         
@@ -380,9 +385,9 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">20. En base al texto: ¿Por qué es importante conocer los estilos de aprendizaje de los alumnos?</div>
             <div class="options">
                 <label><input type="radio" name="q20" value="a"> a) Para diversificar las estrategias de enseñanza y mejorar el aprendizaje</label>
-                <label><input type="radio" name="q20" value="b"> b) Para agrupar a los estudiantes buenos y malos</label>
-                <label><input type="radio" name="q20" value="c"> c) Para darles menos tarea</label>
-                <label><input type="radio" name="q20" value="d"> d) Para facilitar la evaluación estandarizada</label>
+                <label><input type="radio" name="q20" value="b"> b) Para facilitar la evaluación estandarizada</label>
+                <label><input type="radio" name="q20" value="c"> c) Para agrupar a los estudiantes buenos y malos</label>
+                <label><input type="radio" name="q20" value="d"> d) Para darles menos tarea</label>
             </div>
         </div>
         
@@ -391,8 +396,8 @@
             <div class="options">
                 <label><input type="radio" name="q21" value="a"> a) Las estrategias preferidas por el estudiante para aprender</label>
                 <label><input type="radio" name="q21" value="b"> b) La ropa que usa el estudiante</label>
-                <label><input type="radio" name="q21" value="c"> c) El horario de estudio</label>
-                <label><input type="radio" name="q21" value="d"> d) La calificación del estudiante</label>
+                <label><input type="radio" name="q21" value="c"> c) La calificación del estudiante</label>
+                <label><input type="radio" name="q21" value="d"> d) El horario de estudio</label>
             </div>
         </div>
         
@@ -400,8 +405,8 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">22. Desde la perspectiva pedagógica, Según el modelo de Kolb, los estilos de aprendizaje son:</div>
             <div class="options">
                 <label><input type="radio" name="q22" value="a"> a) Divergente, Asimilador, Convergente y Acomodador</label>
-                <label><input type="radio" name="q22" value="b"> b) Visual y Auditivo</label>
-                <label><input type="radio" name="q22" value="c"> c) Rápido y Lento</label>
+                <label><input type="radio" name="q22" value="b"> b) Rápido y Lento</label>
+                <label><input type="radio" name="q22" value="c"> c) Visual y Auditivo</label>
                 <label><input type="radio" name="q22" value="d"> d) Activo y Pasivo</label>
             </div>
         </div>
@@ -409,10 +414,10 @@
         <div class="question-block" id="q23" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">23. Desde la perspectiva pedagógica, Un estudiante con estilo visual aprende mejor mediante:</div>
             <div class="options">
-                <label><input type="radio" name="q23" value="a"> a) Mapas mentales, gráficos y esquemas</label>
-                <label><input type="radio" name="q23" value="b"> b) Escuchando conferencias</label>
-                <label><input type="radio" name="q23" value="c"> c) Tocando objetos</label>
-                <label><input type="radio" name="q23" value="d"> d) Repitiendo en voz alta</label>
+                <label><input type="radio" name="q23" value="a"> a) Tocando objetos</label>
+                <label><input type="radio" name="q23" value="b"> b) Repitiendo en voz alta</label>
+                <label><input type="radio" name="q23" value="c"> c) Escuchando conferencias</label>
+                <label><input type="radio" name="q23" value="d"> d) Mapas mentales, gráficos y esquemas</label>
             </div>
         </div>
         
@@ -420,9 +425,9 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">24. Desde la perspectiva pedagógica, El estilo de aprendizaje kinestésico se basa en:</div>
             <div class="options">
                 <label><input type="radio" name="q24" value="a"> a) El movimiento y la experimentación física</label>
-                <label><input type="radio" name="q24" value="b"> b) La lectura en silencio</label>
-                <label><input type="radio" name="q24" value="c"> c) La visualización de videos</label>
-                <label><input type="radio" name="q24" value="d"> d) El debate oral</label>
+                <label><input type="radio" name="q24" value="b"> b) El debate oral</label>
+                <label><input type="radio" name="q24" value="c"> c) La lectura en silencio</label>
+                <label><input type="radio" name="q24" value="d"> d) La visualización de videos</label>
             </div>
         </div>
         
@@ -430,19 +435,19 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">25. Desde la perspectiva pedagógica, ¿Qué son los métodos de enseñanza?</div>
             <div class="options">
                 <label><input type="radio" name="q25" value="a"> a) Los procedimientos sistemáticos para dirigir el aprendizaje</label>
-                <label><input type="radio" name="q25" value="b"> b) Las reglas de disciplina</label>
+                <label><input type="radio" name="q25" value="b"> b) Los exámenes</label>
                 <label><input type="radio" name="q25" value="c"> c) Los temas del currículo</label>
-                <label><input type="radio" name="q25" value="d"> d) Los exámenes</label>
+                <label><input type="radio" name="q25" value="d"> d) Las reglas de disciplina</label>
             </div>
         </div>
         
         <div class="question-block" id="q26" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">26. Desde la perspectiva pedagógica, El método inductivo se caracteriza por:</div>
             <div class="options">
-                <label><input type="radio" name="q26" value="a"> a) Partir de casos particulares para llegar a una regla general</label>
-                <label><input type="radio" name="q26" value="b"> b) Partir de lo general a lo particular</label>
-                <label><input type="radio" name="q26" value="c"> c) Ignorar las reglas</label>
-                <label><input type="radio" name="q26" value="d"> d) Memorizar conceptos</label>
+                <label><input type="radio" name="q26" value="a"> a) Memorizar conceptos</label>
+                <label><input type="radio" name="q26" value="b"> b) Ignorar las reglas</label>
+                <label><input type="radio" name="q26" value="c"> c) Partir de lo general a lo particular</label>
+                <label><input type="radio" name="q26" value="d"> d) Partir de casos particulares para llegar a una regla general</label>
             </div>
         </div>
         
@@ -451,46 +456,46 @@
             <div class="options">
                 <label><input type="radio" name="q27" value="a"> a) Partir de principios generales para aplicarlos a casos particulares</label>
                 <label><input type="radio" name="q27" value="b"> b) Observar fenómenos sin hipótesis</label>
-                <label><input type="radio" name="q27" value="c"> c) Experimentar al azar</label>
-                <label><input type="radio" name="q27" value="d"> d) Evitar conclusiones</label>
+                <label><input type="radio" name="q27" value="c"> c) Evitar conclusiones</label>
+                <label><input type="radio" name="q27" value="d"> d) Experimentar al azar</label>
             </div>
         </div>
         
         <div class="question-block" id="q28" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">28. Desde la perspectiva pedagógica, El Aprendizaje Basado en Problemas (ABP) promueve:</div>
             <div class="options">
-                <label><input type="radio" name="q28" value="a"> a) La resolución de situaciones complejas del mundo real</label>
-                <label><input type="radio" name="q28" value="b"> b) La copia de textos</label>
-                <label><input type="radio" name="q28" value="c"> c) El silencio en el aula</label>
-                <label><input type="radio" name="q28" value="d"> d) La memorización sin sentido</label>
+                <label><input type="radio" name="q28" value="a"> a) El silencio en el aula</label>
+                <label><input type="radio" name="q28" value="b"> b) La resolución de situaciones complejas del mundo real</label>
+                <label><input type="radio" name="q28" value="c"> c) La memorización sin sentido</label>
+                <label><input type="radio" name="q28" value="d"> d) La copia de textos</label>
             </div>
         </div>
         
         <div class="question-block" id="q29" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">29. Desde la perspectiva pedagógica, El método heurístico se enfoca en:</div>
             <div class="options">
-                <label><input type="radio" name="q29" value="a"> a) El descubrimiento y la resolución activa por parte del alumno</label>
+                <label><input type="radio" name="q29" value="a"> a) El estudio individual</label>
                 <label><input type="radio" name="q29" value="b"> b) La clase magistral del profesor</label>
                 <label><input type="radio" name="q29" value="c"> c) La repetición mecánica</label>
-                <label><input type="radio" name="q29" value="d"> d) El estudio individual</label>
+                <label><input type="radio" name="q29" value="d"> d) El descubrimiento y la resolución activa por parte del alumno</label>
             </div>
         </div>
         
         <div class="question-block" id="q30" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">30. Desde la perspectiva pedagógica, ¿Por qué es importante conocer los estilos de aprendizaje de los alumnos?</div>
             <div class="options">
-                <label><input type="radio" name="q30" value="a"> a) Para diversificar las estrategias de enseñanza y mejorar el aprendizaje</label>
-                <label><input type="radio" name="q30" value="b"> b) Para agrupar a los estudiantes buenos y malos</label>
+                <label><input type="radio" name="q30" value="a"> a) Para facilitar la evaluación estandarizada</label>
+                <label><input type="radio" name="q30" value="b"> b) Para diversificar las estrategias de enseñanza y mejorar el aprendizaje</label>
                 <label><input type="radio" name="q30" value="c"> c) Para darles menos tarea</label>
-                <label><input type="radio" name="q30" value="d"> d) Para facilitar la evaluación estandarizada</label>
+                <label><input type="radio" name="q30" value="d"> d) Para agrupar a los estudiantes buenos y malos</label>
             </div>
         </div>
         
         <div class="question-block" id="q31" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">31. Es importante saber que: ¿Qué es un estilo de aprendizaje?</div>
             <div class="options">
-                <label><input type="radio" name="q31" value="a"> a) Las estrategias preferidas por el estudiante para aprender</label>
-                <label><input type="radio" name="q31" value="b"> b) La ropa que usa el estudiante</label>
+                <label><input type="radio" name="q31" value="a"> a) La ropa que usa el estudiante</label>
+                <label><input type="radio" name="q31" value="b"> b) Las estrategias preferidas por el estudiante para aprender</label>
                 <label><input type="radio" name="q31" value="c"> c) El horario de estudio</label>
                 <label><input type="radio" name="q31" value="d"> d) La calificación del estudiante</label>
             </div>
@@ -499,78 +504,78 @@
         <div class="question-block" id="q32" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">32. Es importante saber que: Según el modelo de Kolb, los estilos de aprendizaje son:</div>
             <div class="options">
-                <label><input type="radio" name="q32" value="a"> a) Divergente, Asimilador, Convergente y Acomodador</label>
-                <label><input type="radio" name="q32" value="b"> b) Visual y Auditivo</label>
-                <label><input type="radio" name="q32" value="c"> c) Rápido y Lento</label>
-                <label><input type="radio" name="q32" value="d"> d) Activo y Pasivo</label>
+                <label><input type="radio" name="q32" value="a"> a) Rápido y Lento</label>
+                <label><input type="radio" name="q32" value="b"> b) Activo y Pasivo</label>
+                <label><input type="radio" name="q32" value="c"> c) Visual y Auditivo</label>
+                <label><input type="radio" name="q32" value="d"> d) Divergente, Asimilador, Convergente y Acomodador</label>
             </div>
         </div>
         
         <div class="question-block" id="q33" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">33. Es importante saber que: Un estudiante con estilo visual aprende mejor mediante:</div>
             <div class="options">
-                <label><input type="radio" name="q33" value="a"> a) Mapas mentales, gráficos y esquemas</label>
-                <label><input type="radio" name="q33" value="b"> b) Escuchando conferencias</label>
+                <label><input type="radio" name="q33" value="a"> a) Repitiendo en voz alta</label>
+                <label><input type="radio" name="q33" value="b"> b) Mapas mentales, gráficos y esquemas</label>
                 <label><input type="radio" name="q33" value="c"> c) Tocando objetos</label>
-                <label><input type="radio" name="q33" value="d"> d) Repitiendo en voz alta</label>
+                <label><input type="radio" name="q33" value="d"> d) Escuchando conferencias</label>
             </div>
         </div>
         
         <div class="question-block" id="q34" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">34. Es importante saber que: El estilo de aprendizaje kinestésico se basa en:</div>
             <div class="options">
-                <label><input type="radio" name="q34" value="a"> a) El movimiento y la experimentación física</label>
-                <label><input type="radio" name="q34" value="b"> b) La lectura en silencio</label>
-                <label><input type="radio" name="q34" value="c"> c) La visualización de videos</label>
-                <label><input type="radio" name="q34" value="d"> d) El debate oral</label>
+                <label><input type="radio" name="q34" value="a"> a) El debate oral</label>
+                <label><input type="radio" name="q34" value="b"> b) La visualización de videos</label>
+                <label><input type="radio" name="q34" value="c"> c) La lectura en silencio</label>
+                <label><input type="radio" name="q34" value="d"> d) El movimiento y la experimentación física</label>
             </div>
         </div>
         
         <div class="question-block" id="q35" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">35. Es importante saber que: ¿Qué son los métodos de enseñanza?</div>
             <div class="options">
-                <label><input type="radio" name="q35" value="a"> a) Los procedimientos sistemáticos para dirigir el aprendizaje</label>
-                <label><input type="radio" name="q35" value="b"> b) Las reglas de disciplina</label>
-                <label><input type="radio" name="q35" value="c"> c) Los temas del currículo</label>
-                <label><input type="radio" name="q35" value="d"> d) Los exámenes</label>
+                <label><input type="radio" name="q35" value="a"> a) Los temas del currículo</label>
+                <label><input type="radio" name="q35" value="b"> b) Los exámenes</label>
+                <label><input type="radio" name="q35" value="c"> c) Las reglas de disciplina</label>
+                <label><input type="radio" name="q35" value="d"> d) Los procedimientos sistemáticos para dirigir el aprendizaje</label>
             </div>
         </div>
         
         <div class="question-block" id="q36" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">36. Es importante saber que: El método inductivo se caracteriza por:</div>
             <div class="options">
-                <label><input type="radio" name="q36" value="a"> a) Partir de casos particulares para llegar a una regla general</label>
+                <label><input type="radio" name="q36" value="a"> a) Memorizar conceptos</label>
                 <label><input type="radio" name="q36" value="b"> b) Partir de lo general a lo particular</label>
-                <label><input type="radio" name="q36" value="c"> c) Ignorar las reglas</label>
-                <label><input type="radio" name="q36" value="d"> d) Memorizar conceptos</label>
+                <label><input type="radio" name="q36" value="c"> c) Partir de casos particulares para llegar a una regla general</label>
+                <label><input type="radio" name="q36" value="d"> d) Ignorar las reglas</label>
             </div>
         </div>
         
         <div class="question-block" id="q37" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">37. Es importante saber que: El método deductivo consiste en:</div>
             <div class="options">
-                <label><input type="radio" name="q37" value="a"> a) Partir de principios generales para aplicarlos a casos particulares</label>
-                <label><input type="radio" name="q37" value="b"> b) Observar fenómenos sin hipótesis</label>
-                <label><input type="radio" name="q37" value="c"> c) Experimentar al azar</label>
-                <label><input type="radio" name="q37" value="d"> d) Evitar conclusiones</label>
+                <label><input type="radio" name="q37" value="a"> a) Observar fenómenos sin hipótesis</label>
+                <label><input type="radio" name="q37" value="b"> b) Partir de principios generales para aplicarlos a casos particulares</label>
+                <label><input type="radio" name="q37" value="c"> c) Evitar conclusiones</label>
+                <label><input type="radio" name="q37" value="d"> d) Experimentar al azar</label>
             </div>
         </div>
         
         <div class="question-block" id="q38" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">38. Es importante saber que: El Aprendizaje Basado en Problemas (ABP) promueve:</div>
             <div class="options">
-                <label><input type="radio" name="q38" value="a"> a) La resolución de situaciones complejas del mundo real</label>
-                <label><input type="radio" name="q38" value="b"> b) La copia de textos</label>
-                <label><input type="radio" name="q38" value="c"> c) El silencio en el aula</label>
-                <label><input type="radio" name="q38" value="d"> d) La memorización sin sentido</label>
+                <label><input type="radio" name="q38" value="a"> a) La memorización sin sentido</label>
+                <label><input type="radio" name="q38" value="b"> b) La resolución de situaciones complejas del mundo real</label>
+                <label><input type="radio" name="q38" value="c"> c) La copia de textos</label>
+                <label><input type="radio" name="q38" value="d"> d) El silencio en el aula</label>
             </div>
         </div>
         
         <div class="question-block" id="q39" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">39. Es importante saber que: El método heurístico se enfoca en:</div>
             <div class="options">
-                <label><input type="radio" name="q39" value="a"> a) El descubrimiento y la resolución activa por parte del alumno</label>
-                <label><input type="radio" name="q39" value="b"> b) La clase magistral del profesor</label>
+                <label><input type="radio" name="q39" value="a"> a) La clase magistral del profesor</label>
+                <label><input type="radio" name="q39" value="b"> b) El descubrimiento y la resolución activa por parte del alumno</label>
                 <label><input type="radio" name="q39" value="c"> c) La repetición mecánica</label>
                 <label><input type="radio" name="q39" value="d"> d) El estudio individual</label>
             </div>
@@ -579,30 +584,30 @@
         <div class="question-block" id="q40" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">40. Es importante saber que: ¿Por qué es importante conocer los estilos de aprendizaje de los alumnos?</div>
             <div class="options">
-                <label><input type="radio" name="q40" value="a"> a) Para diversificar las estrategias de enseñanza y mejorar el aprendizaje</label>
-                <label><input type="radio" name="q40" value="b"> b) Para agrupar a los estudiantes buenos y malos</label>
+                <label><input type="radio" name="q40" value="a"> a) Para facilitar la evaluación estandarizada</label>
+                <label><input type="radio" name="q40" value="b"> b) Para diversificar las estrategias de enseñanza y mejorar el aprendizaje</label>
                 <label><input type="radio" name="q40" value="c"> c) Para darles menos tarea</label>
-                <label><input type="radio" name="q40" value="d"> d) Para facilitar la evaluación estandarizada</label>
+                <label><input type="radio" name="q40" value="d"> d) Para agrupar a los estudiantes buenos y malos</label>
             </div>
         </div>
         
         <div class="question-block" id="q41" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">41. Según la normativa: ¿Qué es un estilo de aprendizaje?</div>
             <div class="options">
-                <label><input type="radio" name="q41" value="a"> a) Las estrategias preferidas por el estudiante para aprender</label>
+                <label><input type="radio" name="q41" value="a"> a) El horario de estudio</label>
                 <label><input type="radio" name="q41" value="b"> b) La ropa que usa el estudiante</label>
-                <label><input type="radio" name="q41" value="c"> c) El horario de estudio</label>
-                <label><input type="radio" name="q41" value="d"> d) La calificación del estudiante</label>
+                <label><input type="radio" name="q41" value="c"> c) La calificación del estudiante</label>
+                <label><input type="radio" name="q41" value="d"> d) Las estrategias preferidas por el estudiante para aprender</label>
             </div>
         </div>
         
         <div class="question-block" id="q42" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">42. Según la normativa: Según el modelo de Kolb, los estilos de aprendizaje son:</div>
             <div class="options">
-                <label><input type="radio" name="q42" value="a"> a) Divergente, Asimilador, Convergente y Acomodador</label>
-                <label><input type="radio" name="q42" value="b"> b) Visual y Auditivo</label>
-                <label><input type="radio" name="q42" value="c"> c) Rápido y Lento</label>
-                <label><input type="radio" name="q42" value="d"> d) Activo y Pasivo</label>
+                <label><input type="radio" name="q42" value="a"> a) Activo y Pasivo</label>
+                <label><input type="radio" name="q42" value="b"> b) Divergente, Asimilador, Convergente y Acomodador</label>
+                <label><input type="radio" name="q42" value="c"> c) Visual y Auditivo</label>
+                <label><input type="radio" name="q42" value="d"> d) Rápido y Lento</label>
             </div>
         </div>
         
@@ -610,9 +615,9 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">43. Según la normativa: Un estudiante con estilo visual aprende mejor mediante:</div>
             <div class="options">
                 <label><input type="radio" name="q43" value="a"> a) Mapas mentales, gráficos y esquemas</label>
-                <label><input type="radio" name="q43" value="b"> b) Escuchando conferencias</label>
+                <label><input type="radio" name="q43" value="b"> b) Repitiendo en voz alta</label>
                 <label><input type="radio" name="q43" value="c"> c) Tocando objetos</label>
-                <label><input type="radio" name="q43" value="d"> d) Repitiendo en voz alta</label>
+                <label><input type="radio" name="q43" value="d"> d) Escuchando conferencias</label>
             </div>
         </div>
         
@@ -620,58 +625,58 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">44. Según la normativa: El estilo de aprendizaje kinestésico se basa en:</div>
             <div class="options">
                 <label><input type="radio" name="q44" value="a"> a) El movimiento y la experimentación física</label>
-                <label><input type="radio" name="q44" value="b"> b) La lectura en silencio</label>
-                <label><input type="radio" name="q44" value="c"> c) La visualización de videos</label>
-                <label><input type="radio" name="q44" value="d"> d) El debate oral</label>
+                <label><input type="radio" name="q44" value="b"> b) El debate oral</label>
+                <label><input type="radio" name="q44" value="c"> c) La lectura en silencio</label>
+                <label><input type="radio" name="q44" value="d"> d) La visualización de videos</label>
             </div>
         </div>
         
         <div class="question-block" id="q45" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">45. Según la normativa: ¿Qué son los métodos de enseñanza?</div>
             <div class="options">
-                <label><input type="radio" name="q45" value="a"> a) Los procedimientos sistemáticos para dirigir el aprendizaje</label>
-                <label><input type="radio" name="q45" value="b"> b) Las reglas de disciplina</label>
-                <label><input type="radio" name="q45" value="c"> c) Los temas del currículo</label>
-                <label><input type="radio" name="q45" value="d"> d) Los exámenes</label>
+                <label><input type="radio" name="q45" value="a"> a) Los exámenes</label>
+                <label><input type="radio" name="q45" value="b"> b) Los procedimientos sistemáticos para dirigir el aprendizaje</label>
+                <label><input type="radio" name="q45" value="c"> c) Las reglas de disciplina</label>
+                <label><input type="radio" name="q45" value="d"> d) Los temas del currículo</label>
             </div>
         </div>
         
         <div class="question-block" id="q46" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">46. Según la normativa: El método inductivo se caracteriza por:</div>
             <div class="options">
-                <label><input type="radio" name="q46" value="a"> a) Partir de casos particulares para llegar a una regla general</label>
-                <label><input type="radio" name="q46" value="b"> b) Partir de lo general a lo particular</label>
-                <label><input type="radio" name="q46" value="c"> c) Ignorar las reglas</label>
-                <label><input type="radio" name="q46" value="d"> d) Memorizar conceptos</label>
+                <label><input type="radio" name="q46" value="a"> a) Partir de lo general a lo particular</label>
+                <label><input type="radio" name="q46" value="b"> b) Ignorar las reglas</label>
+                <label><input type="radio" name="q46" value="c"> c) Memorizar conceptos</label>
+                <label><input type="radio" name="q46" value="d"> d) Partir de casos particulares para llegar a una regla general</label>
             </div>
         </div>
         
         <div class="question-block" id="q47" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">47. Según la normativa: El método deductivo consiste en:</div>
             <div class="options">
-                <label><input type="radio" name="q47" value="a"> a) Partir de principios generales para aplicarlos a casos particulares</label>
-                <label><input type="radio" name="q47" value="b"> b) Observar fenómenos sin hipótesis</label>
-                <label><input type="radio" name="q47" value="c"> c) Experimentar al azar</label>
-                <label><input type="radio" name="q47" value="d"> d) Evitar conclusiones</label>
+                <label><input type="radio" name="q47" value="a"> a) Evitar conclusiones</label>
+                <label><input type="radio" name="q47" value="b"> b) Experimentar al azar</label>
+                <label><input type="radio" name="q47" value="c"> c) Partir de principios generales para aplicarlos a casos particulares</label>
+                <label><input type="radio" name="q47" value="d"> d) Observar fenómenos sin hipótesis</label>
             </div>
         </div>
         
         <div class="question-block" id="q48" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">48. Según la normativa: El Aprendizaje Basado en Problemas (ABP) promueve:</div>
             <div class="options">
-                <label><input type="radio" name="q48" value="a"> a) La resolución de situaciones complejas del mundo real</label>
-                <label><input type="radio" name="q48" value="b"> b) La copia de textos</label>
-                <label><input type="radio" name="q48" value="c"> c) El silencio en el aula</label>
-                <label><input type="radio" name="q48" value="d"> d) La memorización sin sentido</label>
+                <label><input type="radio" name="q48" value="a"> a) El silencio en el aula</label>
+                <label><input type="radio" name="q48" value="b"> b) La memorización sin sentido</label>
+                <label><input type="radio" name="q48" value="c"> c) La copia de textos</label>
+                <label><input type="radio" name="q48" value="d"> d) La resolución de situaciones complejas del mundo real</label>
             </div>
         </div>
         
         <div class="question-block" id="q49" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">49. Según la normativa: El método heurístico se enfoca en:</div>
             <div class="options">
-                <label><input type="radio" name="q49" value="a"> a) El descubrimiento y la resolución activa por parte del alumno</label>
-                <label><input type="radio" name="q49" value="b"> b) La clase magistral del profesor</label>
-                <label><input type="radio" name="q49" value="c"> c) La repetición mecánica</label>
+                <label><input type="radio" name="q49" value="a"> a) La repetición mecánica</label>
+                <label><input type="radio" name="q49" value="b"> b) El descubrimiento y la resolución activa por parte del alumno</label>
+                <label><input type="radio" name="q49" value="c"> c) La clase magistral del profesor</label>
                 <label><input type="radio" name="q49" value="d"> d) El estudio individual</label>
             </div>
         </div>
@@ -680,9 +685,9 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">50. Según la normativa: ¿Por qué es importante conocer los estilos de aprendizaje de los alumnos?</div>
             <div class="options">
                 <label><input type="radio" name="q50" value="a"> a) Para diversificar las estrategias de enseñanza y mejorar el aprendizaje</label>
-                <label><input type="radio" name="q50" value="b"> b) Para agrupar a los estudiantes buenos y malos</label>
-                <label><input type="radio" name="q50" value="c"> c) Para darles menos tarea</label>
-                <label><input type="radio" name="q50" value="d"> d) Para facilitar la evaluación estandarizada</label>
+                <label><input type="radio" name="q50" value="b"> b) Para darles menos tarea</label>
+                <label><input type="radio" name="q50" value="c"> c) Para facilitar la evaluación estandarizada</label>
+                <label><input type="radio" name="q50" value="d"> d) Para agrupar a los estudiantes buenos y malos</label>
             </div>
         </div>
         
@@ -713,55 +718,55 @@
     
     <script>
         const correctAnswers = {
-            "q1": "a",
-        "q2": "a",
-        "q3": "a",
-        "q4": "a",
+            "q1": "d",
+        "q2": "c",
+        "q3": "b",
+        "q4": "c",
         "q5": "a",
-        "q6": "a",
+        "q6": "b",
         "q7": "a",
         "q8": "a",
-        "q9": "a",
+        "q9": "c",
         "q10": "a",
-        "q11": "a",
-        "q12": "a",
-        "q13": "a",
-        "q14": "a",
+        "q11": "b",
+        "q12": "b",
+        "q13": "c",
+        "q14": "b",
         "q15": "a",
-        "q16": "a",
-        "q17": "a",
+        "q16": "b",
+        "q17": "b",
         "q18": "a",
-        "q19": "a",
+        "q19": "c",
         "q20": "a",
         "q21": "a",
         "q22": "a",
-        "q23": "a",
+        "q23": "d",
         "q24": "a",
         "q25": "a",
-        "q26": "a",
+        "q26": "d",
         "q27": "a",
-        "q28": "a",
-        "q29": "a",
-        "q30": "a",
-        "q31": "a",
-        "q32": "a",
-        "q33": "a",
-        "q34": "a",
-        "q35": "a",
-        "q36": "a",
-        "q37": "a",
-        "q38": "a",
-        "q39": "a",
-        "q40": "a",
-        "q41": "a",
-        "q42": "a",
+        "q28": "b",
+        "q29": "d",
+        "q30": "b",
+        "q31": "b",
+        "q32": "d",
+        "q33": "b",
+        "q34": "d",
+        "q35": "d",
+        "q36": "c",
+        "q37": "b",
+        "q38": "b",
+        "q39": "b",
+        "q40": "b",
+        "q41": "d",
+        "q42": "b",
         "q43": "a",
         "q44": "a",
-        "q45": "a",
-        "q46": "a",
-        "q47": "a",
-        "q48": "a",
-        "q49": "a",
+        "q45": "b",
+        "q46": "d",
+        "q47": "c",
+        "q48": "d",
+        "q49": "b",
         "q50": "a"
         };
     </script>

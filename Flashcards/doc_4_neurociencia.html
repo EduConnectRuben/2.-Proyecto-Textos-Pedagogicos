@@ -29,6 +29,9 @@
             .nav-links { display: none !important; }
             .nav-links.show-mobile { display: flex !important; flex-direction: column !important; }
             .dropdown { flex: none !important; width: 100%; border-top: 1px solid rgba(255,255,255,0.1); }
+            .dropdown-content { position: relative !important; min-width: 100% !important; box-shadow: inset 0 2px 5px rgba(0,0,0,0.2) !important; border-radius: 0 !important; background: #2e7d32 !important; border: none !important; }
+            .dropdown-content a { color: white !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; padding: 10px 15px !important; font-size: 0.95rem !important; }
+            .dropdown-content a:hover { background: #1b5e20 !important; }
             .hero-title { font-size: 1.8rem !important; }
             .hero-subtitle { font-size: 1rem !important; }
             .header-title { font-size: 1.1rem !important; }
@@ -38,8 +41,10 @@
         }
         @media (max-width: 768px) {
             /* Ajustes para tarjetas flash */
-            #flashcard-box { padding: 25px 15px !important; min-height: 200px !important; }
-            #card-text { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            #flashcard-box { padding: 15px 10px !important; min-height: 150px !important; }
+            #card-text { font-size: 1.05rem !important; line-height: 1.3 !important; }
+            #flash-buttons { gap: 5px !important; margin-top: 15px !important; }
+            #flash-buttons button { padding: 10px 5px !important; font-size: 0.85rem !important; flex: 1 !important; }
             
             /* Ajustes para audiolibros y contenedores principales */
             div[style*="padding: 40px;"] { padding: 15px !important; }
@@ -89,7 +94,7 @@
     
     <nav class="navbar" id="navbar" style="background: #1b5e20; padding: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 9999;">
         <div class="nav-container" style="width: 100%; max-width: 1200px; margin: 0 auto;">
-            <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('show-mobile')">☰ Menú Principal</button>
+            <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('show-mobile')">Menú Principal ☰</button>
             <div class="nav-links" id="navLinks" style="display: flex; justify-content: center; width: 100%;">
 
             <div class="dropdown" style="flex: 1; text-align: center;">
@@ -175,7 +180,7 @@
             <h2 id="card-text" style="color: white; font-size: 1.8rem; font-weight: bold; margin: 0; text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">Cargando...</h2>
         </div>
         
-        <div style="display: flex; justify-content: space-between; margin-top: 25px; gap: 15px;">
+        <div id="flash-buttons" style="display: flex; justify-content: space-between; margin-top: 25px; gap: 15px;">
             <button onclick="prevCard()" style="background: linear-gradient(to right, #e53935, #c62828); color: white; border: none; padding: 15px 30px; font-size: 1.2rem; font-weight: bold; border-radius: 50px; cursor: pointer; flex: 1; box-shadow: 0 4px 10px rgba(229, 57, 53, 0.3);">← Anterior</button>
             <button onclick="flipCard()" style="background: linear-gradient(to right, #ffc107, #ffb300); color: white; border: none; padding: 15px 30px; font-size: 1.2rem; font-weight: bold; border-radius: 50px; cursor: pointer; flex: 2; box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3); text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">Ver Respuesta</button>
             <button onclick="nextCard()" style="background: linear-gradient(to right, #c62828, #e53935); color: white; border: none; padding: 15px 30px; font-size: 1.2rem; font-weight: bold; border-radius: 50px; cursor: pointer; flex: 1; box-shadow: 0 4px 10px rgba(229, 57, 53, 0.3);">Siguiente →</button>
@@ -188,56 +193,56 @@
     
     <script>
         const questions = [
-            {q: '1. ¿Qué estudia la neuroeducación?', a: 'a) La aplicación de conocimientos sobre el cerebro al proceso de enseñanza'},
-        {q: '2. ¿Qué es la plasticidad cerebral (neuroplasticidad)?', a: 'a) La capacidad del cerebro para cambiar y adaptarse por la experiencia'},
-        {q: '3. El papel de la emoción en el aprendizaje según la neurociencia es:', a: 'a) Fundamental; las emociones positivas facilitan la consolidación de la memoria'},
-        {q: '4. ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?', a: 'a) El hipocampo y la amígdala'},
-        {q: '5. La atención sostenida en el aula:', a: 'a) Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)'},
-        {q: '6. ¿Cómo influye el sueño en el aprendizaje?', a: 'a) Es crucial para consolidar lo aprendido durante el día'},
-        {q: '7. El estrés tóxico o crónico en los estudiantes:', a: 'a) Bloquea las funciones ejecutivas y dificulta el aprendizaje'},
-        {q: '8. Las funciones ejecutivas (planificación, control de impulsos) se desarrollan principalmente en:', a: 'a) La corteza prefrontal'},
-        {q: '9. El ejercicio físico favorece el aprendizaje porque:', a: 'a) Promueve la oxigenación cerebral y la neurogénesis'},
-        {q: '10. Un entorno de aprendizaje \'cerebro-compatible\' debe ser:', a: 'a) Seguro, estimulante, multisensorial y libre de amenazas'},
-        {q: '11. En base al texto: ¿Qué estudia la neuroeducación?', a: 'a) La aplicación de conocimientos sobre el cerebro al proceso de enseñanza'},
-        {q: '12. En base al texto: ¿Qué es la plasticidad cerebral (neuroplasticidad)?', a: 'a) La capacidad del cerebro para cambiar y adaptarse por la experiencia'},
-        {q: '13. En base al texto: El papel de la emoción en el aprendizaje según la neurociencia es:', a: 'a) Fundamental; las emociones positivas facilitan la consolidación de la memoria'},
-        {q: '14. En base al texto: ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?', a: 'a) El hipocampo y la amígdala'},
-        {q: '15. En base al texto: La atención sostenida en el aula:', a: 'a) Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)'},
-        {q: '16. En base al texto: ¿Cómo influye el sueño en el aprendizaje?', a: 'a) Es crucial para consolidar lo aprendido durante el día'},
-        {q: '17. En base al texto: El estrés tóxico o crónico en los estudiantes:', a: 'a) Bloquea las funciones ejecutivas y dificulta el aprendizaje'},
-        {q: '18. En base al texto: Las funciones ejecutivas (planificación, control de impulsos) se desarrollan principalmente en:', a: 'a) La corteza prefrontal'},
-        {q: '19. En base al texto: El ejercicio físico favorece el aprendizaje porque:', a: 'a) Promueve la oxigenación cerebral y la neurogénesis'},
-        {q: '20. En base al texto: Un entorno de aprendizaje \'cerebro-compatible\' debe ser:', a: 'a) Seguro, estimulante, multisensorial y libre de amenazas'},
-        {q: '21. Desde la perspectiva pedagógica, ¿Qué estudia la neuroeducación?', a: 'a) La aplicación de conocimientos sobre el cerebro al proceso de enseñanza'},
-        {q: '22. Desde la perspectiva pedagógica, ¿Qué es la plasticidad cerebral (neuroplasticidad)?', a: 'a) La capacidad del cerebro para cambiar y adaptarse por la experiencia'},
-        {q: '23. Desde la perspectiva pedagógica, El papel de la emoción en el aprendizaje según la neurociencia es:', a: 'a) Fundamental; las emociones positivas facilitan la consolidación de la memoria'},
-        {q: '24. Desde la perspectiva pedagógica, ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?', a: 'a) El hipocampo y la amígdala'},
-        {q: '25. Desde la perspectiva pedagógica, La atención sostenida en el aula:', a: 'a) Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)'},
-        {q: '26. Desde la perspectiva pedagógica, ¿Cómo influye el sueño en el aprendizaje?', a: 'a) Es crucial para consolidar lo aprendido durante el día'},
-        {q: '27. Desde la perspectiva pedagógica, El estrés tóxico o crónico en los estudiantes:', a: 'a) Bloquea las funciones ejecutivas y dificulta el aprendizaje'},
-        {q: '28. Desde la perspectiva pedagógica, Las funciones ejecutivas (planificación, control de impulsos) se desarrollan principalmente en:', a: 'a) La corteza prefrontal'},
-        {q: '29. Desde la perspectiva pedagógica, El ejercicio físico favorece el aprendizaje porque:', a: 'a) Promueve la oxigenación cerebral y la neurogénesis'},
-        {q: '30. Desde la perspectiva pedagógica, Un entorno de aprendizaje \'cerebro-compatible\' debe ser:', a: 'a) Seguro, estimulante, multisensorial y libre de amenazas'},
-        {q: '31. Es importante saber que: ¿Qué estudia la neuroeducación?', a: 'a) La aplicación de conocimientos sobre el cerebro al proceso de enseñanza'},
-        {q: '32. Es importante saber que: ¿Qué es la plasticidad cerebral (neuroplasticidad)?', a: 'a) La capacidad del cerebro para cambiar y adaptarse por la experiencia'},
-        {q: '33. Es importante saber que: El papel de la emoción en el aprendizaje según la neurociencia es:', a: 'a) Fundamental; las emociones positivas facilitan la consolidación de la memoria'},
-        {q: '34. Es importante saber que: ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?', a: 'a) El hipocampo y la amígdala'},
-        {q: '35. Es importante saber que: La atención sostenida en el aula:', a: 'a) Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)'},
-        {q: '36. Es importante saber que: ¿Cómo influye el sueño en el aprendizaje?', a: 'a) Es crucial para consolidar lo aprendido durante el día'},
-        {q: '37. Es importante saber que: El estrés tóxico o crónico en los estudiantes:', a: 'a) Bloquea las funciones ejecutivas y dificulta el aprendizaje'},
-        {q: '38. Es importante saber que: Las funciones ejecutivas (planificación, control de impulsos) se desarrollan principalmente en:', a: 'a) La corteza prefrontal'},
-        {q: '39. Es importante saber que: El ejercicio físico favorece el aprendizaje porque:', a: 'a) Promueve la oxigenación cerebral y la neurogénesis'},
-        {q: '40. Es importante saber que: Un entorno de aprendizaje \'cerebro-compatible\' debe ser:', a: 'a) Seguro, estimulante, multisensorial y libre de amenazas'},
-        {q: '41. Según la normativa: ¿Qué estudia la neuroeducación?', a: 'a) La aplicación de conocimientos sobre el cerebro al proceso de enseñanza'},
-        {q: '42. Según la normativa: ¿Qué es la plasticidad cerebral (neuroplasticidad)?', a: 'a) La capacidad del cerebro para cambiar y adaptarse por la experiencia'},
-        {q: '43. Según la normativa: El papel de la emoción en el aprendizaje según la neurociencia es:', a: 'a) Fundamental; las emociones positivas facilitan la consolidación de la memoria'},
-        {q: '44. Según la normativa: ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?', a: 'a) El hipocampo y la amígdala'},
-        {q: '45. Según la normativa: La atención sostenida en el aula:', a: 'a) Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)'},
-        {q: '46. Según la normativa: ¿Cómo influye el sueño en el aprendizaje?', a: 'a) Es crucial para consolidar lo aprendido durante el día'},
-        {q: '47. Según la normativa: El estrés tóxico o crónico en los estudiantes:', a: 'a) Bloquea las funciones ejecutivas y dificulta el aprendizaje'},
-        {q: '48. Según la normativa: Las funciones ejecutivas (planificación, control de impulsos) se desarrollan principalmente en:', a: 'a) La corteza prefrontal'},
-        {q: '49. Según la normativa: El ejercicio físico favorece el aprendizaje porque:', a: 'a) Promueve la oxigenación cerebral y la neurogénesis'},
-        {q: '50. Según la normativa: Un entorno de aprendizaje \'cerebro-compatible\' debe ser:', a: 'a) Seguro, estimulante, multisensorial y libre de amenazas'}
+            {q: '1. ¿Qué estudia la neuroeducación?', a: 'La aplicación de conocimientos sobre el cerebro al proceso de enseñanza'},
+        {q: '2. ¿Qué es la plasticidad cerebral (neuroplasticidad)?', a: 'La capacidad del cerebro para cambiar y adaptarse por la experiencia'},
+        {q: '3. El papel de la emoción en el aprendizaje según la neurociencia es:', a: 'Fundamental; las emociones positivas facilitan la consolidación de la memoria'},
+        {q: '4. ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?', a: 'El hipocampo y la amígdala'},
+        {q: '5. La atención sostenida en el aula:', a: 'Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)'},
+        {q: '6. ¿Cómo influye el sueño en el aprendizaje?', a: 'Es crucial para consolidar lo aprendido durante el día'},
+        {q: '7. El estrés tóxico o crónico en los estudiantes:', a: 'Bloquea las funciones ejecutivas y dificulta el aprendizaje'},
+        {q: '8. Las funciones ejecutivas (planificación, control de impulsos) se desarrollan principalmente en:', a: 'La corteza prefrontal'},
+        {q: '9. El ejercicio físico favorece el aprendizaje porque:', a: 'Promueve la oxigenación cerebral y la neurogénesis'},
+        {q: '10. Un entorno de aprendizaje \'cerebro-compatible\' debe ser:', a: 'Seguro, estimulante, multisensorial y libre de amenazas'},
+        {q: '11. En base al texto: ¿Qué estudia la neuroeducación?', a: 'La aplicación de conocimientos sobre el cerebro al proceso de enseñanza'},
+        {q: '12. En base al texto: ¿Qué es la plasticidad cerebral (neuroplasticidad)?', a: 'La capacidad del cerebro para cambiar y adaptarse por la experiencia'},
+        {q: '13. En base al texto: El papel de la emoción en el aprendizaje según la neurociencia es:', a: 'Fundamental; las emociones positivas facilitan la consolidación de la memoria'},
+        {q: '14. En base al texto: ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?', a: 'El hipocampo y la amígdala'},
+        {q: '15. En base al texto: La atención sostenida en el aula:', a: 'Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)'},
+        {q: '16. En base al texto: ¿Cómo influye el sueño en el aprendizaje?', a: 'Es crucial para consolidar lo aprendido durante el día'},
+        {q: '17. En base al texto: El estrés tóxico o crónico en los estudiantes:', a: 'Bloquea las funciones ejecutivas y dificulta el aprendizaje'},
+        {q: '18. En base al texto: Las funciones ejecutivas (planificación, control de impulsos) se desarrollan principalmente en:', a: 'La corteza prefrontal'},
+        {q: '19. En base al texto: El ejercicio físico favorece el aprendizaje porque:', a: 'Promueve la oxigenación cerebral y la neurogénesis'},
+        {q: '20. En base al texto: Un entorno de aprendizaje \'cerebro-compatible\' debe ser:', a: 'Seguro, estimulante, multisensorial y libre de amenazas'},
+        {q: '21. Desde la perspectiva pedagógica, ¿Qué estudia la neuroeducación?', a: 'La aplicación de conocimientos sobre el cerebro al proceso de enseñanza'},
+        {q: '22. Desde la perspectiva pedagógica, ¿Qué es la plasticidad cerebral (neuroplasticidad)?', a: 'La capacidad del cerebro para cambiar y adaptarse por la experiencia'},
+        {q: '23. Desde la perspectiva pedagógica, El papel de la emoción en el aprendizaje según la neurociencia es:', a: 'Fundamental; las emociones positivas facilitan la consolidación de la memoria'},
+        {q: '24. Desde la perspectiva pedagógica, ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?', a: 'El hipocampo y la amígdala'},
+        {q: '25. Desde la perspectiva pedagógica, La atención sostenida en el aula:', a: 'Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)'},
+        {q: '26. Desde la perspectiva pedagógica, ¿Cómo influye el sueño en el aprendizaje?', a: 'Es crucial para consolidar lo aprendido durante el día'},
+        {q: '27. Desde la perspectiva pedagógica, El estrés tóxico o crónico en los estudiantes:', a: 'Bloquea las funciones ejecutivas y dificulta el aprendizaje'},
+        {q: '28. Desde la perspectiva pedagógica, Las funciones ejecutivas (planificación, control de impulsos) se desarrollan principalmente en:', a: 'La corteza prefrontal'},
+        {q: '29. Desde la perspectiva pedagógica, El ejercicio físico favorece el aprendizaje porque:', a: 'Promueve la oxigenación cerebral y la neurogénesis'},
+        {q: '30. Desde la perspectiva pedagógica, Un entorno de aprendizaje \'cerebro-compatible\' debe ser:', a: 'Seguro, estimulante, multisensorial y libre de amenazas'},
+        {q: '31. Es importante saber que: ¿Qué estudia la neuroeducación?', a: 'La aplicación de conocimientos sobre el cerebro al proceso de enseñanza'},
+        {q: '32. Es importante saber que: ¿Qué es la plasticidad cerebral (neuroplasticidad)?', a: 'La capacidad del cerebro para cambiar y adaptarse por la experiencia'},
+        {q: '33. Es importante saber que: El papel de la emoción en el aprendizaje según la neurociencia es:', a: 'Fundamental; las emociones positivas facilitan la consolidación de la memoria'},
+        {q: '34. Es importante saber que: ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?', a: 'El hipocampo y la amígdala'},
+        {q: '35. Es importante saber que: La atención sostenida en el aula:', a: 'Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)'},
+        {q: '36. Es importante saber que: ¿Cómo influye el sueño en el aprendizaje?', a: 'Es crucial para consolidar lo aprendido durante el día'},
+        {q: '37. Es importante saber que: El estrés tóxico o crónico en los estudiantes:', a: 'Bloquea las funciones ejecutivas y dificulta el aprendizaje'},
+        {q: '38. Es importante saber que: Las funciones ejecutivas (planificación, control de impulsos) se desarrollan principalmente en:', a: 'La corteza prefrontal'},
+        {q: '39. Es importante saber que: El ejercicio físico favorece el aprendizaje porque:', a: 'Promueve la oxigenación cerebral y la neurogénesis'},
+        {q: '40. Es importante saber que: Un entorno de aprendizaje \'cerebro-compatible\' debe ser:', a: 'Seguro, estimulante, multisensorial y libre de amenazas'},
+        {q: '41. Según la normativa: ¿Qué estudia la neuroeducación?', a: 'La aplicación de conocimientos sobre el cerebro al proceso de enseñanza'},
+        {q: '42. Según la normativa: ¿Qué es la plasticidad cerebral (neuroplasticidad)?', a: 'La capacidad del cerebro para cambiar y adaptarse por la experiencia'},
+        {q: '43. Según la normativa: El papel de la emoción en el aprendizaje según la neurociencia es:', a: 'Fundamental; las emociones positivas facilitan la consolidación de la memoria'},
+        {q: '44. Según la normativa: ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?', a: 'El hipocampo y la amígdala'},
+        {q: '45. Según la normativa: La atención sostenida en el aula:', a: 'Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)'},
+        {q: '46. Según la normativa: ¿Cómo influye el sueño en el aprendizaje?', a: 'Es crucial para consolidar lo aprendido durante el día'},
+        {q: '47. Según la normativa: El estrés tóxico o crónico en los estudiantes:', a: 'Bloquea las funciones ejecutivas y dificulta el aprendizaje'},
+        {q: '48. Según la normativa: Las funciones ejecutivas (planificación, control de impulsos) se desarrollan principalmente en:', a: 'La corteza prefrontal'},
+        {q: '49. Según la normativa: El ejercicio físico favorece el aprendizaje porque:', a: 'Promueve la oxigenación cerebral y la neurogénesis'},
+        {q: '50. Según la normativa: Un entorno de aprendizaje \'cerebro-compatible\' debe ser:', a: 'Seguro, estimulante, multisensorial y libre de amenazas'}
         ];
         
         let currentIndex = 0;

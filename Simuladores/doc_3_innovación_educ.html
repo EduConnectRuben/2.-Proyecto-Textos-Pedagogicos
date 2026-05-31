@@ -29,6 +29,9 @@
             .nav-links { display: none !important; }
             .nav-links.show-mobile { display: flex !important; flex-direction: column !important; }
             .dropdown { flex: none !important; width: 100%; border-top: 1px solid rgba(255,255,255,0.1); }
+            .dropdown-content { position: relative !important; min-width: 100% !important; box-shadow: inset 0 2px 5px rgba(0,0,0,0.2) !important; border-radius: 0 !important; background: #2e7d32 !important; border: none !important; }
+            .dropdown-content a { color: white !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; padding: 10px 15px !important; font-size: 0.95rem !important; }
+            .dropdown-content a:hover { background: #1b5e20 !important; }
             .hero-title { font-size: 1.8rem !important; }
             .hero-subtitle { font-size: 1rem !important; }
             .header-title { font-size: 1.1rem !important; }
@@ -38,8 +41,10 @@
         }
         @media (max-width: 768px) {
             /* Ajustes para tarjetas flash */
-            #flashcard-box { padding: 25px 15px !important; min-height: 200px !important; }
-            #card-text { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            #flashcard-box { padding: 15px 10px !important; min-height: 150px !important; }
+            #card-text { font-size: 1.05rem !important; line-height: 1.3 !important; }
+            #flash-buttons { gap: 5px !important; margin-top: 15px !important; }
+            #flash-buttons button { padding: 10px 5px !important; font-size: 0.85rem !important; flex: 1 !important; }
             
             /* Ajustes para audiolibros y contenedores principales */
             div[style*="padding: 40px;"] { padding: 15px !important; }
@@ -89,7 +94,7 @@
     
     <nav class="navbar" id="navbar" style="background: #1b5e20; padding: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 9999;">
         <div class="nav-container" style="width: 100%; max-width: 1200px; margin: 0 auto;">
-            <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('show-mobile')">☰ Menú Principal</button>
+            <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('show-mobile')">Menú Principal ☰</button>
             <div class="nav-links" id="navLinks" style="display: flex; justify-content: center; width: 100%;">
 
             <div class="dropdown" style="flex: 1; text-align: center;">
@@ -190,49 +195,49 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">1. ¿Qué es la innovación educativa?</div>
             <div class="options">
                 <label><input type="radio" name="q1" value="a"> a) La introducción de cambios novedosos para mejorar el proceso educativo</label>
-                <label><input type="radio" name="q1" value="b"> b) Usar computadoras nuevas</label>
+                <label><input type="radio" name="q1" value="b"> b) Pintar el colegio</label>
                 <label><input type="radio" name="q1" value="c"> c) Cambiar de director</label>
-                <label><input type="radio" name="q1" value="d"> d) Pintar el colegio</label>
+                <label><input type="radio" name="q1" value="d"> d) Usar computadoras nuevas</label>
             </div>
         </div>
         
         <div class="question-block" id="q2" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">2. Un factor clave para el éxito de la innovación educativa es:</div>
             <div class="options">
-                <label><input type="radio" name="q2" value="a"> a) La formación y actitud receptiva de los docentes</label>
-                <label><input type="radio" name="q2" value="b"> b) El presupuesto ilimitado</label>
-                <label><input type="radio" name="q2" value="c"> c) La presión de los padres</label>
-                <label><input type="radio" name="q2" value="d"> d) La tecnología costosa</label>
+                <label><input type="radio" name="q2" value="a"> a) La presión de los padres</label>
+                <label><input type="radio" name="q2" value="b"> b) La tecnología costosa</label>
+                <label><input type="radio" name="q2" value="c"> c) La formación y actitud receptiva de los docentes</label>
+                <label><input type="radio" name="q2" value="d"> d) El presupuesto ilimitado</label>
             </div>
         </div>
         
         <div class="question-block" id="q3" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">3. ¿Qué significa 'Aula Invertida' (Flipped Classroom)?</div>
             <div class="options">
-                <label><input type="radio" name="q3" value="a"> a) Estudiar la teoría en casa y realizar la práctica en el aula</label>
-                <label><input type="radio" name="q3" value="b"> b) Dar clases al revés</label>
-                <label><input type="radio" name="q3" value="c"> c) Que los alumnos evalúen al profesor</label>
-                <label><input type="radio" name="q3" value="d"> d) No dejar tarea</label>
+                <label><input type="radio" name="q3" value="a"> a) Dar clases al revés</label>
+                <label><input type="radio" name="q3" value="b"> b) No dejar tarea</label>
+                <label><input type="radio" name="q3" value="c"> c) Estudiar la teoría en casa y realizar la práctica en el aula</label>
+                <label><input type="radio" name="q3" value="d"> d) Que los alumnos evalúen al profesor</label>
             </div>
         </div>
         
         <div class="question-block" id="q4" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">4. La gamificación en la educación consiste en:</div>
             <div class="options">
-                <label><input type="radio" name="q4" value="a"> a) Aplicar mecánicas de juegos en entornos no lúdicos para motivar</label>
-                <label><input type="radio" name="q4" value="b"> b) Jugar en clase todo el tiempo</label>
-                <label><input type="radio" name="q4" value="c"> c) Prohibir los videojuegos</label>
-                <label><input type="radio" name="q4" value="d"> d) Crear juguetes</label>
+                <label><input type="radio" name="q4" value="a"> a) Crear juguetes</label>
+                <label><input type="radio" name="q4" value="b"> b) Prohibir los videojuegos</label>
+                <label><input type="radio" name="q4" value="c"> c) Aplicar mecánicas de juegos en entornos no lúdicos para motivar</label>
+                <label><input type="radio" name="q4" value="d"> d) Jugar en clase todo el tiempo</label>
             </div>
         </div>
         
         <div class="question-block" id="q5" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">5. El aprendizaje colaborativo fomenta:</div>
             <div class="options">
-                <label><input type="radio" name="q5" value="a"> a) El trabajo en equipo, la interdependencia y la responsabilidad</label>
+                <label><input type="radio" name="q5" value="a"> a) Que un alumno haga todo</label>
                 <label><input type="radio" name="q5" value="b"> b) La competencia desleal</label>
                 <label><input type="radio" name="q5" value="c"> c) El trabajo aislado</label>
-                <label><input type="radio" name="q5" value="d"> d) Que un alumno haga todo</label>
+                <label><input type="radio" name="q5" value="d"> d) El trabajo en equipo, la interdependencia y la responsabilidad</label>
             </div>
         </div>
         
@@ -240,19 +245,19 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">6. La principal barrera para la innovación educativa suele ser:</div>
             <div class="options">
                 <label><input type="radio" name="q6" value="a"> a) La resistencia al cambio por parte de los actores educativos</label>
-                <label><input type="radio" name="q6" value="b"> b) La falta de alumnos</label>
-                <label><input type="radio" name="q6" value="c"> c) El exceso de libros</label>
-                <label><input type="radio" name="q6" value="d"> d) Las vacaciones</label>
+                <label><input type="radio" name="q6" value="b"> b) El exceso de libros</label>
+                <label><input type="radio" name="q6" value="c"> c) Las vacaciones</label>
+                <label><input type="radio" name="q6" value="d"> d) La falta de alumnos</label>
             </div>
         </div>
         
         <div class="question-block" id="q7" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">7. Las TIC en la innovación educativa deben ser:</div>
             <div class="options">
-                <label><input type="radio" name="q7" value="a"> a) Herramientas pedagógicas, no fines en sí mismas</label>
-                <label><input type="radio" name="q7" value="b"> b) El reemplazo del docente</label>
-                <label><input type="radio" name="q7" value="c"> c) Uso exclusivo para jugar</label>
-                <label><input type="radio" name="q7" value="d"> d) Prohibidas en el aula</label>
+                <label><input type="radio" name="q7" value="a"> a) Prohibidas en el aula</label>
+                <label><input type="radio" name="q7" value="b"> b) Uso exclusivo para jugar</label>
+                <label><input type="radio" name="q7" value="c"> c) Herramientas pedagógicas, no fines en sí mismas</label>
+                <label><input type="radio" name="q7" value="d"> d) El reemplazo del docente</label>
             </div>
         </div>
         
@@ -260,17 +265,17 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">8. La evaluación en un entorno innovador prioriza:</div>
             <div class="options">
                 <label><input type="radio" name="q8" value="a"> a) El proceso, la retroalimentación y la autoevaluación</label>
-                <label><input type="radio" name="q8" value="b"> b) Solo la nota final</label>
-                <label><input type="radio" name="q8" value="c"> c) El examen sorpresa</label>
-                <label><input type="radio" name="q8" value="d"> d) La comparación entre alumnos</label>
+                <label><input type="radio" name="q8" value="b"> b) La comparación entre alumnos</label>
+                <label><input type="radio" name="q8" value="c"> c) Solo la nota final</label>
+                <label><input type="radio" name="q8" value="d"> d) El examen sorpresa</label>
             </div>
         </div>
         
         <div class="question-block" id="q9" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">9. ¿Qué papel tiene la creatividad en la educación?</div>
             <div class="options">
-                <label><input type="radio" name="q9" value="a"> a) Es fundamental para la resolución de problemas y la innovación</label>
-                <label><input type="radio" name="q9" value="b"> b) Solo sirve en clases de arte</label>
+                <label><input type="radio" name="q9" value="a"> a) Solo sirve en clases de arte</label>
+                <label><input type="radio" name="q9" value="b"> b) Es fundamental para la resolución de problemas y la innovación</label>
                 <label><input type="radio" name="q9" value="c"> c) Es un distractor</label>
                 <label><input type="radio" name="q9" value="d"> d) No se puede enseñar</label>
             </div>
@@ -279,30 +284,30 @@
         <div class="question-block" id="q10" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">10. Un ecosistema educativo innovador requiere:</div>
             <div class="options">
-                <label><input type="radio" name="q10" value="a"> a) Liderazgo, cultura colaborativa y flexibilidad</label>
-                <label><input type="radio" name="q10" value="b"> b) Reglas estrictas e inamovibles</label>
-                <label><input type="radio" name="q10" value="c"> c) Aulas silenciosas</label>
-                <label><input type="radio" name="q10" value="d"> d) Un solo método de enseñanza</label>
+                <label><input type="radio" name="q10" value="a"> a) Un solo método de enseñanza</label>
+                <label><input type="radio" name="q10" value="b"> b) Aulas silenciosas</label>
+                <label><input type="radio" name="q10" value="c"> c) Reglas estrictas e inamovibles</label>
+                <label><input type="radio" name="q10" value="d"> d) Liderazgo, cultura colaborativa y flexibilidad</label>
             </div>
         </div>
         
         <div class="question-block" id="q11" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">11. En base al texto: ¿Qué es la innovación educativa?</div>
             <div class="options">
-                <label><input type="radio" name="q11" value="a"> a) La introducción de cambios novedosos para mejorar el proceso educativo</label>
+                <label><input type="radio" name="q11" value="a"> a) Pintar el colegio</label>
                 <label><input type="radio" name="q11" value="b"> b) Usar computadoras nuevas</label>
                 <label><input type="radio" name="q11" value="c"> c) Cambiar de director</label>
-                <label><input type="radio" name="q11" value="d"> d) Pintar el colegio</label>
+                <label><input type="radio" name="q11" value="d"> d) La introducción de cambios novedosos para mejorar el proceso educativo</label>
             </div>
         </div>
         
         <div class="question-block" id="q12" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">12. En base al texto: Un factor clave para el éxito de la innovación educativa es:</div>
             <div class="options">
-                <label><input type="radio" name="q12" value="a"> a) La formación y actitud receptiva de los docentes</label>
-                <label><input type="radio" name="q12" value="b"> b) El presupuesto ilimitado</label>
-                <label><input type="radio" name="q12" value="c"> c) La presión de los padres</label>
-                <label><input type="radio" name="q12" value="d"> d) La tecnología costosa</label>
+                <label><input type="radio" name="q12" value="a"> a) El presupuesto ilimitado</label>
+                <label><input type="radio" name="q12" value="b"> b) La presión de los padres</label>
+                <label><input type="radio" name="q12" value="c"> c) La tecnología costosa</label>
+                <label><input type="radio" name="q12" value="d"> d) La formación y actitud receptiva de los docentes</label>
             </div>
         </div>
         
@@ -310,8 +315,8 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">13. En base al texto: ¿Qué significa 'Aula Invertida' (Flipped Classroom)?</div>
             <div class="options">
                 <label><input type="radio" name="q13" value="a"> a) Estudiar la teoría en casa y realizar la práctica en el aula</label>
-                <label><input type="radio" name="q13" value="b"> b) Dar clases al revés</label>
-                <label><input type="radio" name="q13" value="c"> c) Que los alumnos evalúen al profesor</label>
+                <label><input type="radio" name="q13" value="b"> b) Que los alumnos evalúen al profesor</label>
+                <label><input type="radio" name="q13" value="c"> c) Dar clases al revés</label>
                 <label><input type="radio" name="q13" value="d"> d) No dejar tarea</label>
             </div>
         </div>
@@ -319,20 +324,20 @@
         <div class="question-block" id="q14" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">14. En base al texto: La gamificación en la educación consiste en:</div>
             <div class="options">
-                <label><input type="radio" name="q14" value="a"> a) Aplicar mecánicas de juegos en entornos no lúdicos para motivar</label>
-                <label><input type="radio" name="q14" value="b"> b) Jugar en clase todo el tiempo</label>
-                <label><input type="radio" name="q14" value="c"> c) Prohibir los videojuegos</label>
-                <label><input type="radio" name="q14" value="d"> d) Crear juguetes</label>
+                <label><input type="radio" name="q14" value="a"> a) Jugar en clase todo el tiempo</label>
+                <label><input type="radio" name="q14" value="b"> b) Aplicar mecánicas de juegos en entornos no lúdicos para motivar</label>
+                <label><input type="radio" name="q14" value="c"> c) Crear juguetes</label>
+                <label><input type="radio" name="q14" value="d"> d) Prohibir los videojuegos</label>
             </div>
         </div>
         
         <div class="question-block" id="q15" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">15. En base al texto: El aprendizaje colaborativo fomenta:</div>
             <div class="options">
-                <label><input type="radio" name="q15" value="a"> a) El trabajo en equipo, la interdependencia y la responsabilidad</label>
-                <label><input type="radio" name="q15" value="b"> b) La competencia desleal</label>
-                <label><input type="radio" name="q15" value="c"> c) El trabajo aislado</label>
-                <label><input type="radio" name="q15" value="d"> d) Que un alumno haga todo</label>
+                <label><input type="radio" name="q15" value="a"> a) Que un alumno haga todo</label>
+                <label><input type="radio" name="q15" value="b"> b) El trabajo en equipo, la interdependencia y la responsabilidad</label>
+                <label><input type="radio" name="q15" value="c"> c) La competencia desleal</label>
+                <label><input type="radio" name="q15" value="d"> d) El trabajo aislado</label>
             </div>
         </div>
         
@@ -340,18 +345,18 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">16. En base al texto: La principal barrera para la innovación educativa suele ser:</div>
             <div class="options">
                 <label><input type="radio" name="q16" value="a"> a) La resistencia al cambio por parte de los actores educativos</label>
-                <label><input type="radio" name="q16" value="b"> b) La falta de alumnos</label>
+                <label><input type="radio" name="q16" value="b"> b) Las vacaciones</label>
                 <label><input type="radio" name="q16" value="c"> c) El exceso de libros</label>
-                <label><input type="radio" name="q16" value="d"> d) Las vacaciones</label>
+                <label><input type="radio" name="q16" value="d"> d) La falta de alumnos</label>
             </div>
         </div>
         
         <div class="question-block" id="q17" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">17. En base al texto: Las TIC en la innovación educativa deben ser:</div>
             <div class="options">
-                <label><input type="radio" name="q17" value="a"> a) Herramientas pedagógicas, no fines en sí mismas</label>
-                <label><input type="radio" name="q17" value="b"> b) El reemplazo del docente</label>
-                <label><input type="radio" name="q17" value="c"> c) Uso exclusivo para jugar</label>
+                <label><input type="radio" name="q17" value="a"> a) El reemplazo del docente</label>
+                <label><input type="radio" name="q17" value="b"> b) Uso exclusivo para jugar</label>
+                <label><input type="radio" name="q17" value="c"> c) Herramientas pedagógicas, no fines en sí mismas</label>
                 <label><input type="radio" name="q17" value="d"> d) Prohibidas en el aula</label>
             </div>
         </div>
@@ -359,20 +364,20 @@
         <div class="question-block" id="q18" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">18. En base al texto: La evaluación en un entorno innovador prioriza:</div>
             <div class="options">
-                <label><input type="radio" name="q18" value="a"> a) El proceso, la retroalimentación y la autoevaluación</label>
-                <label><input type="radio" name="q18" value="b"> b) Solo la nota final</label>
+                <label><input type="radio" name="q18" value="a"> a) Solo la nota final</label>
+                <label><input type="radio" name="q18" value="b"> b) La comparación entre alumnos</label>
                 <label><input type="radio" name="q18" value="c"> c) El examen sorpresa</label>
-                <label><input type="radio" name="q18" value="d"> d) La comparación entre alumnos</label>
+                <label><input type="radio" name="q18" value="d"> d) El proceso, la retroalimentación y la autoevaluación</label>
             </div>
         </div>
         
         <div class="question-block" id="q19" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">19. En base al texto: ¿Qué papel tiene la creatividad en la educación?</div>
             <div class="options">
-                <label><input type="radio" name="q19" value="a"> a) Es fundamental para la resolución de problemas y la innovación</label>
-                <label><input type="radio" name="q19" value="b"> b) Solo sirve en clases de arte</label>
-                <label><input type="radio" name="q19" value="c"> c) Es un distractor</label>
-                <label><input type="radio" name="q19" value="d"> d) No se puede enseñar</label>
+                <label><input type="radio" name="q19" value="a"> a) No se puede enseñar</label>
+                <label><input type="radio" name="q19" value="b"> b) Es fundamental para la resolución de problemas y la innovación</label>
+                <label><input type="radio" name="q19" value="c"> c) Solo sirve en clases de arte</label>
+                <label><input type="radio" name="q19" value="d"> d) Es un distractor</label>
             </div>
         </div>
         
@@ -389,10 +394,10 @@
         <div class="question-block" id="q21" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">21. Desde la perspectiva pedagógica, ¿Qué es la innovación educativa?</div>
             <div class="options">
-                <label><input type="radio" name="q21" value="a"> a) La introducción de cambios novedosos para mejorar el proceso educativo</label>
+                <label><input type="radio" name="q21" value="a"> a) Cambiar de director</label>
                 <label><input type="radio" name="q21" value="b"> b) Usar computadoras nuevas</label>
-                <label><input type="radio" name="q21" value="c"> c) Cambiar de director</label>
-                <label><input type="radio" name="q21" value="d"> d) Pintar el colegio</label>
+                <label><input type="radio" name="q21" value="c"> c) Pintar el colegio</label>
+                <label><input type="radio" name="q21" value="d"> d) La introducción de cambios novedosos para mejorar el proceso educativo</label>
             </div>
         </div>
         
@@ -400,19 +405,19 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">22. Desde la perspectiva pedagógica, Un factor clave para el éxito de la innovación educativa es:</div>
             <div class="options">
                 <label><input type="radio" name="q22" value="a"> a) La formación y actitud receptiva de los docentes</label>
-                <label><input type="radio" name="q22" value="b"> b) El presupuesto ilimitado</label>
-                <label><input type="radio" name="q22" value="c"> c) La presión de los padres</label>
-                <label><input type="radio" name="q22" value="d"> d) La tecnología costosa</label>
+                <label><input type="radio" name="q22" value="b"> b) La presión de los padres</label>
+                <label><input type="radio" name="q22" value="c"> c) La tecnología costosa</label>
+                <label><input type="radio" name="q22" value="d"> d) El presupuesto ilimitado</label>
             </div>
         </div>
         
         <div class="question-block" id="q23" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">23. Desde la perspectiva pedagógica, ¿Qué significa 'Aula Invertida' (Flipped Classroom)?</div>
             <div class="options">
-                <label><input type="radio" name="q23" value="a"> a) Estudiar la teoría en casa y realizar la práctica en el aula</label>
-                <label><input type="radio" name="q23" value="b"> b) Dar clases al revés</label>
-                <label><input type="radio" name="q23" value="c"> c) Que los alumnos evalúen al profesor</label>
-                <label><input type="radio" name="q23" value="d"> d) No dejar tarea</label>
+                <label><input type="radio" name="q23" value="a"> a) No dejar tarea</label>
+                <label><input type="radio" name="q23" value="b"> b) Que los alumnos evalúen al profesor</label>
+                <label><input type="radio" name="q23" value="c"> c) Estudiar la teoría en casa y realizar la práctica en el aula</label>
+                <label><input type="radio" name="q23" value="d"> d) Dar clases al revés</label>
             </div>
         </div>
         
@@ -420,28 +425,28 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">24. Desde la perspectiva pedagógica, La gamificación en la educación consiste en:</div>
             <div class="options">
                 <label><input type="radio" name="q24" value="a"> a) Aplicar mecánicas de juegos en entornos no lúdicos para motivar</label>
-                <label><input type="radio" name="q24" value="b"> b) Jugar en clase todo el tiempo</label>
+                <label><input type="radio" name="q24" value="b"> b) Crear juguetes</label>
                 <label><input type="radio" name="q24" value="c"> c) Prohibir los videojuegos</label>
-                <label><input type="radio" name="q24" value="d"> d) Crear juguetes</label>
+                <label><input type="radio" name="q24" value="d"> d) Jugar en clase todo el tiempo</label>
             </div>
         </div>
         
         <div class="question-block" id="q25" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">25. Desde la perspectiva pedagógica, El aprendizaje colaborativo fomenta:</div>
             <div class="options">
-                <label><input type="radio" name="q25" value="a"> a) El trabajo en equipo, la interdependencia y la responsabilidad</label>
-                <label><input type="radio" name="q25" value="b"> b) La competencia desleal</label>
-                <label><input type="radio" name="q25" value="c"> c) El trabajo aislado</label>
-                <label><input type="radio" name="q25" value="d"> d) Que un alumno haga todo</label>
+                <label><input type="radio" name="q25" value="a"> a) Que un alumno haga todo</label>
+                <label><input type="radio" name="q25" value="b"> b) El trabajo aislado</label>
+                <label><input type="radio" name="q25" value="c"> c) El trabajo en equipo, la interdependencia y la responsabilidad</label>
+                <label><input type="radio" name="q25" value="d"> d) La competencia desleal</label>
             </div>
         </div>
         
         <div class="question-block" id="q26" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">26. Desde la perspectiva pedagógica, La principal barrera para la innovación educativa suele ser:</div>
             <div class="options">
-                <label><input type="radio" name="q26" value="a"> a) La resistencia al cambio por parte de los actores educativos</label>
-                <label><input type="radio" name="q26" value="b"> b) La falta de alumnos</label>
-                <label><input type="radio" name="q26" value="c"> c) El exceso de libros</label>
+                <label><input type="radio" name="q26" value="a"> a) El exceso de libros</label>
+                <label><input type="radio" name="q26" value="b"> b) La resistencia al cambio por parte de los actores educativos</label>
+                <label><input type="radio" name="q26" value="c"> c) La falta de alumnos</label>
                 <label><input type="radio" name="q26" value="d"> d) Las vacaciones</label>
             </div>
         </div>
@@ -449,9 +454,9 @@
         <div class="question-block" id="q27" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">27. Desde la perspectiva pedagógica, Las TIC en la innovación educativa deben ser:</div>
             <div class="options">
-                <label><input type="radio" name="q27" value="a"> a) Herramientas pedagógicas, no fines en sí mismas</label>
+                <label><input type="radio" name="q27" value="a"> a) Uso exclusivo para jugar</label>
                 <label><input type="radio" name="q27" value="b"> b) El reemplazo del docente</label>
-                <label><input type="radio" name="q27" value="c"> c) Uso exclusivo para jugar</label>
+                <label><input type="radio" name="q27" value="c"> c) Herramientas pedagógicas, no fines en sí mismas</label>
                 <label><input type="radio" name="q27" value="d"> d) Prohibidas en el aula</label>
             </div>
         </div>
@@ -459,30 +464,30 @@
         <div class="question-block" id="q28" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">28. Desde la perspectiva pedagógica, La evaluación en un entorno innovador prioriza:</div>
             <div class="options">
-                <label><input type="radio" name="q28" value="a"> a) El proceso, la retroalimentación y la autoevaluación</label>
+                <label><input type="radio" name="q28" value="a"> a) La comparación entre alumnos</label>
                 <label><input type="radio" name="q28" value="b"> b) Solo la nota final</label>
-                <label><input type="radio" name="q28" value="c"> c) El examen sorpresa</label>
-                <label><input type="radio" name="q28" value="d"> d) La comparación entre alumnos</label>
+                <label><input type="radio" name="q28" value="c"> c) El proceso, la retroalimentación y la autoevaluación</label>
+                <label><input type="radio" name="q28" value="d"> d) El examen sorpresa</label>
             </div>
         </div>
         
         <div class="question-block" id="q29" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">29. Desde la perspectiva pedagógica, ¿Qué papel tiene la creatividad en la educación?</div>
             <div class="options">
-                <label><input type="radio" name="q29" value="a"> a) Es fundamental para la resolución de problemas y la innovación</label>
-                <label><input type="radio" name="q29" value="b"> b) Solo sirve en clases de arte</label>
-                <label><input type="radio" name="q29" value="c"> c) Es un distractor</label>
-                <label><input type="radio" name="q29" value="d"> d) No se puede enseñar</label>
+                <label><input type="radio" name="q29" value="a"> a) Solo sirve en clases de arte</label>
+                <label><input type="radio" name="q29" value="b"> b) No se puede enseñar</label>
+                <label><input type="radio" name="q29" value="c"> c) Es fundamental para la resolución de problemas y la innovación</label>
+                <label><input type="radio" name="q29" value="d"> d) Es un distractor</label>
             </div>
         </div>
         
         <div class="question-block" id="q30" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">30. Desde la perspectiva pedagógica, Un ecosistema educativo innovador requiere:</div>
             <div class="options">
-                <label><input type="radio" name="q30" value="a"> a) Liderazgo, cultura colaborativa y flexibilidad</label>
-                <label><input type="radio" name="q30" value="b"> b) Reglas estrictas e inamovibles</label>
-                <label><input type="radio" name="q30" value="c"> c) Aulas silenciosas</label>
-                <label><input type="radio" name="q30" value="d"> d) Un solo método de enseñanza</label>
+                <label><input type="radio" name="q30" value="a"> a) Aulas silenciosas</label>
+                <label><input type="radio" name="q30" value="b"> b) Liderazgo, cultura colaborativa y flexibilidad</label>
+                <label><input type="radio" name="q30" value="c"> c) Un solo método de enseñanza</label>
+                <label><input type="radio" name="q30" value="d"> d) Reglas estrictas e inamovibles</label>
             </div>
         </div>
         
@@ -499,30 +504,30 @@
         <div class="question-block" id="q32" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">32. Es importante saber que: Un factor clave para el éxito de la innovación educativa es:</div>
             <div class="options">
-                <label><input type="radio" name="q32" value="a"> a) La formación y actitud receptiva de los docentes</label>
-                <label><input type="radio" name="q32" value="b"> b) El presupuesto ilimitado</label>
-                <label><input type="radio" name="q32" value="c"> c) La presión de los padres</label>
-                <label><input type="radio" name="q32" value="d"> d) La tecnología costosa</label>
+                <label><input type="radio" name="q32" value="a"> a) La presión de los padres</label>
+                <label><input type="radio" name="q32" value="b"> b) La tecnología costosa</label>
+                <label><input type="radio" name="q32" value="c"> c) El presupuesto ilimitado</label>
+                <label><input type="radio" name="q32" value="d"> d) La formación y actitud receptiva de los docentes</label>
             </div>
         </div>
         
         <div class="question-block" id="q33" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">33. Es importante saber que: ¿Qué significa 'Aula Invertida' (Flipped Classroom)?</div>
             <div class="options">
-                <label><input type="radio" name="q33" value="a"> a) Estudiar la teoría en casa y realizar la práctica en el aula</label>
-                <label><input type="radio" name="q33" value="b"> b) Dar clases al revés</label>
-                <label><input type="radio" name="q33" value="c"> c) Que los alumnos evalúen al profesor</label>
-                <label><input type="radio" name="q33" value="d"> d) No dejar tarea</label>
+                <label><input type="radio" name="q33" value="a"> a) No dejar tarea</label>
+                <label><input type="radio" name="q33" value="b"> b) Que los alumnos evalúen al profesor</label>
+                <label><input type="radio" name="q33" value="c"> c) Estudiar la teoría en casa y realizar la práctica en el aula</label>
+                <label><input type="radio" name="q33" value="d"> d) Dar clases al revés</label>
             </div>
         </div>
         
         <div class="question-block" id="q34" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">34. Es importante saber que: La gamificación en la educación consiste en:</div>
             <div class="options">
-                <label><input type="radio" name="q34" value="a"> a) Aplicar mecánicas de juegos en entornos no lúdicos para motivar</label>
-                <label><input type="radio" name="q34" value="b"> b) Jugar en clase todo el tiempo</label>
-                <label><input type="radio" name="q34" value="c"> c) Prohibir los videojuegos</label>
-                <label><input type="radio" name="q34" value="d"> d) Crear juguetes</label>
+                <label><input type="radio" name="q34" value="a"> a) Crear juguetes</label>
+                <label><input type="radio" name="q34" value="b"> b) Prohibir los videojuegos</label>
+                <label><input type="radio" name="q34" value="c"> c) Jugar en clase todo el tiempo</label>
+                <label><input type="radio" name="q34" value="d"> d) Aplicar mecánicas de juegos en entornos no lúdicos para motivar</label>
             </div>
         </div>
         
@@ -531,8 +536,8 @@
             <div class="options">
                 <label><input type="radio" name="q35" value="a"> a) El trabajo en equipo, la interdependencia y la responsabilidad</label>
                 <label><input type="radio" name="q35" value="b"> b) La competencia desleal</label>
-                <label><input type="radio" name="q35" value="c"> c) El trabajo aislado</label>
-                <label><input type="radio" name="q35" value="d"> d) Que un alumno haga todo</label>
+                <label><input type="radio" name="q35" value="c"> c) Que un alumno haga todo</label>
+                <label><input type="radio" name="q35" value="d"> d) El trabajo aislado</label>
             </div>
         </div>
         
@@ -540,9 +545,9 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">36. Es importante saber que: La principal barrera para la innovación educativa suele ser:</div>
             <div class="options">
                 <label><input type="radio" name="q36" value="a"> a) La resistencia al cambio por parte de los actores educativos</label>
-                <label><input type="radio" name="q36" value="b"> b) La falta de alumnos</label>
-                <label><input type="radio" name="q36" value="c"> c) El exceso de libros</label>
-                <label><input type="radio" name="q36" value="d"> d) Las vacaciones</label>
+                <label><input type="radio" name="q36" value="b"> b) El exceso de libros</label>
+                <label><input type="radio" name="q36" value="c"> c) Las vacaciones</label>
+                <label><input type="radio" name="q36" value="d"> d) La falta de alumnos</label>
             </div>
         </div>
         
@@ -551,17 +556,17 @@
             <div class="options">
                 <label><input type="radio" name="q37" value="a"> a) Herramientas pedagógicas, no fines en sí mismas</label>
                 <label><input type="radio" name="q37" value="b"> b) El reemplazo del docente</label>
-                <label><input type="radio" name="q37" value="c"> c) Uso exclusivo para jugar</label>
-                <label><input type="radio" name="q37" value="d"> d) Prohibidas en el aula</label>
+                <label><input type="radio" name="q37" value="c"> c) Prohibidas en el aula</label>
+                <label><input type="radio" name="q37" value="d"> d) Uso exclusivo para jugar</label>
             </div>
         </div>
         
         <div class="question-block" id="q38" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">38. Es importante saber que: La evaluación en un entorno innovador prioriza:</div>
             <div class="options">
-                <label><input type="radio" name="q38" value="a"> a) El proceso, la retroalimentación y la autoevaluación</label>
-                <label><input type="radio" name="q38" value="b"> b) Solo la nota final</label>
-                <label><input type="radio" name="q38" value="c"> c) El examen sorpresa</label>
+                <label><input type="radio" name="q38" value="a"> a) Solo la nota final</label>
+                <label><input type="radio" name="q38" value="b"> b) El examen sorpresa</label>
+                <label><input type="radio" name="q38" value="c"> c) El proceso, la retroalimentación y la autoevaluación</label>
                 <label><input type="radio" name="q38" value="d"> d) La comparación entre alumnos</label>
             </div>
         </div>
@@ -569,20 +574,20 @@
         <div class="question-block" id="q39" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">39. Es importante saber que: ¿Qué papel tiene la creatividad en la educación?</div>
             <div class="options">
-                <label><input type="radio" name="q39" value="a"> a) Es fundamental para la resolución de problemas y la innovación</label>
-                <label><input type="radio" name="q39" value="b"> b) Solo sirve en clases de arte</label>
-                <label><input type="radio" name="q39" value="c"> c) Es un distractor</label>
-                <label><input type="radio" name="q39" value="d"> d) No se puede enseñar</label>
+                <label><input type="radio" name="q39" value="a"> a) Es un distractor</label>
+                <label><input type="radio" name="q39" value="b"> b) No se puede enseñar</label>
+                <label><input type="radio" name="q39" value="c"> c) Solo sirve en clases de arte</label>
+                <label><input type="radio" name="q39" value="d"> d) Es fundamental para la resolución de problemas y la innovación</label>
             </div>
         </div>
         
         <div class="question-block" id="q40" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">40. Es importante saber que: Un ecosistema educativo innovador requiere:</div>
             <div class="options">
-                <label><input type="radio" name="q40" value="a"> a) Liderazgo, cultura colaborativa y flexibilidad</label>
-                <label><input type="radio" name="q40" value="b"> b) Reglas estrictas e inamovibles</label>
-                <label><input type="radio" name="q40" value="c"> c) Aulas silenciosas</label>
-                <label><input type="radio" name="q40" value="d"> d) Un solo método de enseñanza</label>
+                <label><input type="radio" name="q40" value="a"> a) Reglas estrictas e inamovibles</label>
+                <label><input type="radio" name="q40" value="b"> b) Un solo método de enseñanza</label>
+                <label><input type="radio" name="q40" value="c"> c) Liderazgo, cultura colaborativa y flexibilidad</label>
+                <label><input type="radio" name="q40" value="d"> d) Aulas silenciosas</label>
             </div>
         </div>
         
@@ -599,39 +604,39 @@
         <div class="question-block" id="q42" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">42. Según la normativa: Un factor clave para el éxito de la innovación educativa es:</div>
             <div class="options">
-                <label><input type="radio" name="q42" value="a"> a) La formación y actitud receptiva de los docentes</label>
-                <label><input type="radio" name="q42" value="b"> b) El presupuesto ilimitado</label>
-                <label><input type="radio" name="q42" value="c"> c) La presión de los padres</label>
-                <label><input type="radio" name="q42" value="d"> d) La tecnología costosa</label>
+                <label><input type="radio" name="q42" value="a"> a) La presión de los padres</label>
+                <label><input type="radio" name="q42" value="b"> b) La tecnología costosa</label>
+                <label><input type="radio" name="q42" value="c"> c) El presupuesto ilimitado</label>
+                <label><input type="radio" name="q42" value="d"> d) La formación y actitud receptiva de los docentes</label>
             </div>
         </div>
         
         <div class="question-block" id="q43" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">43. Según la normativa: ¿Qué significa 'Aula Invertida' (Flipped Classroom)?</div>
             <div class="options">
-                <label><input type="radio" name="q43" value="a"> a) Estudiar la teoría en casa y realizar la práctica en el aula</label>
-                <label><input type="radio" name="q43" value="b"> b) Dar clases al revés</label>
-                <label><input type="radio" name="q43" value="c"> c) Que los alumnos evalúen al profesor</label>
-                <label><input type="radio" name="q43" value="d"> d) No dejar tarea</label>
+                <label><input type="radio" name="q43" value="a"> a) Que los alumnos evalúen al profesor</label>
+                <label><input type="radio" name="q43" value="b"> b) Estudiar la teoría en casa y realizar la práctica en el aula</label>
+                <label><input type="radio" name="q43" value="c"> c) No dejar tarea</label>
+                <label><input type="radio" name="q43" value="d"> d) Dar clases al revés</label>
             </div>
         </div>
         
         <div class="question-block" id="q44" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">44. Según la normativa: La gamificación en la educación consiste en:</div>
             <div class="options">
-                <label><input type="radio" name="q44" value="a"> a) Aplicar mecánicas de juegos en entornos no lúdicos para motivar</label>
-                <label><input type="radio" name="q44" value="b"> b) Jugar en clase todo el tiempo</label>
+                <label><input type="radio" name="q44" value="a"> a) Crear juguetes</label>
+                <label><input type="radio" name="q44" value="b"> b) Aplicar mecánicas de juegos en entornos no lúdicos para motivar</label>
                 <label><input type="radio" name="q44" value="c"> c) Prohibir los videojuegos</label>
-                <label><input type="radio" name="q44" value="d"> d) Crear juguetes</label>
+                <label><input type="radio" name="q44" value="d"> d) Jugar en clase todo el tiempo</label>
             </div>
         </div>
         
         <div class="question-block" id="q45" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">45. Según la normativa: El aprendizaje colaborativo fomenta:</div>
             <div class="options">
-                <label><input type="radio" name="q45" value="a"> a) El trabajo en equipo, la interdependencia y la responsabilidad</label>
-                <label><input type="radio" name="q45" value="b"> b) La competencia desleal</label>
-                <label><input type="radio" name="q45" value="c"> c) El trabajo aislado</label>
+                <label><input type="radio" name="q45" value="a"> a) La competencia desleal</label>
+                <label><input type="radio" name="q45" value="b"> b) El trabajo aislado</label>
+                <label><input type="radio" name="q45" value="c"> c) El trabajo en equipo, la interdependencia y la responsabilidad</label>
                 <label><input type="radio" name="q45" value="d"> d) Que un alumno haga todo</label>
             </div>
         </div>
@@ -639,9 +644,9 @@
         <div class="question-block" id="q46" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">46. Según la normativa: La principal barrera para la innovación educativa suele ser:</div>
             <div class="options">
-                <label><input type="radio" name="q46" value="a"> a) La resistencia al cambio por parte de los actores educativos</label>
-                <label><input type="radio" name="q46" value="b"> b) La falta de alumnos</label>
-                <label><input type="radio" name="q46" value="c"> c) El exceso de libros</label>
+                <label><input type="radio" name="q46" value="a"> a) La falta de alumnos</label>
+                <label><input type="radio" name="q46" value="b"> b) El exceso de libros</label>
+                <label><input type="radio" name="q46" value="c"> c) La resistencia al cambio por parte de los actores educativos</label>
                 <label><input type="radio" name="q46" value="d"> d) Las vacaciones</label>
             </div>
         </div>
@@ -651,16 +656,16 @@
             <div class="options">
                 <label><input type="radio" name="q47" value="a"> a) Herramientas pedagógicas, no fines en sí mismas</label>
                 <label><input type="radio" name="q47" value="b"> b) El reemplazo del docente</label>
-                <label><input type="radio" name="q47" value="c"> c) Uso exclusivo para jugar</label>
-                <label><input type="radio" name="q47" value="d"> d) Prohibidas en el aula</label>
+                <label><input type="radio" name="q47" value="c"> c) Prohibidas en el aula</label>
+                <label><input type="radio" name="q47" value="d"> d) Uso exclusivo para jugar</label>
             </div>
         </div>
         
         <div class="question-block" id="q48" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">48. Según la normativa: La evaluación en un entorno innovador prioriza:</div>
             <div class="options">
-                <label><input type="radio" name="q48" value="a"> a) El proceso, la retroalimentación y la autoevaluación</label>
-                <label><input type="radio" name="q48" value="b"> b) Solo la nota final</label>
+                <label><input type="radio" name="q48" value="a"> a) Solo la nota final</label>
+                <label><input type="radio" name="q48" value="b"> b) El proceso, la retroalimentación y la autoevaluación</label>
                 <label><input type="radio" name="q48" value="c"> c) El examen sorpresa</label>
                 <label><input type="radio" name="q48" value="d"> d) La comparación entre alumnos</label>
             </div>
@@ -669,20 +674,20 @@
         <div class="question-block" id="q49" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">49. Según la normativa: ¿Qué papel tiene la creatividad en la educación?</div>
             <div class="options">
-                <label><input type="radio" name="q49" value="a"> a) Es fundamental para la resolución de problemas y la innovación</label>
-                <label><input type="radio" name="q49" value="b"> b) Solo sirve en clases de arte</label>
+                <label><input type="radio" name="q49" value="a"> a) Solo sirve en clases de arte</label>
+                <label><input type="radio" name="q49" value="b"> b) No se puede enseñar</label>
                 <label><input type="radio" name="q49" value="c"> c) Es un distractor</label>
-                <label><input type="radio" name="q49" value="d"> d) No se puede enseñar</label>
+                <label><input type="radio" name="q49" value="d"> d) Es fundamental para la resolución de problemas y la innovación</label>
             </div>
         </div>
         
         <div class="question-block" id="q50" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">50. Según la normativa: Un ecosistema educativo innovador requiere:</div>
             <div class="options">
-                <label><input type="radio" name="q50" value="a"> a) Liderazgo, cultura colaborativa y flexibilidad</label>
-                <label><input type="radio" name="q50" value="b"> b) Reglas estrictas e inamovibles</label>
-                <label><input type="radio" name="q50" value="c"> c) Aulas silenciosas</label>
-                <label><input type="radio" name="q50" value="d"> d) Un solo método de enseñanza</label>
+                <label><input type="radio" name="q50" value="a"> a) Un solo método de enseñanza</label>
+                <label><input type="radio" name="q50" value="b"> b) Aulas silenciosas</label>
+                <label><input type="radio" name="q50" value="c"> c) Liderazgo, cultura colaborativa y flexibilidad</label>
+                <label><input type="radio" name="q50" value="d"> d) Reglas estrictas e inamovibles</label>
             </div>
         </div>
         
@@ -714,55 +719,55 @@
     <script>
         const correctAnswers = {
             "q1": "a",
-        "q2": "a",
-        "q3": "a",
-        "q4": "a",
-        "q5": "a",
+        "q2": "c",
+        "q3": "c",
+        "q4": "c",
+        "q5": "d",
         "q6": "a",
-        "q7": "a",
+        "q7": "c",
         "q8": "a",
-        "q9": "a",
-        "q10": "a",
-        "q11": "a",
-        "q12": "a",
+        "q9": "b",
+        "q10": "d",
+        "q11": "d",
+        "q12": "d",
         "q13": "a",
-        "q14": "a",
-        "q15": "a",
+        "q14": "b",
+        "q15": "b",
         "q16": "a",
-        "q17": "a",
-        "q18": "a",
-        "q19": "a",
+        "q17": "c",
+        "q18": "d",
+        "q19": "b",
         "q20": "a",
-        "q21": "a",
+        "q21": "d",
         "q22": "a",
-        "q23": "a",
+        "q23": "c",
         "q24": "a",
-        "q25": "a",
-        "q26": "a",
-        "q27": "a",
-        "q28": "a",
-        "q29": "a",
-        "q30": "a",
+        "q25": "c",
+        "q26": "b",
+        "q27": "c",
+        "q28": "c",
+        "q29": "c",
+        "q30": "b",
         "q31": "a",
-        "q32": "a",
-        "q33": "a",
-        "q34": "a",
+        "q32": "d",
+        "q33": "c",
+        "q34": "d",
         "q35": "a",
         "q36": "a",
         "q37": "a",
-        "q38": "a",
-        "q39": "a",
-        "q40": "a",
+        "q38": "c",
+        "q39": "d",
+        "q40": "c",
         "q41": "a",
-        "q42": "a",
-        "q43": "a",
-        "q44": "a",
-        "q45": "a",
-        "q46": "a",
+        "q42": "d",
+        "q43": "b",
+        "q44": "b",
+        "q45": "c",
+        "q46": "c",
         "q47": "a",
-        "q48": "a",
-        "q49": "a",
-        "q50": "a"
+        "q48": "b",
+        "q49": "d",
+        "q50": "c"
         };
     </script>
     <script src="../preguntas.js"></script>

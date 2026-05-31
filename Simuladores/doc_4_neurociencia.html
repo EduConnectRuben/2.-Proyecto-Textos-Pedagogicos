@@ -29,6 +29,9 @@
             .nav-links { display: none !important; }
             .nav-links.show-mobile { display: flex !important; flex-direction: column !important; }
             .dropdown { flex: none !important; width: 100%; border-top: 1px solid rgba(255,255,255,0.1); }
+            .dropdown-content { position: relative !important; min-width: 100% !important; box-shadow: inset 0 2px 5px rgba(0,0,0,0.2) !important; border-radius: 0 !important; background: #2e7d32 !important; border: none !important; }
+            .dropdown-content a { color: white !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; padding: 10px 15px !important; font-size: 0.95rem !important; }
+            .dropdown-content a:hover { background: #1b5e20 !important; }
             .hero-title { font-size: 1.8rem !important; }
             .hero-subtitle { font-size: 1rem !important; }
             .header-title { font-size: 1.1rem !important; }
@@ -38,8 +41,10 @@
         }
         @media (max-width: 768px) {
             /* Ajustes para tarjetas flash */
-            #flashcard-box { padding: 25px 15px !important; min-height: 200px !important; }
-            #card-text { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            #flashcard-box { padding: 15px 10px !important; min-height: 150px !important; }
+            #card-text { font-size: 1.05rem !important; line-height: 1.3 !important; }
+            #flash-buttons { gap: 5px !important; margin-top: 15px !important; }
+            #flash-buttons button { padding: 10px 5px !important; font-size: 0.85rem !important; flex: 1 !important; }
             
             /* Ajustes para audiolibros y contenedores principales */
             div[style*="padding: 40px;"] { padding: 15px !important; }
@@ -89,7 +94,7 @@
     
     <nav class="navbar" id="navbar" style="background: #1b5e20; padding: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 9999;">
         <div class="nav-container" style="width: 100%; max-width: 1200px; margin: 0 auto;">
-            <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('show-mobile')">☰ Menú Principal</button>
+            <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('show-mobile')">Menú Principal ☰</button>
             <div class="nav-links" id="navLinks" style="display: flex; justify-content: center; width: 100%;">
 
             <div class="dropdown" style="flex: 1; text-align: center;">
@@ -189,40 +194,40 @@
         <div class="question-block" id="q1" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">1. ¿Qué estudia la neuroeducación?</div>
             <div class="options">
-                <label><input type="radio" name="q1" value="a"> a) La aplicación de conocimientos sobre el cerebro al proceso de enseñanza</label>
-                <label><input type="radio" name="q1" value="b"> b) Las enfermedades psiquiátricas</label>
-                <label><input type="radio" name="q1" value="c"> c) La anatomía humana básica</label>
-                <label><input type="radio" name="q1" value="d"> d) La psicología clínica</label>
+                <label><input type="radio" name="q1" value="a"> a) Las enfermedades psiquiátricas</label>
+                <label><input type="radio" name="q1" value="b"> b) La psicología clínica</label>
+                <label><input type="radio" name="q1" value="c"> c) La aplicación de conocimientos sobre el cerebro al proceso de enseñanza</label>
+                <label><input type="radio" name="q1" value="d"> d) La anatomía humana básica</label>
             </div>
         </div>
         
         <div class="question-block" id="q2" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">2. ¿Qué es la plasticidad cerebral (neuroplasticidad)?</div>
             <div class="options">
-                <label><input type="radio" name="q2" value="a"> a) La capacidad del cerebro para cambiar y adaptarse por la experiencia</label>
-                <label><input type="radio" name="q2" value="b"> b) La dureza del cráneo</label>
-                <label><input type="radio" name="q2" value="c"> c) El tamaño del cerebro</label>
-                <label><input type="radio" name="q2" value="d"> d) La incapacidad de aprender de adulto</label>
+                <label><input type="radio" name="q2" value="a"> a) La incapacidad de aprender de adulto</label>
+                <label><input type="radio" name="q2" value="b"> b) La capacidad del cerebro para cambiar y adaptarse por la experiencia</label>
+                <label><input type="radio" name="q2" value="c"> c) La dureza del cráneo</label>
+                <label><input type="radio" name="q2" value="d"> d) El tamaño del cerebro</label>
             </div>
         </div>
         
         <div class="question-block" id="q3" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">3. El papel de la emoción en el aprendizaje según la neurociencia es:</div>
             <div class="options">
-                <label><input type="radio" name="q3" value="a"> a) Fundamental; las emociones positivas facilitan la consolidación de la memoria</label>
-                <label><input type="radio" name="q3" value="b"> b) Nulo; la emoción distrae</label>
-                <label><input type="radio" name="q3" value="c"> c) Negativo siempre</label>
-                <label><input type="radio" name="q3" value="d"> d) Secundario frente a la razón pura</label>
+                <label><input type="radio" name="q3" value="a"> a) Negativo siempre</label>
+                <label><input type="radio" name="q3" value="b"> b) Secundario frente a la razón pura</label>
+                <label><input type="radio" name="q3" value="c"> c) Nulo; la emoción distrae</label>
+                <label><input type="radio" name="q3" value="d"> d) Fundamental; las emociones positivas facilitan la consolidación de la memoria</label>
             </div>
         </div>
         
         <div class="question-block" id="q4" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">4. ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?</div>
             <div class="options">
-                <label><input type="radio" name="q4" value="a"> a) El hipocampo y la amígdala</label>
-                <label><input type="radio" name="q4" value="b"> b) Los pulmones</label>
-                <label><input type="radio" name="q4" value="c"> c) El corazón</label>
-                <label><input type="radio" name="q4" value="d"> d) El cerebelo exclusivamente</label>
+                <label><input type="radio" name="q4" value="a"> a) Los pulmones</label>
+                <label><input type="radio" name="q4" value="b"> b) El cerebelo exclusivamente</label>
+                <label><input type="radio" name="q4" value="c"> c) El hipocampo y la amígdala</label>
+                <label><input type="radio" name="q4" value="d"> d) El corazón</label>
             </div>
         </div>
         
@@ -231,18 +236,18 @@
             <div class="options">
                 <label><input type="radio" name="q5" value="a"> a) Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)</label>
                 <label><input type="radio" name="q5" value="b"> b) Puede durar 3 horas seguidas</label>
-                <label><input type="radio" name="q5" value="c"> c) No es necesaria para aprender</label>
-                <label><input type="radio" name="q5" value="d"> d) Es igual en todas las edades</label>
+                <label><input type="radio" name="q5" value="c"> c) Es igual en todas las edades</label>
+                <label><input type="radio" name="q5" value="d"> d) No es necesaria para aprender</label>
             </div>
         </div>
         
         <div class="question-block" id="q6" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">6. ¿Cómo influye el sueño en el aprendizaje?</div>
             <div class="options">
-                <label><input type="radio" name="q6" value="a"> a) Es crucial para consolidar lo aprendido durante el día</label>
-                <label><input type="radio" name="q6" value="b"> b) No tiene ninguna influencia</label>
-                <label><input type="radio" name="q6" value="c"> c) Solo sirve para descansar los músculos</label>
-                <label><input type="radio" name="q6" value="d"> d) Menos horas de sueño mejoran la memoria</label>
+                <label><input type="radio" name="q6" value="a"> a) Menos horas de sueño mejoran la memoria</label>
+                <label><input type="radio" name="q6" value="b"> b) Es crucial para consolidar lo aprendido durante el día</label>
+                <label><input type="radio" name="q6" value="c"> c) No tiene ninguna influencia</label>
+                <label><input type="radio" name="q6" value="d"> d) Solo sirve para descansar los músculos</label>
             </div>
         </div>
         
@@ -259,40 +264,40 @@
         <div class="question-block" id="q8" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">8. Las funciones ejecutivas (planificación, control de impulsos) se desarrollan principalmente en:</div>
             <div class="options">
-                <label><input type="radio" name="q8" value="a"> a) La corteza prefrontal</label>
-                <label><input type="radio" name="q8" value="b"> b) El bulbo raquídeo</label>
-                <label><input type="radio" name="q8" value="c"> c) La médula espinal</label>
-                <label><input type="radio" name="q8" value="d"> d) El lóbulo occipital</label>
+                <label><input type="radio" name="q8" value="a"> a) El lóbulo occipital</label>
+                <label><input type="radio" name="q8" value="b"> b) La médula espinal</label>
+                <label><input type="radio" name="q8" value="c"> c) La corteza prefrontal</label>
+                <label><input type="radio" name="q8" value="d"> d) El bulbo raquídeo</label>
             </div>
         </div>
         
         <div class="question-block" id="q9" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">9. El ejercicio físico favorece el aprendizaje porque:</div>
             <div class="options">
-                <label><input type="radio" name="q9" value="a"> a) Promueve la oxigenación cerebral y la neurogénesis</label>
-                <label><input type="radio" name="q9" value="b"> b) Cansa al alumno para que esté quieto</label>
-                <label><input type="radio" name="q9" value="c"> c) Desarrolla músculos</label>
-                <label><input type="radio" name="q9" value="d"> d) Distrae de los estudios</label>
+                <label><input type="radio" name="q9" value="a"> a) Cansa al alumno para que esté quieto</label>
+                <label><input type="radio" name="q9" value="b"> b) Distrae de los estudios</label>
+                <label><input type="radio" name="q9" value="c"> c) Promueve la oxigenación cerebral y la neurogénesis</label>
+                <label><input type="radio" name="q9" value="d"> d) Desarrolla músculos</label>
             </div>
         </div>
         
         <div class="question-block" id="q10" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">10. Un entorno de aprendizaje 'cerebro-compatible' debe ser:</div>
             <div class="options">
-                <label><input type="radio" name="q10" value="a"> a) Seguro, estimulante, multisensorial y libre de amenazas</label>
-                <label><input type="radio" name="q10" value="b"> b) Aburrido y monótono</label>
-                <label><input type="radio" name="q10" value="c"> c) Estresante para exigir más</label>
-                <label><input type="radio" name="q10" value="d"> d) Lleno de castigos</label>
+                <label><input type="radio" name="q10" value="a"> a) Aburrido y monótono</label>
+                <label><input type="radio" name="q10" value="b"> b) Lleno de castigos</label>
+                <label><input type="radio" name="q10" value="c"> c) Seguro, estimulante, multisensorial y libre de amenazas</label>
+                <label><input type="radio" name="q10" value="d"> d) Estresante para exigir más</label>
             </div>
         </div>
         
         <div class="question-block" id="q11" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">11. En base al texto: ¿Qué estudia la neuroeducación?</div>
             <div class="options">
-                <label><input type="radio" name="q11" value="a"> a) La aplicación de conocimientos sobre el cerebro al proceso de enseñanza</label>
-                <label><input type="radio" name="q11" value="b"> b) Las enfermedades psiquiátricas</label>
-                <label><input type="radio" name="q11" value="c"> c) La anatomía humana básica</label>
-                <label><input type="radio" name="q11" value="d"> d) La psicología clínica</label>
+                <label><input type="radio" name="q11" value="a"> a) Las enfermedades psiquiátricas</label>
+                <label><input type="radio" name="q11" value="b"> b) La anatomía humana básica</label>
+                <label><input type="radio" name="q11" value="c"> c) La psicología clínica</label>
+                <label><input type="radio" name="q11" value="d"> d) La aplicación de conocimientos sobre el cerebro al proceso de enseñanza</label>
             </div>
         </div>
         
@@ -300,8 +305,8 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">12. En base al texto: ¿Qué es la plasticidad cerebral (neuroplasticidad)?</div>
             <div class="options">
                 <label><input type="radio" name="q12" value="a"> a) La capacidad del cerebro para cambiar y adaptarse por la experiencia</label>
-                <label><input type="radio" name="q12" value="b"> b) La dureza del cráneo</label>
-                <label><input type="radio" name="q12" value="c"> c) El tamaño del cerebro</label>
+                <label><input type="radio" name="q12" value="b"> b) El tamaño del cerebro</label>
+                <label><input type="radio" name="q12" value="c"> c) La dureza del cráneo</label>
                 <label><input type="radio" name="q12" value="d"> d) La incapacidad de aprender de adulto</label>
             </div>
         </div>
@@ -309,29 +314,29 @@
         <div class="question-block" id="q13" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">13. En base al texto: El papel de la emoción en el aprendizaje según la neurociencia es:</div>
             <div class="options">
-                <label><input type="radio" name="q13" value="a"> a) Fundamental; las emociones positivas facilitan la consolidación de la memoria</label>
-                <label><input type="radio" name="q13" value="b"> b) Nulo; la emoción distrae</label>
-                <label><input type="radio" name="q13" value="c"> c) Negativo siempre</label>
-                <label><input type="radio" name="q13" value="d"> d) Secundario frente a la razón pura</label>
+                <label><input type="radio" name="q13" value="a"> a) Secundario frente a la razón pura</label>
+                <label><input type="radio" name="q13" value="b"> b) Fundamental; las emociones positivas facilitan la consolidación de la memoria</label>
+                <label><input type="radio" name="q13" value="c"> c) Nulo; la emoción distrae</label>
+                <label><input type="radio" name="q13" value="d"> d) Negativo siempre</label>
             </div>
         </div>
         
         <div class="question-block" id="q14" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">14. En base al texto: ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?</div>
             <div class="options">
-                <label><input type="radio" name="q14" value="a"> a) El hipocampo y la amígdala</label>
-                <label><input type="radio" name="q14" value="b"> b) Los pulmones</label>
-                <label><input type="radio" name="q14" value="c"> c) El corazón</label>
-                <label><input type="radio" name="q14" value="d"> d) El cerebelo exclusivamente</label>
+                <label><input type="radio" name="q14" value="a"> a) El corazón</label>
+                <label><input type="radio" name="q14" value="b"> b) El hipocampo y la amígdala</label>
+                <label><input type="radio" name="q14" value="c"> c) El cerebelo exclusivamente</label>
+                <label><input type="radio" name="q14" value="d"> d) Los pulmones</label>
             </div>
         </div>
         
         <div class="question-block" id="q15" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">15. En base al texto: La atención sostenida en el aula:</div>
             <div class="options">
-                <label><input type="radio" name="q15" value="a"> a) Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)</label>
-                <label><input type="radio" name="q15" value="b"> b) Puede durar 3 horas seguidas</label>
-                <label><input type="radio" name="q15" value="c"> c) No es necesaria para aprender</label>
+                <label><input type="radio" name="q15" value="a"> a) Puede durar 3 horas seguidas</label>
+                <label><input type="radio" name="q15" value="b"> b) No es necesaria para aprender</label>
+                <label><input type="radio" name="q15" value="c"> c) Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)</label>
                 <label><input type="radio" name="q15" value="d"> d) Es igual en todas las edades</label>
             </div>
         </div>
@@ -339,10 +344,10 @@
         <div class="question-block" id="q16" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">16. En base al texto: ¿Cómo influye el sueño en el aprendizaje?</div>
             <div class="options">
-                <label><input type="radio" name="q16" value="a"> a) Es crucial para consolidar lo aprendido durante el día</label>
-                <label><input type="radio" name="q16" value="b"> b) No tiene ninguna influencia</label>
+                <label><input type="radio" name="q16" value="a"> a) Menos horas de sueño mejoran la memoria</label>
+                <label><input type="radio" name="q16" value="b"> b) Es crucial para consolidar lo aprendido durante el día</label>
                 <label><input type="radio" name="q16" value="c"> c) Solo sirve para descansar los músculos</label>
-                <label><input type="radio" name="q16" value="d"> d) Menos horas de sueño mejoran la memoria</label>
+                <label><input type="radio" name="q16" value="d"> d) No tiene ninguna influencia</label>
             </div>
         </div>
         
@@ -351,8 +356,8 @@
             <div class="options">
                 <label><input type="radio" name="q17" value="a"> a) Bloquea las funciones ejecutivas y dificulta el aprendizaje</label>
                 <label><input type="radio" name="q17" value="b"> b) Ayuda a aprender más rápido</label>
-                <label><input type="radio" name="q17" value="c"> c) No afecta al cerebro</label>
-                <label><input type="radio" name="q17" value="d"> d) Es motivador</label>
+                <label><input type="radio" name="q17" value="c"> c) Es motivador</label>
+                <label><input type="radio" name="q17" value="d"> d) No afecta al cerebro</label>
             </div>
         </div>
         
@@ -361,28 +366,28 @@
             <div class="options">
                 <label><input type="radio" name="q18" value="a"> a) La corteza prefrontal</label>
                 <label><input type="radio" name="q18" value="b"> b) El bulbo raquídeo</label>
-                <label><input type="radio" name="q18" value="c"> c) La médula espinal</label>
-                <label><input type="radio" name="q18" value="d"> d) El lóbulo occipital</label>
+                <label><input type="radio" name="q18" value="c"> c) El lóbulo occipital</label>
+                <label><input type="radio" name="q18" value="d"> d) La médula espinal</label>
             </div>
         </div>
         
         <div class="question-block" id="q19" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">19. En base al texto: El ejercicio físico favorece el aprendizaje porque:</div>
             <div class="options">
-                <label><input type="radio" name="q19" value="a"> a) Promueve la oxigenación cerebral y la neurogénesis</label>
-                <label><input type="radio" name="q19" value="b"> b) Cansa al alumno para que esté quieto</label>
-                <label><input type="radio" name="q19" value="c"> c) Desarrolla músculos</label>
-                <label><input type="radio" name="q19" value="d"> d) Distrae de los estudios</label>
+                <label><input type="radio" name="q19" value="a"> a) Distrae de los estudios</label>
+                <label><input type="radio" name="q19" value="b"> b) Desarrolla músculos</label>
+                <label><input type="radio" name="q19" value="c"> c) Cansa al alumno para que esté quieto</label>
+                <label><input type="radio" name="q19" value="d"> d) Promueve la oxigenación cerebral y la neurogénesis</label>
             </div>
         </div>
         
         <div class="question-block" id="q20" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">20. En base al texto: Un entorno de aprendizaje 'cerebro-compatible' debe ser:</div>
             <div class="options">
-                <label><input type="radio" name="q20" value="a"> a) Seguro, estimulante, multisensorial y libre de amenazas</label>
-                <label><input type="radio" name="q20" value="b"> b) Aburrido y monótono</label>
-                <label><input type="radio" name="q20" value="c"> c) Estresante para exigir más</label>
-                <label><input type="radio" name="q20" value="d"> d) Lleno de castigos</label>
+                <label><input type="radio" name="q20" value="a"> a) Aburrido y monótono</label>
+                <label><input type="radio" name="q20" value="b"> b) Estresante para exigir más</label>
+                <label><input type="radio" name="q20" value="c"> c) Lleno de castigos</label>
+                <label><input type="radio" name="q20" value="d"> d) Seguro, estimulante, multisensorial y libre de amenazas</label>
             </div>
         </div>
         
@@ -390,8 +395,8 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">21. Desde la perspectiva pedagógica, ¿Qué estudia la neuroeducación?</div>
             <div class="options">
                 <label><input type="radio" name="q21" value="a"> a) La aplicación de conocimientos sobre el cerebro al proceso de enseñanza</label>
-                <label><input type="radio" name="q21" value="b"> b) Las enfermedades psiquiátricas</label>
-                <label><input type="radio" name="q21" value="c"> c) La anatomía humana básica</label>
+                <label><input type="radio" name="q21" value="b"> b) La anatomía humana básica</label>
+                <label><input type="radio" name="q21" value="c"> c) Las enfermedades psiquiátricas</label>
                 <label><input type="radio" name="q21" value="d"> d) La psicología clínica</label>
             </div>
         </div>
@@ -399,39 +404,39 @@
         <div class="question-block" id="q22" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">22. Desde la perspectiva pedagógica, ¿Qué es la plasticidad cerebral (neuroplasticidad)?</div>
             <div class="options">
-                <label><input type="radio" name="q22" value="a"> a) La capacidad del cerebro para cambiar y adaptarse por la experiencia</label>
-                <label><input type="radio" name="q22" value="b"> b) La dureza del cráneo</label>
-                <label><input type="radio" name="q22" value="c"> c) El tamaño del cerebro</label>
-                <label><input type="radio" name="q22" value="d"> d) La incapacidad de aprender de adulto</label>
+                <label><input type="radio" name="q22" value="a"> a) La dureza del cráneo</label>
+                <label><input type="radio" name="q22" value="b"> b) La incapacidad de aprender de adulto</label>
+                <label><input type="radio" name="q22" value="c"> c) La capacidad del cerebro para cambiar y adaptarse por la experiencia</label>
+                <label><input type="radio" name="q22" value="d"> d) El tamaño del cerebro</label>
             </div>
         </div>
         
         <div class="question-block" id="q23" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">23. Desde la perspectiva pedagógica, El papel de la emoción en el aprendizaje según la neurociencia es:</div>
             <div class="options">
-                <label><input type="radio" name="q23" value="a"> a) Fundamental; las emociones positivas facilitan la consolidación de la memoria</label>
-                <label><input type="radio" name="q23" value="b"> b) Nulo; la emoción distrae</label>
+                <label><input type="radio" name="q23" value="a"> a) Secundario frente a la razón pura</label>
+                <label><input type="radio" name="q23" value="b"> b) Fundamental; las emociones positivas facilitan la consolidación de la memoria</label>
                 <label><input type="radio" name="q23" value="c"> c) Negativo siempre</label>
-                <label><input type="radio" name="q23" value="d"> d) Secundario frente a la razón pura</label>
+                <label><input type="radio" name="q23" value="d"> d) Nulo; la emoción distrae</label>
             </div>
         </div>
         
         <div class="question-block" id="q24" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">24. Desde la perspectiva pedagógica, ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?</div>
             <div class="options">
-                <label><input type="radio" name="q24" value="a"> a) El hipocampo y la amígdala</label>
-                <label><input type="radio" name="q24" value="b"> b) Los pulmones</label>
-                <label><input type="radio" name="q24" value="c"> c) El corazón</label>
-                <label><input type="radio" name="q24" value="d"> d) El cerebelo exclusivamente</label>
+                <label><input type="radio" name="q24" value="a"> a) El corazón</label>
+                <label><input type="radio" name="q24" value="b"> b) El hipocampo y la amígdala</label>
+                <label><input type="radio" name="q24" value="c"> c) El cerebelo exclusivamente</label>
+                <label><input type="radio" name="q24" value="d"> d) Los pulmones</label>
             </div>
         </div>
         
         <div class="question-block" id="q25" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">25. Desde la perspectiva pedagógica, La atención sostenida en el aula:</div>
             <div class="options">
-                <label><input type="radio" name="q25" value="a"> a) Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)</label>
-                <label><input type="radio" name="q25" value="b"> b) Puede durar 3 horas seguidas</label>
-                <label><input type="radio" name="q25" value="c"> c) No es necesaria para aprender</label>
+                <label><input type="radio" name="q25" value="a"> a) Puede durar 3 horas seguidas</label>
+                <label><input type="radio" name="q25" value="b"> b) No es necesaria para aprender</label>
+                <label><input type="radio" name="q25" value="c"> c) Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)</label>
                 <label><input type="radio" name="q25" value="d"> d) Es igual en todas las edades</label>
             </div>
         </div>
@@ -439,9 +444,9 @@
         <div class="question-block" id="q26" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">26. Desde la perspectiva pedagógica, ¿Cómo influye el sueño en el aprendizaje?</div>
             <div class="options">
-                <label><input type="radio" name="q26" value="a"> a) Es crucial para consolidar lo aprendido durante el día</label>
-                <label><input type="radio" name="q26" value="b"> b) No tiene ninguna influencia</label>
-                <label><input type="radio" name="q26" value="c"> c) Solo sirve para descansar los músculos</label>
+                <label><input type="radio" name="q26" value="a"> a) Solo sirve para descansar los músculos</label>
+                <label><input type="radio" name="q26" value="b"> b) Es crucial para consolidar lo aprendido durante el día</label>
+                <label><input type="radio" name="q26" value="c"> c) No tiene ninguna influencia</label>
                 <label><input type="radio" name="q26" value="d"> d) Menos horas de sueño mejoran la memoria</label>
             </div>
         </div>
@@ -449,10 +454,10 @@
         <div class="question-block" id="q27" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">27. Desde la perspectiva pedagógica, El estrés tóxico o crónico en los estudiantes:</div>
             <div class="options">
-                <label><input type="radio" name="q27" value="a"> a) Bloquea las funciones ejecutivas y dificulta el aprendizaje</label>
-                <label><input type="radio" name="q27" value="b"> b) Ayuda a aprender más rápido</label>
+                <label><input type="radio" name="q27" value="a"> a) Es motivador</label>
+                <label><input type="radio" name="q27" value="b"> b) Bloquea las funciones ejecutivas y dificulta el aprendizaje</label>
                 <label><input type="radio" name="q27" value="c"> c) No afecta al cerebro</label>
-                <label><input type="radio" name="q27" value="d"> d) Es motivador</label>
+                <label><input type="radio" name="q27" value="d"> d) Ayuda a aprender más rápido</label>
             </div>
         </div>
         
@@ -469,28 +474,28 @@
         <div class="question-block" id="q29" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">29. Desde la perspectiva pedagógica, El ejercicio físico favorece el aprendizaje porque:</div>
             <div class="options">
-                <label><input type="radio" name="q29" value="a"> a) Promueve la oxigenación cerebral y la neurogénesis</label>
+                <label><input type="radio" name="q29" value="a"> a) Desarrolla músculos</label>
                 <label><input type="radio" name="q29" value="b"> b) Cansa al alumno para que esté quieto</label>
-                <label><input type="radio" name="q29" value="c"> c) Desarrolla músculos</label>
-                <label><input type="radio" name="q29" value="d"> d) Distrae de los estudios</label>
+                <label><input type="radio" name="q29" value="c"> c) Distrae de los estudios</label>
+                <label><input type="radio" name="q29" value="d"> d) Promueve la oxigenación cerebral y la neurogénesis</label>
             </div>
         </div>
         
         <div class="question-block" id="q30" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">30. Desde la perspectiva pedagógica, Un entorno de aprendizaje 'cerebro-compatible' debe ser:</div>
             <div class="options">
-                <label><input type="radio" name="q30" value="a"> a) Seguro, estimulante, multisensorial y libre de amenazas</label>
-                <label><input type="radio" name="q30" value="b"> b) Aburrido y monótono</label>
+                <label><input type="radio" name="q30" value="a"> a) Lleno de castigos</label>
+                <label><input type="radio" name="q30" value="b"> b) Seguro, estimulante, multisensorial y libre de amenazas</label>
                 <label><input type="radio" name="q30" value="c"> c) Estresante para exigir más</label>
-                <label><input type="radio" name="q30" value="d"> d) Lleno de castigos</label>
+                <label><input type="radio" name="q30" value="d"> d) Aburrido y monótono</label>
             </div>
         </div>
         
         <div class="question-block" id="q31" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">31. Es importante saber que: ¿Qué estudia la neuroeducación?</div>
             <div class="options">
-                <label><input type="radio" name="q31" value="a"> a) La aplicación de conocimientos sobre el cerebro al proceso de enseñanza</label>
-                <label><input type="radio" name="q31" value="b"> b) Las enfermedades psiquiátricas</label>
+                <label><input type="radio" name="q31" value="a"> a) Las enfermedades psiquiátricas</label>
+                <label><input type="radio" name="q31" value="b"> b) La aplicación de conocimientos sobre el cerebro al proceso de enseñanza</label>
                 <label><input type="radio" name="q31" value="c"> c) La anatomía humana básica</label>
                 <label><input type="radio" name="q31" value="d"> d) La psicología clínica</label>
             </div>
@@ -499,30 +504,30 @@
         <div class="question-block" id="q32" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">32. Es importante saber que: ¿Qué es la plasticidad cerebral (neuroplasticidad)?</div>
             <div class="options">
-                <label><input type="radio" name="q32" value="a"> a) La capacidad del cerebro para cambiar y adaptarse por la experiencia</label>
-                <label><input type="radio" name="q32" value="b"> b) La dureza del cráneo</label>
-                <label><input type="radio" name="q32" value="c"> c) El tamaño del cerebro</label>
-                <label><input type="radio" name="q32" value="d"> d) La incapacidad de aprender de adulto</label>
+                <label><input type="radio" name="q32" value="a"> a) La incapacidad de aprender de adulto</label>
+                <label><input type="radio" name="q32" value="b"> b) El tamaño del cerebro</label>
+                <label><input type="radio" name="q32" value="c"> c) La dureza del cráneo</label>
+                <label><input type="radio" name="q32" value="d"> d) La capacidad del cerebro para cambiar y adaptarse por la experiencia</label>
             </div>
         </div>
         
         <div class="question-block" id="q33" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">33. Es importante saber que: El papel de la emoción en el aprendizaje según la neurociencia es:</div>
             <div class="options">
-                <label><input type="radio" name="q33" value="a"> a) Fundamental; las emociones positivas facilitan la consolidación de la memoria</label>
-                <label><input type="radio" name="q33" value="b"> b) Nulo; la emoción distrae</label>
-                <label><input type="radio" name="q33" value="c"> c) Negativo siempre</label>
-                <label><input type="radio" name="q33" value="d"> d) Secundario frente a la razón pura</label>
+                <label><input type="radio" name="q33" value="a"> a) Secundario frente a la razón pura</label>
+                <label><input type="radio" name="q33" value="b"> b) Negativo siempre</label>
+                <label><input type="radio" name="q33" value="c"> c) Fundamental; las emociones positivas facilitan la consolidación de la memoria</label>
+                <label><input type="radio" name="q33" value="d"> d) Nulo; la emoción distrae</label>
             </div>
         </div>
         
         <div class="question-block" id="q34" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">34. Es importante saber que: ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?</div>
             <div class="options">
-                <label><input type="radio" name="q34" value="a"> a) El hipocampo y la amígdala</label>
-                <label><input type="radio" name="q34" value="b"> b) Los pulmones</label>
-                <label><input type="radio" name="q34" value="c"> c) El corazón</label>
-                <label><input type="radio" name="q34" value="d"> d) El cerebelo exclusivamente</label>
+                <label><input type="radio" name="q34" value="a"> a) Los pulmones</label>
+                <label><input type="radio" name="q34" value="b"> b) El cerebelo exclusivamente</label>
+                <label><input type="radio" name="q34" value="c"> c) El hipocampo y la amígdala</label>
+                <label><input type="radio" name="q34" value="d"> d) El corazón</label>
             </div>
         </div>
         
@@ -539,40 +544,40 @@
         <div class="question-block" id="q36" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">36. Es importante saber que: ¿Cómo influye el sueño en el aprendizaje?</div>
             <div class="options">
-                <label><input type="radio" name="q36" value="a"> a) Es crucial para consolidar lo aprendido durante el día</label>
+                <label><input type="radio" name="q36" value="a"> a) Menos horas de sueño mejoran la memoria</label>
                 <label><input type="radio" name="q36" value="b"> b) No tiene ninguna influencia</label>
-                <label><input type="radio" name="q36" value="c"> c) Solo sirve para descansar los músculos</label>
-                <label><input type="radio" name="q36" value="d"> d) Menos horas de sueño mejoran la memoria</label>
+                <label><input type="radio" name="q36" value="c"> c) Es crucial para consolidar lo aprendido durante el día</label>
+                <label><input type="radio" name="q36" value="d"> d) Solo sirve para descansar los músculos</label>
             </div>
         </div>
         
         <div class="question-block" id="q37" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">37. Es importante saber que: El estrés tóxico o crónico en los estudiantes:</div>
             <div class="options">
-                <label><input type="radio" name="q37" value="a"> a) Bloquea las funciones ejecutivas y dificulta el aprendizaje</label>
-                <label><input type="radio" name="q37" value="b"> b) Ayuda a aprender más rápido</label>
-                <label><input type="radio" name="q37" value="c"> c) No afecta al cerebro</label>
-                <label><input type="radio" name="q37" value="d"> d) Es motivador</label>
+                <label><input type="radio" name="q37" value="a"> a) No afecta al cerebro</label>
+                <label><input type="radio" name="q37" value="b"> b) Es motivador</label>
+                <label><input type="radio" name="q37" value="c"> c) Ayuda a aprender más rápido</label>
+                <label><input type="radio" name="q37" value="d"> d) Bloquea las funciones ejecutivas y dificulta el aprendizaje</label>
             </div>
         </div>
         
         <div class="question-block" id="q38" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">38. Es importante saber que: Las funciones ejecutivas (planificación, control de impulsos) se desarrollan principalmente en:</div>
             <div class="options">
-                <label><input type="radio" name="q38" value="a"> a) La corteza prefrontal</label>
-                <label><input type="radio" name="q38" value="b"> b) El bulbo raquídeo</label>
+                <label><input type="radio" name="q38" value="a"> a) El bulbo raquídeo</label>
+                <label><input type="radio" name="q38" value="b"> b) El lóbulo occipital</label>
                 <label><input type="radio" name="q38" value="c"> c) La médula espinal</label>
-                <label><input type="radio" name="q38" value="d"> d) El lóbulo occipital</label>
+                <label><input type="radio" name="q38" value="d"> d) La corteza prefrontal</label>
             </div>
         </div>
         
         <div class="question-block" id="q39" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">39. Es importante saber que: El ejercicio físico favorece el aprendizaje porque:</div>
             <div class="options">
-                <label><input type="radio" name="q39" value="a"> a) Promueve la oxigenación cerebral y la neurogénesis</label>
-                <label><input type="radio" name="q39" value="b"> b) Cansa al alumno para que esté quieto</label>
-                <label><input type="radio" name="q39" value="c"> c) Desarrolla músculos</label>
-                <label><input type="radio" name="q39" value="d"> d) Distrae de los estudios</label>
+                <label><input type="radio" name="q39" value="a"> a) Cansa al alumno para que esté quieto</label>
+                <label><input type="radio" name="q39" value="b"> b) Promueve la oxigenación cerebral y la neurogénesis</label>
+                <label><input type="radio" name="q39" value="c"> c) Distrae de los estudios</label>
+                <label><input type="radio" name="q39" value="d"> d) Desarrolla músculos</label>
             </div>
         </div>
         
@@ -581,17 +586,17 @@
             <div class="options">
                 <label><input type="radio" name="q40" value="a"> a) Seguro, estimulante, multisensorial y libre de amenazas</label>
                 <label><input type="radio" name="q40" value="b"> b) Aburrido y monótono</label>
-                <label><input type="radio" name="q40" value="c"> c) Estresante para exigir más</label>
-                <label><input type="radio" name="q40" value="d"> d) Lleno de castigos</label>
+                <label><input type="radio" name="q40" value="c"> c) Lleno de castigos</label>
+                <label><input type="radio" name="q40" value="d"> d) Estresante para exigir más</label>
             </div>
         </div>
         
         <div class="question-block" id="q41" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">41. Según la normativa: ¿Qué estudia la neuroeducación?</div>
             <div class="options">
-                <label><input type="radio" name="q41" value="a"> a) La aplicación de conocimientos sobre el cerebro al proceso de enseñanza</label>
+                <label><input type="radio" name="q41" value="a"> a) La anatomía humana básica</label>
                 <label><input type="radio" name="q41" value="b"> b) Las enfermedades psiquiátricas</label>
-                <label><input type="radio" name="q41" value="c"> c) La anatomía humana básica</label>
+                <label><input type="radio" name="q41" value="c"> c) La aplicación de conocimientos sobre el cerebro al proceso de enseñanza</label>
                 <label><input type="radio" name="q41" value="d"> d) La psicología clínica</label>
             </div>
         </div>
@@ -599,10 +604,10 @@
         <div class="question-block" id="q42" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">42. Según la normativa: ¿Qué es la plasticidad cerebral (neuroplasticidad)?</div>
             <div class="options">
-                <label><input type="radio" name="q42" value="a"> a) La capacidad del cerebro para cambiar y adaptarse por la experiencia</label>
-                <label><input type="radio" name="q42" value="b"> b) La dureza del cráneo</label>
-                <label><input type="radio" name="q42" value="c"> c) El tamaño del cerebro</label>
-                <label><input type="radio" name="q42" value="d"> d) La incapacidad de aprender de adulto</label>
+                <label><input type="radio" name="q42" value="a"> a) El tamaño del cerebro</label>
+                <label><input type="radio" name="q42" value="b"> b) La incapacidad de aprender de adulto</label>
+                <label><input type="radio" name="q42" value="c"> c) La dureza del cráneo</label>
+                <label><input type="radio" name="q42" value="d"> d) La capacidad del cerebro para cambiar y adaptarse por la experiencia</label>
             </div>
         </div>
         
@@ -610,49 +615,49 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">43. Según la normativa: El papel de la emoción en el aprendizaje según la neurociencia es:</div>
             <div class="options">
                 <label><input type="radio" name="q43" value="a"> a) Fundamental; las emociones positivas facilitan la consolidación de la memoria</label>
-                <label><input type="radio" name="q43" value="b"> b) Nulo; la emoción distrae</label>
-                <label><input type="radio" name="q43" value="c"> c) Negativo siempre</label>
-                <label><input type="radio" name="q43" value="d"> d) Secundario frente a la razón pura</label>
+                <label><input type="radio" name="q43" value="b"> b) Secundario frente a la razón pura</label>
+                <label><input type="radio" name="q43" value="c"> c) Nulo; la emoción distrae</label>
+                <label><input type="radio" name="q43" value="d"> d) Negativo siempre</label>
             </div>
         </div>
         
         <div class="question-block" id="q44" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">44. Según la normativa: ¿Qué estructuras cerebrales están fuertemente ligadas a la memoria y el aprendizaje?</div>
             <div class="options">
-                <label><input type="radio" name="q44" value="a"> a) El hipocampo y la amígdala</label>
-                <label><input type="radio" name="q44" value="b"> b) Los pulmones</label>
-                <label><input type="radio" name="q44" value="c"> c) El corazón</label>
-                <label><input type="radio" name="q44" value="d"> d) El cerebelo exclusivamente</label>
+                <label><input type="radio" name="q44" value="a"> a) El cerebelo exclusivamente</label>
+                <label><input type="radio" name="q44" value="b"> b) El corazón</label>
+                <label><input type="radio" name="q44" value="c"> c) El hipocampo y la amígdala</label>
+                <label><input type="radio" name="q44" value="d"> d) Los pulmones</label>
             </div>
         </div>
         
         <div class="question-block" id="q45" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">45. Según la normativa: La atención sostenida en el aula:</div>
             <div class="options">
-                <label><input type="radio" name="q45" value="a"> a) Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)</label>
-                <label><input type="radio" name="q45" value="b"> b) Puede durar 3 horas seguidas</label>
-                <label><input type="radio" name="q45" value="c"> c) No es necesaria para aprender</label>
-                <label><input type="radio" name="q45" value="d"> d) Es igual en todas las edades</label>
+                <label><input type="radio" name="q45" value="a"> a) Es igual en todas las edades</label>
+                <label><input type="radio" name="q45" value="b"> b) No es necesaria para aprender</label>
+                <label><input type="radio" name="q45" value="c"> c) Fluctúa y no puede mantenerse al máximo por largos periodos (más de 15-20 min)</label>
+                <label><input type="radio" name="q45" value="d"> d) Puede durar 3 horas seguidas</label>
             </div>
         </div>
         
         <div class="question-block" id="q46" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">46. Según la normativa: ¿Cómo influye el sueño en el aprendizaje?</div>
             <div class="options">
-                <label><input type="radio" name="q46" value="a"> a) Es crucial para consolidar lo aprendido durante el día</label>
+                <label><input type="radio" name="q46" value="a"> a) Solo sirve para descansar los músculos</label>
                 <label><input type="radio" name="q46" value="b"> b) No tiene ninguna influencia</label>
-                <label><input type="radio" name="q46" value="c"> c) Solo sirve para descansar los músculos</label>
-                <label><input type="radio" name="q46" value="d"> d) Menos horas de sueño mejoran la memoria</label>
+                <label><input type="radio" name="q46" value="c"> c) Menos horas de sueño mejoran la memoria</label>
+                <label><input type="radio" name="q46" value="d"> d) Es crucial para consolidar lo aprendido durante el día</label>
             </div>
         </div>
         
         <div class="question-block" id="q47" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">47. Según la normativa: El estrés tóxico o crónico en los estudiantes:</div>
             <div class="options">
-                <label><input type="radio" name="q47" value="a"> a) Bloquea las funciones ejecutivas y dificulta el aprendizaje</label>
-                <label><input type="radio" name="q47" value="b"> b) Ayuda a aprender más rápido</label>
-                <label><input type="radio" name="q47" value="c"> c) No afecta al cerebro</label>
-                <label><input type="radio" name="q47" value="d"> d) Es motivador</label>
+                <label><input type="radio" name="q47" value="a"> a) No afecta al cerebro</label>
+                <label><input type="radio" name="q47" value="b"> b) Es motivador</label>
+                <label><input type="radio" name="q47" value="c"> c) Ayuda a aprender más rápido</label>
+                <label><input type="radio" name="q47" value="d"> d) Bloquea las funciones ejecutivas y dificulta el aprendizaje</label>
             </div>
         </div>
         
@@ -660,19 +665,19 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">48. Según la normativa: Las funciones ejecutivas (planificación, control de impulsos) se desarrollan principalmente en:</div>
             <div class="options">
                 <label><input type="radio" name="q48" value="a"> a) La corteza prefrontal</label>
-                <label><input type="radio" name="q48" value="b"> b) El bulbo raquídeo</label>
-                <label><input type="radio" name="q48" value="c"> c) La médula espinal</label>
-                <label><input type="radio" name="q48" value="d"> d) El lóbulo occipital</label>
+                <label><input type="radio" name="q48" value="b"> b) El lóbulo occipital</label>
+                <label><input type="radio" name="q48" value="c"> c) El bulbo raquídeo</label>
+                <label><input type="radio" name="q48" value="d"> d) La médula espinal</label>
             </div>
         </div>
         
         <div class="question-block" id="q49" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">49. Según la normativa: El ejercicio físico favorece el aprendizaje porque:</div>
             <div class="options">
-                <label><input type="radio" name="q49" value="a"> a) Promueve la oxigenación cerebral y la neurogénesis</label>
+                <label><input type="radio" name="q49" value="a"> a) Distrae de los estudios</label>
                 <label><input type="radio" name="q49" value="b"> b) Cansa al alumno para que esté quieto</label>
-                <label><input type="radio" name="q49" value="c"> c) Desarrolla músculos</label>
-                <label><input type="radio" name="q49" value="d"> d) Distrae de los estudios</label>
+                <label><input type="radio" name="q49" value="c"> c) Promueve la oxigenación cerebral y la neurogénesis</label>
+                <label><input type="radio" name="q49" value="d"> d) Desarrolla músculos</label>
             </div>
         </div>
         
@@ -680,8 +685,8 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">50. Según la normativa: Un entorno de aprendizaje 'cerebro-compatible' debe ser:</div>
             <div class="options">
                 <label><input type="radio" name="q50" value="a"> a) Seguro, estimulante, multisensorial y libre de amenazas</label>
-                <label><input type="radio" name="q50" value="b"> b) Aburrido y monótono</label>
-                <label><input type="radio" name="q50" value="c"> c) Estresante para exigir más</label>
+                <label><input type="radio" name="q50" value="b"> b) Estresante para exigir más</label>
+                <label><input type="radio" name="q50" value="c"> c) Aburrido y monótono</label>
                 <label><input type="radio" name="q50" value="d"> d) Lleno de castigos</label>
             </div>
         </div>
@@ -713,55 +718,55 @@
     
     <script>
         const correctAnswers = {
-            "q1": "a",
-        "q2": "a",
-        "q3": "a",
-        "q4": "a",
+            "q1": "c",
+        "q2": "b",
+        "q3": "d",
+        "q4": "c",
         "q5": "a",
-        "q6": "a",
+        "q6": "b",
         "q7": "a",
-        "q8": "a",
-        "q9": "a",
-        "q10": "a",
-        "q11": "a",
+        "q8": "c",
+        "q9": "c",
+        "q10": "c",
+        "q11": "d",
         "q12": "a",
-        "q13": "a",
-        "q14": "a",
-        "q15": "a",
-        "q16": "a",
+        "q13": "b",
+        "q14": "b",
+        "q15": "c",
+        "q16": "b",
         "q17": "a",
         "q18": "a",
-        "q19": "a",
-        "q20": "a",
+        "q19": "d",
+        "q20": "d",
         "q21": "a",
-        "q22": "a",
-        "q23": "a",
-        "q24": "a",
-        "q25": "a",
-        "q26": "a",
-        "q27": "a",
+        "q22": "c",
+        "q23": "b",
+        "q24": "b",
+        "q25": "c",
+        "q26": "b",
+        "q27": "b",
         "q28": "a",
-        "q29": "a",
-        "q30": "a",
-        "q31": "a",
-        "q32": "a",
-        "q33": "a",
-        "q34": "a",
+        "q29": "d",
+        "q30": "b",
+        "q31": "b",
+        "q32": "d",
+        "q33": "c",
+        "q34": "c",
         "q35": "a",
-        "q36": "a",
-        "q37": "a",
-        "q38": "a",
-        "q39": "a",
+        "q36": "c",
+        "q37": "d",
+        "q38": "d",
+        "q39": "b",
         "q40": "a",
-        "q41": "a",
-        "q42": "a",
+        "q41": "c",
+        "q42": "d",
         "q43": "a",
-        "q44": "a",
-        "q45": "a",
-        "q46": "a",
-        "q47": "a",
+        "q44": "c",
+        "q45": "c",
+        "q46": "d",
+        "q47": "d",
         "q48": "a",
-        "q49": "a",
+        "q49": "c",
         "q50": "a"
         };
     </script>

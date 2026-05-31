@@ -29,6 +29,9 @@
             .nav-links { display: none !important; }
             .nav-links.show-mobile { display: flex !important; flex-direction: column !important; }
             .dropdown { flex: none !important; width: 100%; border-top: 1px solid rgba(255,255,255,0.1); }
+            .dropdown-content { position: relative !important; min-width: 100% !important; box-shadow: inset 0 2px 5px rgba(0,0,0,0.2) !important; border-radius: 0 !important; background: #2e7d32 !important; border: none !important; }
+            .dropdown-content a { color: white !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; padding: 10px 15px !important; font-size: 0.95rem !important; }
+            .dropdown-content a:hover { background: #1b5e20 !important; }
             .hero-title { font-size: 1.8rem !important; }
             .hero-subtitle { font-size: 1rem !important; }
             .header-title { font-size: 1.1rem !important; }
@@ -38,8 +41,10 @@
         }
         @media (max-width: 768px) {
             /* Ajustes para tarjetas flash */
-            #flashcard-box { padding: 25px 15px !important; min-height: 200px !important; }
-            #card-text { font-size: 1.1rem !important; line-height: 1.4 !important; }
+            #flashcard-box { padding: 15px 10px !important; min-height: 150px !important; }
+            #card-text { font-size: 1.05rem !important; line-height: 1.3 !important; }
+            #flash-buttons { gap: 5px !important; margin-top: 15px !important; }
+            #flash-buttons button { padding: 10px 5px !important; font-size: 0.85rem !important; flex: 1 !important; }
             
             /* Ajustes para audiolibros y contenedores principales */
             div[style*="padding: 40px;"] { padding: 15px !important; }
@@ -89,7 +94,7 @@
     
     <nav class="navbar" id="navbar" style="background: #1b5e20; padding: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 9999;">
         <div class="nav-container" style="width: 100%; max-width: 1200px; margin: 0 auto;">
-            <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('show-mobile')">☰ Menú Principal</button>
+            <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('show-mobile')">Menú Principal ☰</button>
             <div class="nav-links" id="navLinks" style="display: flex; justify-content: center; width: 100%;">
 
             <div class="dropdown" style="flex: 1; text-align: center;">
@@ -190,8 +195,8 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">1. ¿Cuál es el principal objetivo del desarrollo curricular?</div>
             <div class="options">
                 <label><input type="radio" name="q1" value="a"> a) Adaptar la educación a las necesidades sociales y pedagógicas actuales</label>
-                <label><input type="radio" name="q1" value="b"> b) Imprimir nuevos libros de texto</label>
-                <label><input type="radio" name="q1" value="c"> c) Aumentar la carga horaria</label>
+                <label><input type="radio" name="q1" value="b"> b) Aumentar la carga horaria</label>
+                <label><input type="radio" name="q1" value="c"> c) Imprimir nuevos libros de texto</label>
                 <label><input type="radio" name="q1" value="d"> d) Facilitar el trabajo administrativo</label>
             </div>
         </div>
@@ -199,30 +204,30 @@
         <div class="question-block" id="q2" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">2. La innovación curricular implica:</div>
             <div class="options">
-                <label><input type="radio" name="q2" value="a"> a) Transformaciones profundas en la práctica pedagógica</label>
+                <label><input type="radio" name="q2" value="a"> a) Mantener los métodos tradicionales</label>
                 <label><input type="radio" name="q2" value="b"> b) Cambiar únicamente el título de las materias</label>
                 <label><input type="radio" name="q2" value="c"> c) Usar tecnología sin planificar</label>
-                <label><input type="radio" name="q2" value="d"> d) Mantener los métodos tradicionales</label>
+                <label><input type="radio" name="q2" value="d"> d) Transformaciones profundas en la práctica pedagógica</label>
             </div>
         </div>
         
         <div class="question-block" id="q3" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">3. El diseño curricular base es:</div>
             <div class="options">
-                <label><input type="radio" name="q3" value="a"> a) Un documento flexible y orientador a nivel nacional</label>
+                <label><input type="radio" name="q3" value="a"> a) Un catálogo de castigos</label>
                 <label><input type="radio" name="q3" value="b"> b) Un manual estricto e inmodificable</label>
                 <label><input type="radio" name="q3" value="c"> c) Una guía exclusiva para directores</label>
-                <label><input type="radio" name="q3" value="d"> d) Un catálogo de castigos</label>
+                <label><input type="radio" name="q3" value="d"> d) Un documento flexible y orientador a nivel nacional</label>
             </div>
         </div>
         
         <div class="question-block" id="q4" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">4. ¿Qué es el currículo regionalizado?</div>
             <div class="options">
-                <label><input type="radio" name="q4" value="a"> a) La adaptación del currículo base a las características culturales locales</label>
-                <label><input type="radio" name="q4" value="b"> b) Un plan de estudios extranjero</label>
-                <label><input type="radio" name="q4" value="c"> c) El horario de clases del colegio</label>
-                <label><input type="radio" name="q4" value="d"> d) La lista de útiles escolares</label>
+                <label><input type="radio" name="q4" value="a"> a) La lista de útiles escolares</label>
+                <label><input type="radio" name="q4" value="b"> b) El horario de clases del colegio</label>
+                <label><input type="radio" name="q4" value="c"> c) La adaptación del currículo base a las características culturales locales</label>
+                <label><input type="radio" name="q4" value="d"> d) Un plan de estudios extranjero</label>
             </div>
         </div>
         
@@ -239,30 +244,30 @@
         <div class="question-block" id="q6" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">6. ¿Qué rol juega el docente en la innovación curricular?</div>
             <div class="options">
-                <label><input type="radio" name="q6" value="a"> a) Es un investigador y facilitador del aprendizaje</label>
-                <label><input type="radio" name="q6" value="b"> b) Es un mero transmisor de conocimientos</label>
-                <label><input type="radio" name="q6" value="c"> c) Es un administrador de recursos</label>
-                <label><input type="radio" name="q6" value="d"> d) No tiene rol en la innovación</label>
+                <label><input type="radio" name="q6" value="a"> a) Es un administrador de recursos</label>
+                <label><input type="radio" name="q6" value="b"> b) No tiene rol en la innovación</label>
+                <label><input type="radio" name="q6" value="c"> c) Es un investigador y facilitador del aprendizaje</label>
+                <label><input type="radio" name="q6" value="d"> d) Es un mero transmisor de conocimientos</label>
             </div>
         </div>
         
         <div class="question-block" id="q7" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">7. El Proyecto Socioproductivo (PSP) se caracteriza por:</div>
             <div class="options">
-                <label><input type="radio" name="q7" value="a"> a) Vincular la escuela con la comunidad para resolver problemas</label>
-                <label><input type="radio" name="q7" value="b"> b) Ser un trabajo académico de grado</label>
-                <label><input type="radio" name="q7" value="c"> c) Un documento financiero</label>
-                <label><input type="radio" name="q7" value="d"> d) Una feria de ciencias</label>
+                <label><input type="radio" name="q7" value="a"> a) Una feria de ciencias</label>
+                <label><input type="radio" name="q7" value="b"> b) Vincular la escuela con la comunidad para resolver problemas</label>
+                <label><input type="radio" name="q7" value="c"> c) Ser un trabajo académico de grado</label>
+                <label><input type="radio" name="q7" value="d"> d) Un documento financiero</label>
             </div>
         </div>
         
         <div class="question-block" id="q8" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">8. ¿Cómo se debe abordar la diversidad en el desarrollo curricular?</div>
             <div class="options">
-                <label><input type="radio" name="q8" value="a"> a) A través de adaptaciones curriculares y educación inclusiva</label>
-                <label><input type="radio" name="q8" value="b"> b) Ignorando las diferencias</label>
-                <label><input type="radio" name="q8" value="c"> c) Creando aulas separadas</label>
-                <label><input type="radio" name="q8" value="d"> d) Evaluando a todos con el mismo examen</label>
+                <label><input type="radio" name="q8" value="a"> a) Evaluando a todos con el mismo examen</label>
+                <label><input type="radio" name="q8" value="b"> b) Creando aulas separadas</label>
+                <label><input type="radio" name="q8" value="c"> c) A través de adaptaciones curriculares y educación inclusiva</label>
+                <label><input type="radio" name="q8" value="d"> d) Ignorando las diferencias</label>
             </div>
         </div>
         
@@ -270,19 +275,19 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">9. La transversalidad en el currículo se refiere a:</div>
             <div class="options">
                 <label><input type="radio" name="q9" value="a"> a) Temas que atraviesan todas las áreas del conocimiento</label>
-                <label><input type="radio" name="q9" value="b"> b) Materias que se pasan rápido</label>
+                <label><input type="radio" name="q9" value="b"> b) Actividades extracurriculares</label>
                 <label><input type="radio" name="q9" value="c"> c) Temas prohibidos</label>
-                <label><input type="radio" name="q9" value="d"> d) Actividades extracurriculares</label>
+                <label><input type="radio" name="q9" value="d"> d) Materias que se pasan rápido</label>
             </div>
         </div>
         
         <div class="question-block" id="q10" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">10. Un currículo pertinente es aquel que:</div>
             <div class="options">
-                <label><input type="radio" name="q10" value="a"> a) Responde a las necesidades y contexto de los estudiantes</label>
-                <label><input type="radio" name="q10" value="b"> b) Es copia de un modelo exitoso en otro país</label>
-                <label><input type="radio" name="q10" value="c"> c) Se aprueba rápido</label>
-                <label><input type="radio" name="q10" value="d"> d) Es muy difícil de aprobar</label>
+                <label><input type="radio" name="q10" value="a"> a) Es copia de un modelo exitoso en otro país</label>
+                <label><input type="radio" name="q10" value="b"> b) Es muy difícil de aprobar</label>
+                <label><input type="radio" name="q10" value="c"> c) Responde a las necesidades y contexto de los estudiantes</label>
+                <label><input type="radio" name="q10" value="d"> d) Se aprueba rápido</label>
             </div>
         </div>
         
@@ -299,10 +304,10 @@
         <div class="question-block" id="q12" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">12. En base al texto: La innovación curricular implica:</div>
             <div class="options">
-                <label><input type="radio" name="q12" value="a"> a) Transformaciones profundas en la práctica pedagógica</label>
-                <label><input type="radio" name="q12" value="b"> b) Cambiar únicamente el título de las materias</label>
-                <label><input type="radio" name="q12" value="c"> c) Usar tecnología sin planificar</label>
-                <label><input type="radio" name="q12" value="d"> d) Mantener los métodos tradicionales</label>
+                <label><input type="radio" name="q12" value="a"> a) Usar tecnología sin planificar</label>
+                <label><input type="radio" name="q12" value="b"> b) Mantener los métodos tradicionales</label>
+                <label><input type="radio" name="q12" value="c"> c) Cambiar únicamente el título de las materias</label>
+                <label><input type="radio" name="q12" value="d"> d) Transformaciones profundas en la práctica pedagógica</label>
             </div>
         </div>
         
@@ -310,9 +315,9 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">13. En base al texto: El diseño curricular base es:</div>
             <div class="options">
                 <label><input type="radio" name="q13" value="a"> a) Un documento flexible y orientador a nivel nacional</label>
-                <label><input type="radio" name="q13" value="b"> b) Un manual estricto e inmodificable</label>
-                <label><input type="radio" name="q13" value="c"> c) Una guía exclusiva para directores</label>
-                <label><input type="radio" name="q13" value="d"> d) Un catálogo de castigos</label>
+                <label><input type="radio" name="q13" value="b"> b) Un catálogo de castigos</label>
+                <label><input type="radio" name="q13" value="c"> c) Un manual estricto e inmodificable</label>
+                <label><input type="radio" name="q13" value="d"> d) Una guía exclusiva para directores</label>
             </div>
         </div>
         
@@ -320,8 +325,8 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">14. En base al texto: ¿Qué es el currículo regionalizado?</div>
             <div class="options">
                 <label><input type="radio" name="q14" value="a"> a) La adaptación del currículo base a las características culturales locales</label>
-                <label><input type="radio" name="q14" value="b"> b) Un plan de estudios extranjero</label>
-                <label><input type="radio" name="q14" value="c"> c) El horario de clases del colegio</label>
+                <label><input type="radio" name="q14" value="b"> b) El horario de clases del colegio</label>
+                <label><input type="radio" name="q14" value="c"> c) Un plan de estudios extranjero</label>
                 <label><input type="radio" name="q14" value="d"> d) La lista de útiles escolares</label>
             </div>
         </div>
@@ -329,10 +334,10 @@
         <div class="question-block" id="q15" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">15. En base al texto: La evaluación en el currículo innovador debe ser:</div>
             <div class="options">
-                <label><input type="radio" name="q15" value="a"> a) Formativa, integral y continua</label>
-                <label><input type="radio" name="q15" value="b"> b) Exclusivamente sumativa a fin de año</label>
-                <label><input type="radio" name="q15" value="c"> c) Punitiva y memorística</label>
-                <label><input type="radio" name="q15" value="d"> d) Opcional para los estudiantes</label>
+                <label><input type="radio" name="q15" value="a"> a) Opcional para los estudiantes</label>
+                <label><input type="radio" name="q15" value="b"> b) Punitiva y memorística</label>
+                <label><input type="radio" name="q15" value="c"> c) Formativa, integral y continua</label>
+                <label><input type="radio" name="q15" value="d"> d) Exclusivamente sumativa a fin de año</label>
             </div>
         </div>
         
@@ -341,8 +346,8 @@
             <div class="options">
                 <label><input type="radio" name="q16" value="a"> a) Es un investigador y facilitador del aprendizaje</label>
                 <label><input type="radio" name="q16" value="b"> b) Es un mero transmisor de conocimientos</label>
-                <label><input type="radio" name="q16" value="c"> c) Es un administrador de recursos</label>
-                <label><input type="radio" name="q16" value="d"> d) No tiene rol en la innovación</label>
+                <label><input type="radio" name="q16" value="c"> c) No tiene rol en la innovación</label>
+                <label><input type="radio" name="q16" value="d"> d) Es un administrador de recursos</label>
             </div>
         </div>
         
@@ -351,17 +356,17 @@
             <div class="options">
                 <label><input type="radio" name="q17" value="a"> a) Vincular la escuela con la comunidad para resolver problemas</label>
                 <label><input type="radio" name="q17" value="b"> b) Ser un trabajo académico de grado</label>
-                <label><input type="radio" name="q17" value="c"> c) Un documento financiero</label>
-                <label><input type="radio" name="q17" value="d"> d) Una feria de ciencias</label>
+                <label><input type="radio" name="q17" value="c"> c) Una feria de ciencias</label>
+                <label><input type="radio" name="q17" value="d"> d) Un documento financiero</label>
             </div>
         </div>
         
         <div class="question-block" id="q18" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">18. En base al texto: ¿Cómo se debe abordar la diversidad en el desarrollo curricular?</div>
             <div class="options">
-                <label><input type="radio" name="q18" value="a"> a) A través de adaptaciones curriculares y educación inclusiva</label>
-                <label><input type="radio" name="q18" value="b"> b) Ignorando las diferencias</label>
-                <label><input type="radio" name="q18" value="c"> c) Creando aulas separadas</label>
+                <label><input type="radio" name="q18" value="a"> a) Creando aulas separadas</label>
+                <label><input type="radio" name="q18" value="b"> b) A través de adaptaciones curriculares y educación inclusiva</label>
+                <label><input type="radio" name="q18" value="c"> c) Ignorando las diferencias</label>
                 <label><input type="radio" name="q18" value="d"> d) Evaluando a todos con el mismo examen</label>
             </div>
         </div>
@@ -369,60 +374,60 @@
         <div class="question-block" id="q19" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">19. En base al texto: La transversalidad en el currículo se refiere a:</div>
             <div class="options">
-                <label><input type="radio" name="q19" value="a"> a) Temas que atraviesan todas las áreas del conocimiento</label>
-                <label><input type="radio" name="q19" value="b"> b) Materias que se pasan rápido</label>
+                <label><input type="radio" name="q19" value="a"> a) Materias que se pasan rápido</label>
+                <label><input type="radio" name="q19" value="b"> b) Actividades extracurriculares</label>
                 <label><input type="radio" name="q19" value="c"> c) Temas prohibidos</label>
-                <label><input type="radio" name="q19" value="d"> d) Actividades extracurriculares</label>
+                <label><input type="radio" name="q19" value="d"> d) Temas que atraviesan todas las áreas del conocimiento</label>
             </div>
         </div>
         
         <div class="question-block" id="q20" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">20. En base al texto: Un currículo pertinente es aquel que:</div>
             <div class="options">
-                <label><input type="radio" name="q20" value="a"> a) Responde a las necesidades y contexto de los estudiantes</label>
-                <label><input type="radio" name="q20" value="b"> b) Es copia de un modelo exitoso en otro país</label>
-                <label><input type="radio" name="q20" value="c"> c) Se aprueba rápido</label>
-                <label><input type="radio" name="q20" value="d"> d) Es muy difícil de aprobar</label>
+                <label><input type="radio" name="q20" value="a"> a) Es copia de un modelo exitoso en otro país</label>
+                <label><input type="radio" name="q20" value="b"> b) Se aprueba rápido</label>
+                <label><input type="radio" name="q20" value="c"> c) Es muy difícil de aprobar</label>
+                <label><input type="radio" name="q20" value="d"> d) Responde a las necesidades y contexto de los estudiantes</label>
             </div>
         </div>
         
         <div class="question-block" id="q21" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">21. Desde la perspectiva pedagógica, ¿Cuál es el principal objetivo del desarrollo curricular?</div>
             <div class="options">
-                <label><input type="radio" name="q21" value="a"> a) Adaptar la educación a las necesidades sociales y pedagógicas actuales</label>
-                <label><input type="radio" name="q21" value="b"> b) Imprimir nuevos libros de texto</label>
-                <label><input type="radio" name="q21" value="c"> c) Aumentar la carga horaria</label>
-                <label><input type="radio" name="q21" value="d"> d) Facilitar el trabajo administrativo</label>
+                <label><input type="radio" name="q21" value="a"> a) Imprimir nuevos libros de texto</label>
+                <label><input type="radio" name="q21" value="b"> b) Adaptar la educación a las necesidades sociales y pedagógicas actuales</label>
+                <label><input type="radio" name="q21" value="c"> c) Facilitar el trabajo administrativo</label>
+                <label><input type="radio" name="q21" value="d"> d) Aumentar la carga horaria</label>
             </div>
         </div>
         
         <div class="question-block" id="q22" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">22. Desde la perspectiva pedagógica, La innovación curricular implica:</div>
             <div class="options">
-                <label><input type="radio" name="q22" value="a"> a) Transformaciones profundas en la práctica pedagógica</label>
-                <label><input type="radio" name="q22" value="b"> b) Cambiar únicamente el título de las materias</label>
-                <label><input type="radio" name="q22" value="c"> c) Usar tecnología sin planificar</label>
-                <label><input type="radio" name="q22" value="d"> d) Mantener los métodos tradicionales</label>
+                <label><input type="radio" name="q22" value="a"> a) Usar tecnología sin planificar</label>
+                <label><input type="radio" name="q22" value="b"> b) Transformaciones profundas en la práctica pedagógica</label>
+                <label><input type="radio" name="q22" value="c"> c) Mantener los métodos tradicionales</label>
+                <label><input type="radio" name="q22" value="d"> d) Cambiar únicamente el título de las materias</label>
             </div>
         </div>
         
         <div class="question-block" id="q23" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">23. Desde la perspectiva pedagógica, El diseño curricular base es:</div>
             <div class="options">
-                <label><input type="radio" name="q23" value="a"> a) Un documento flexible y orientador a nivel nacional</label>
-                <label><input type="radio" name="q23" value="b"> b) Un manual estricto e inmodificable</label>
-                <label><input type="radio" name="q23" value="c"> c) Una guía exclusiva para directores</label>
-                <label><input type="radio" name="q23" value="d"> d) Un catálogo de castigos</label>
+                <label><input type="radio" name="q23" value="a"> a) Un manual estricto e inmodificable</label>
+                <label><input type="radio" name="q23" value="b"> b) Una guía exclusiva para directores</label>
+                <label><input type="radio" name="q23" value="c"> c) Un catálogo de castigos</label>
+                <label><input type="radio" name="q23" value="d"> d) Un documento flexible y orientador a nivel nacional</label>
             </div>
         </div>
         
         <div class="question-block" id="q24" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">24. Desde la perspectiva pedagógica, ¿Qué es el currículo regionalizado?</div>
             <div class="options">
-                <label><input type="radio" name="q24" value="a"> a) La adaptación del currículo base a las características culturales locales</label>
+                <label><input type="radio" name="q24" value="a"> a) La lista de útiles escolares</label>
                 <label><input type="radio" name="q24" value="b"> b) Un plan de estudios extranjero</label>
                 <label><input type="radio" name="q24" value="c"> c) El horario de clases del colegio</label>
-                <label><input type="radio" name="q24" value="d"> d) La lista de útiles escolares</label>
+                <label><input type="radio" name="q24" value="d"> d) La adaptación del currículo base a las características culturales locales</label>
             </div>
         </div>
         
@@ -431,8 +436,8 @@
             <div class="options">
                 <label><input type="radio" name="q25" value="a"> a) Formativa, integral y continua</label>
                 <label><input type="radio" name="q25" value="b"> b) Exclusivamente sumativa a fin de año</label>
-                <label><input type="radio" name="q25" value="c"> c) Punitiva y memorística</label>
-                <label><input type="radio" name="q25" value="d"> d) Opcional para los estudiantes</label>
+                <label><input type="radio" name="q25" value="c"> c) Opcional para los estudiantes</label>
+                <label><input type="radio" name="q25" value="d"> d) Punitiva y memorística</label>
             </div>
         </div>
         
@@ -440,28 +445,28 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">26. Desde la perspectiva pedagógica, ¿Qué rol juega el docente en la innovación curricular?</div>
             <div class="options">
                 <label><input type="radio" name="q26" value="a"> a) Es un investigador y facilitador del aprendizaje</label>
-                <label><input type="radio" name="q26" value="b"> b) Es un mero transmisor de conocimientos</label>
-                <label><input type="radio" name="q26" value="c"> c) Es un administrador de recursos</label>
-                <label><input type="radio" name="q26" value="d"> d) No tiene rol en la innovación</label>
+                <label><input type="radio" name="q26" value="b"> b) No tiene rol en la innovación</label>
+                <label><input type="radio" name="q26" value="c"> c) Es un mero transmisor de conocimientos</label>
+                <label><input type="radio" name="q26" value="d"> d) Es un administrador de recursos</label>
             </div>
         </div>
         
         <div class="question-block" id="q27" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">27. Desde la perspectiva pedagógica, El Proyecto Socioproductivo (PSP) se caracteriza por:</div>
             <div class="options">
-                <label><input type="radio" name="q27" value="a"> a) Vincular la escuela con la comunidad para resolver problemas</label>
+                <label><input type="radio" name="q27" value="a"> a) Una feria de ciencias</label>
                 <label><input type="radio" name="q27" value="b"> b) Ser un trabajo académico de grado</label>
-                <label><input type="radio" name="q27" value="c"> c) Un documento financiero</label>
-                <label><input type="radio" name="q27" value="d"> d) Una feria de ciencias</label>
+                <label><input type="radio" name="q27" value="c"> c) Vincular la escuela con la comunidad para resolver problemas</label>
+                <label><input type="radio" name="q27" value="d"> d) Un documento financiero</label>
             </div>
         </div>
         
         <div class="question-block" id="q28" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">28. Desde la perspectiva pedagógica, ¿Cómo se debe abordar la diversidad en el desarrollo curricular?</div>
             <div class="options">
-                <label><input type="radio" name="q28" value="a"> a) A través de adaptaciones curriculares y educación inclusiva</label>
-                <label><input type="radio" name="q28" value="b"> b) Ignorando las diferencias</label>
-                <label><input type="radio" name="q28" value="c"> c) Creando aulas separadas</label>
+                <label><input type="radio" name="q28" value="a"> a) Ignorando las diferencias</label>
+                <label><input type="radio" name="q28" value="b"> b) Creando aulas separadas</label>
+                <label><input type="radio" name="q28" value="c"> c) A través de adaptaciones curriculares y educación inclusiva</label>
                 <label><input type="radio" name="q28" value="d"> d) Evaluando a todos con el mismo examen</label>
             </div>
         </div>
@@ -469,39 +474,39 @@
         <div class="question-block" id="q29" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">29. Desde la perspectiva pedagógica, La transversalidad en el currículo se refiere a:</div>
             <div class="options">
-                <label><input type="radio" name="q29" value="a"> a) Temas que atraviesan todas las áreas del conocimiento</label>
-                <label><input type="radio" name="q29" value="b"> b) Materias que se pasan rápido</label>
+                <label><input type="radio" name="q29" value="a"> a) Actividades extracurriculares</label>
+                <label><input type="radio" name="q29" value="b"> b) Temas que atraviesan todas las áreas del conocimiento</label>
                 <label><input type="radio" name="q29" value="c"> c) Temas prohibidos</label>
-                <label><input type="radio" name="q29" value="d"> d) Actividades extracurriculares</label>
+                <label><input type="radio" name="q29" value="d"> d) Materias que se pasan rápido</label>
             </div>
         </div>
         
         <div class="question-block" id="q30" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">30. Desde la perspectiva pedagógica, Un currículo pertinente es aquel que:</div>
             <div class="options">
-                <label><input type="radio" name="q30" value="a"> a) Responde a las necesidades y contexto de los estudiantes</label>
-                <label><input type="radio" name="q30" value="b"> b) Es copia de un modelo exitoso en otro país</label>
-                <label><input type="radio" name="q30" value="c"> c) Se aprueba rápido</label>
-                <label><input type="radio" name="q30" value="d"> d) Es muy difícil de aprobar</label>
+                <label><input type="radio" name="q30" value="a"> a) Es muy difícil de aprobar</label>
+                <label><input type="radio" name="q30" value="b"> b) Se aprueba rápido</label>
+                <label><input type="radio" name="q30" value="c"> c) Responde a las necesidades y contexto de los estudiantes</label>
+                <label><input type="radio" name="q30" value="d"> d) Es copia de un modelo exitoso en otro país</label>
             </div>
         </div>
         
         <div class="question-block" id="q31" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">31. Es importante saber que: ¿Cuál es el principal objetivo del desarrollo curricular?</div>
             <div class="options">
-                <label><input type="radio" name="q31" value="a"> a) Adaptar la educación a las necesidades sociales y pedagógicas actuales</label>
-                <label><input type="radio" name="q31" value="b"> b) Imprimir nuevos libros de texto</label>
-                <label><input type="radio" name="q31" value="c"> c) Aumentar la carga horaria</label>
-                <label><input type="radio" name="q31" value="d"> d) Facilitar el trabajo administrativo</label>
+                <label><input type="radio" name="q31" value="a"> a) Imprimir nuevos libros de texto</label>
+                <label><input type="radio" name="q31" value="b"> b) Adaptar la educación a las necesidades sociales y pedagógicas actuales</label>
+                <label><input type="radio" name="q31" value="c"> c) Facilitar el trabajo administrativo</label>
+                <label><input type="radio" name="q31" value="d"> d) Aumentar la carga horaria</label>
             </div>
         </div>
         
         <div class="question-block" id="q32" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">32. Es importante saber que: La innovación curricular implica:</div>
             <div class="options">
-                <label><input type="radio" name="q32" value="a"> a) Transformaciones profundas en la práctica pedagógica</label>
-                <label><input type="radio" name="q32" value="b"> b) Cambiar únicamente el título de las materias</label>
-                <label><input type="radio" name="q32" value="c"> c) Usar tecnología sin planificar</label>
+                <label><input type="radio" name="q32" value="a"> a) Usar tecnología sin planificar</label>
+                <label><input type="radio" name="q32" value="b"> b) Transformaciones profundas en la práctica pedagógica</label>
+                <label><input type="radio" name="q32" value="c"> c) Cambiar únicamente el título de las materias</label>
                 <label><input type="radio" name="q32" value="d"> d) Mantener los métodos tradicionales</label>
             </div>
         </div>
@@ -509,10 +514,10 @@
         <div class="question-block" id="q33" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">33. Es importante saber que: El diseño curricular base es:</div>
             <div class="options">
-                <label><input type="radio" name="q33" value="a"> a) Un documento flexible y orientador a nivel nacional</label>
-                <label><input type="radio" name="q33" value="b"> b) Un manual estricto e inmodificable</label>
-                <label><input type="radio" name="q33" value="c"> c) Una guía exclusiva para directores</label>
-                <label><input type="radio" name="q33" value="d"> d) Un catálogo de castigos</label>
+                <label><input type="radio" name="q33" value="a"> a) Un manual estricto e inmodificable</label>
+                <label><input type="radio" name="q33" value="b"> b) Un documento flexible y orientador a nivel nacional</label>
+                <label><input type="radio" name="q33" value="c"> c) Un catálogo de castigos</label>
+                <label><input type="radio" name="q33" value="d"> d) Una guía exclusiva para directores</label>
             </div>
         </div>
         
@@ -520,18 +525,18 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">34. Es importante saber que: ¿Qué es el currículo regionalizado?</div>
             <div class="options">
                 <label><input type="radio" name="q34" value="a"> a) La adaptación del currículo base a las características culturales locales</label>
-                <label><input type="radio" name="q34" value="b"> b) Un plan de estudios extranjero</label>
-                <label><input type="radio" name="q34" value="c"> c) El horario de clases del colegio</label>
-                <label><input type="radio" name="q34" value="d"> d) La lista de útiles escolares</label>
+                <label><input type="radio" name="q34" value="b"> b) El horario de clases del colegio</label>
+                <label><input type="radio" name="q34" value="c"> c) La lista de útiles escolares</label>
+                <label><input type="radio" name="q34" value="d"> d) Un plan de estudios extranjero</label>
             </div>
         </div>
         
         <div class="question-block" id="q35" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">35. Es importante saber que: La evaluación en el currículo innovador debe ser:</div>
             <div class="options">
-                <label><input type="radio" name="q35" value="a"> a) Formativa, integral y continua</label>
-                <label><input type="radio" name="q35" value="b"> b) Exclusivamente sumativa a fin de año</label>
-                <label><input type="radio" name="q35" value="c"> c) Punitiva y memorística</label>
+                <label><input type="radio" name="q35" value="a"> a) Punitiva y memorística</label>
+                <label><input type="radio" name="q35" value="b"> b) Formativa, integral y continua</label>
+                <label><input type="radio" name="q35" value="c"> c) Exclusivamente sumativa a fin de año</label>
                 <label><input type="radio" name="q35" value="d"> d) Opcional para los estudiantes</label>
             </div>
         </div>
@@ -539,10 +544,10 @@
         <div class="question-block" id="q36" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">36. Es importante saber que: ¿Qué rol juega el docente en la innovación curricular?</div>
             <div class="options">
-                <label><input type="radio" name="q36" value="a"> a) Es un investigador y facilitador del aprendizaje</label>
-                <label><input type="radio" name="q36" value="b"> b) Es un mero transmisor de conocimientos</label>
-                <label><input type="radio" name="q36" value="c"> c) Es un administrador de recursos</label>
-                <label><input type="radio" name="q36" value="d"> d) No tiene rol en la innovación</label>
+                <label><input type="radio" name="q36" value="a"> a) Es un administrador de recursos</label>
+                <label><input type="radio" name="q36" value="b"> b) Es un investigador y facilitador del aprendizaje</label>
+                <label><input type="radio" name="q36" value="c"> c) No tiene rol en la innovación</label>
+                <label><input type="radio" name="q36" value="d"> d) Es un mero transmisor de conocimientos</label>
             </div>
         </div>
         
@@ -559,10 +564,10 @@
         <div class="question-block" id="q38" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">38. Es importante saber que: ¿Cómo se debe abordar la diversidad en el desarrollo curricular?</div>
             <div class="options">
-                <label><input type="radio" name="q38" value="a"> a) A través de adaptaciones curriculares y educación inclusiva</label>
+                <label><input type="radio" name="q38" value="a"> a) Evaluando a todos con el mismo examen</label>
                 <label><input type="radio" name="q38" value="b"> b) Ignorando las diferencias</label>
                 <label><input type="radio" name="q38" value="c"> c) Creando aulas separadas</label>
-                <label><input type="radio" name="q38" value="d"> d) Evaluando a todos con el mismo examen</label>
+                <label><input type="radio" name="q38" value="d"> d) A través de adaptaciones curriculares y educación inclusiva</label>
             </div>
         </div>
         
@@ -570,8 +575,8 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">39. Es importante saber que: La transversalidad en el currículo se refiere a:</div>
             <div class="options">
                 <label><input type="radio" name="q39" value="a"> a) Temas que atraviesan todas las áreas del conocimiento</label>
-                <label><input type="radio" name="q39" value="b"> b) Materias que se pasan rápido</label>
-                <label><input type="radio" name="q39" value="c"> c) Temas prohibidos</label>
+                <label><input type="radio" name="q39" value="b"> b) Temas prohibidos</label>
+                <label><input type="radio" name="q39" value="c"> c) Materias que se pasan rápido</label>
                 <label><input type="radio" name="q39" value="d"> d) Actividades extracurriculares</label>
             </div>
         </div>
@@ -579,20 +584,20 @@
         <div class="question-block" id="q40" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">40. Es importante saber que: Un currículo pertinente es aquel que:</div>
             <div class="options">
-                <label><input type="radio" name="q40" value="a"> a) Responde a las necesidades y contexto de los estudiantes</label>
-                <label><input type="radio" name="q40" value="b"> b) Es copia de un modelo exitoso en otro país</label>
-                <label><input type="radio" name="q40" value="c"> c) Se aprueba rápido</label>
-                <label><input type="radio" name="q40" value="d"> d) Es muy difícil de aprobar</label>
+                <label><input type="radio" name="q40" value="a"> a) Es copia de un modelo exitoso en otro país</label>
+                <label><input type="radio" name="q40" value="b"> b) Es muy difícil de aprobar</label>
+                <label><input type="radio" name="q40" value="c"> c) Responde a las necesidades y contexto de los estudiantes</label>
+                <label><input type="radio" name="q40" value="d"> d) Se aprueba rápido</label>
             </div>
         </div>
         
         <div class="question-block" id="q41" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">41. Según la normativa: ¿Cuál es el principal objetivo del desarrollo curricular?</div>
             <div class="options">
-                <label><input type="radio" name="q41" value="a"> a) Adaptar la educación a las necesidades sociales y pedagógicas actuales</label>
-                <label><input type="radio" name="q41" value="b"> b) Imprimir nuevos libros de texto</label>
-                <label><input type="radio" name="q41" value="c"> c) Aumentar la carga horaria</label>
-                <label><input type="radio" name="q41" value="d"> d) Facilitar el trabajo administrativo</label>
+                <label><input type="radio" name="q41" value="a"> a) Aumentar la carga horaria</label>
+                <label><input type="radio" name="q41" value="b"> b) Facilitar el trabajo administrativo</label>
+                <label><input type="radio" name="q41" value="c"> c) Imprimir nuevos libros de texto</label>
+                <label><input type="radio" name="q41" value="d"> d) Adaptar la educación a las necesidades sociales y pedagógicas actuales</label>
             </div>
         </div>
         
@@ -600,8 +605,8 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">42. Según la normativa: La innovación curricular implica:</div>
             <div class="options">
                 <label><input type="radio" name="q42" value="a"> a) Transformaciones profundas en la práctica pedagógica</label>
-                <label><input type="radio" name="q42" value="b"> b) Cambiar únicamente el título de las materias</label>
-                <label><input type="radio" name="q42" value="c"> c) Usar tecnología sin planificar</label>
+                <label><input type="radio" name="q42" value="b"> b) Usar tecnología sin planificar</label>
+                <label><input type="radio" name="q42" value="c"> c) Cambiar únicamente el título de las materias</label>
                 <label><input type="radio" name="q42" value="d"> d) Mantener los métodos tradicionales</label>
             </div>
         </div>
@@ -609,69 +614,69 @@
         <div class="question-block" id="q43" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">43. Según la normativa: El diseño curricular base es:</div>
             <div class="options">
-                <label><input type="radio" name="q43" value="a"> a) Un documento flexible y orientador a nivel nacional</label>
-                <label><input type="radio" name="q43" value="b"> b) Un manual estricto e inmodificable</label>
-                <label><input type="radio" name="q43" value="c"> c) Una guía exclusiva para directores</label>
-                <label><input type="radio" name="q43" value="d"> d) Un catálogo de castigos</label>
+                <label><input type="radio" name="q43" value="a"> a) Un manual estricto e inmodificable</label>
+                <label><input type="radio" name="q43" value="b"> b) Una guía exclusiva para directores</label>
+                <label><input type="radio" name="q43" value="c"> c) Un catálogo de castigos</label>
+                <label><input type="radio" name="q43" value="d"> d) Un documento flexible y orientador a nivel nacional</label>
             </div>
         </div>
         
         <div class="question-block" id="q44" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">44. Según la normativa: ¿Qué es el currículo regionalizado?</div>
             <div class="options">
-                <label><input type="radio" name="q44" value="a"> a) La adaptación del currículo base a las características culturales locales</label>
-                <label><input type="radio" name="q44" value="b"> b) Un plan de estudios extranjero</label>
-                <label><input type="radio" name="q44" value="c"> c) El horario de clases del colegio</label>
-                <label><input type="radio" name="q44" value="d"> d) La lista de útiles escolares</label>
+                <label><input type="radio" name="q44" value="a"> a) El horario de clases del colegio</label>
+                <label><input type="radio" name="q44" value="b"> b) La lista de útiles escolares</label>
+                <label><input type="radio" name="q44" value="c"> c) Un plan de estudios extranjero</label>
+                <label><input type="radio" name="q44" value="d"> d) La adaptación del currículo base a las características culturales locales</label>
             </div>
         </div>
         
         <div class="question-block" id="q45" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">45. Según la normativa: La evaluación en el currículo innovador debe ser:</div>
             <div class="options">
-                <label><input type="radio" name="q45" value="a"> a) Formativa, integral y continua</label>
-                <label><input type="radio" name="q45" value="b"> b) Exclusivamente sumativa a fin de año</label>
+                <label><input type="radio" name="q45" value="a"> a) Opcional para los estudiantes</label>
+                <label><input type="radio" name="q45" value="b"> b) Formativa, integral y continua</label>
                 <label><input type="radio" name="q45" value="c"> c) Punitiva y memorística</label>
-                <label><input type="radio" name="q45" value="d"> d) Opcional para los estudiantes</label>
+                <label><input type="radio" name="q45" value="d"> d) Exclusivamente sumativa a fin de año</label>
             </div>
         </div>
         
         <div class="question-block" id="q46" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">46. Según la normativa: ¿Qué rol juega el docente en la innovación curricular?</div>
             <div class="options">
-                <label><input type="radio" name="q46" value="a"> a) Es un investigador y facilitador del aprendizaje</label>
-                <label><input type="radio" name="q46" value="b"> b) Es un mero transmisor de conocimientos</label>
-                <label><input type="radio" name="q46" value="c"> c) Es un administrador de recursos</label>
-                <label><input type="radio" name="q46" value="d"> d) No tiene rol en la innovación</label>
+                <label><input type="radio" name="q46" value="a"> a) No tiene rol en la innovación</label>
+                <label><input type="radio" name="q46" value="b"> b) Es un investigador y facilitador del aprendizaje</label>
+                <label><input type="radio" name="q46" value="c"> c) Es un mero transmisor de conocimientos</label>
+                <label><input type="radio" name="q46" value="d"> d) Es un administrador de recursos</label>
             </div>
         </div>
         
         <div class="question-block" id="q47" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">47. Según la normativa: El Proyecto Socioproductivo (PSP) se caracteriza por:</div>
             <div class="options">
-                <label><input type="radio" name="q47" value="a"> a) Vincular la escuela con la comunidad para resolver problemas</label>
-                <label><input type="radio" name="q47" value="b"> b) Ser un trabajo académico de grado</label>
-                <label><input type="radio" name="q47" value="c"> c) Un documento financiero</label>
-                <label><input type="radio" name="q47" value="d"> d) Una feria de ciencias</label>
+                <label><input type="radio" name="q47" value="a"> a) Un documento financiero</label>
+                <label><input type="radio" name="q47" value="b"> b) Una feria de ciencias</label>
+                <label><input type="radio" name="q47" value="c"> c) Ser un trabajo académico de grado</label>
+                <label><input type="radio" name="q47" value="d"> d) Vincular la escuela con la comunidad para resolver problemas</label>
             </div>
         </div>
         
         <div class="question-block" id="q48" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">48. Según la normativa: ¿Cómo se debe abordar la diversidad en el desarrollo curricular?</div>
             <div class="options">
-                <label><input type="radio" name="q48" value="a"> a) A través de adaptaciones curriculares y educación inclusiva</label>
-                <label><input type="radio" name="q48" value="b"> b) Ignorando las diferencias</label>
+                <label><input type="radio" name="q48" value="a"> a) Evaluando a todos con el mismo examen</label>
+                <label><input type="radio" name="q48" value="b"> b) A través de adaptaciones curriculares y educación inclusiva</label>
                 <label><input type="radio" name="q48" value="c"> c) Creando aulas separadas</label>
-                <label><input type="radio" name="q48" value="d"> d) Evaluando a todos con el mismo examen</label>
+                <label><input type="radio" name="q48" value="d"> d) Ignorando las diferencias</label>
             </div>
         </div>
         
         <div class="question-block" id="q49" style="background: #f9fdf9; border: 1px solid #c8e6c9; border-left: 5px solid #2e7d32; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">49. Según la normativa: La transversalidad en el currículo se refiere a:</div>
             <div class="options">
-                <label><input type="radio" name="q49" value="a"> a) Temas que atraviesan todas las áreas del conocimiento</label>
-                <label><input type="radio" name="q49" value="b"> b) Materias que se pasan rápido</label>
-                <label><input type="radio" name="q49" value="c"> c) Temas prohibidos</label>
+                <label><input type="radio" name="q49" value="a"> a) Materias que se pasan rápido</label>
+                <label><input type="radio" name="q49" value="b"> b) Temas prohibidos</label>
+                <label><input type="radio" name="q49" value="c"> c) Temas que atraviesan todas las áreas del conocimiento</label>
                 <label><input type="radio" name="q49" value="d"> d) Actividades extracurriculares</label>
             </div>
         </div>
@@ -680,8 +685,8 @@
             <div class="question-text" style="color: #1b5e20; font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">50. Según la normativa: Un currículo pertinente es aquel que:</div>
             <div class="options">
                 <label><input type="radio" name="q50" value="a"> a) Responde a las necesidades y contexto de los estudiantes</label>
-                <label><input type="radio" name="q50" value="b"> b) Es copia de un modelo exitoso en otro país</label>
-                <label><input type="radio" name="q50" value="c"> c) Se aprueba rápido</label>
+                <label><input type="radio" name="q50" value="b"> b) Se aprueba rápido</label>
+                <label><input type="radio" name="q50" value="c"> c) Es copia de un modelo exitoso en otro país</label>
                 <label><input type="radio" name="q50" value="d"> d) Es muy difícil de aprobar</label>
             </div>
         </div>
@@ -714,54 +719,54 @@
     <script>
         const correctAnswers = {
             "q1": "a",
-        "q2": "a",
-        "q3": "a",
-        "q4": "a",
+        "q2": "d",
+        "q3": "d",
+        "q4": "c",
         "q5": "a",
-        "q6": "a",
-        "q7": "a",
-        "q8": "a",
+        "q6": "c",
+        "q7": "b",
+        "q8": "c",
         "q9": "a",
-        "q10": "a",
+        "q10": "c",
         "q11": "a",
-        "q12": "a",
+        "q12": "d",
         "q13": "a",
         "q14": "a",
-        "q15": "a",
+        "q15": "c",
         "q16": "a",
         "q17": "a",
-        "q18": "a",
-        "q19": "a",
-        "q20": "a",
-        "q21": "a",
-        "q22": "a",
-        "q23": "a",
-        "q24": "a",
+        "q18": "b",
+        "q19": "d",
+        "q20": "d",
+        "q21": "b",
+        "q22": "b",
+        "q23": "d",
+        "q24": "d",
         "q25": "a",
         "q26": "a",
-        "q27": "a",
-        "q28": "a",
-        "q29": "a",
-        "q30": "a",
-        "q31": "a",
-        "q32": "a",
-        "q33": "a",
+        "q27": "c",
+        "q28": "c",
+        "q29": "b",
+        "q30": "c",
+        "q31": "b",
+        "q32": "b",
+        "q33": "b",
         "q34": "a",
-        "q35": "a",
-        "q36": "a",
+        "q35": "b",
+        "q36": "b",
         "q37": "a",
-        "q38": "a",
+        "q38": "d",
         "q39": "a",
-        "q40": "a",
-        "q41": "a",
+        "q40": "c",
+        "q41": "d",
         "q42": "a",
-        "q43": "a",
-        "q44": "a",
-        "q45": "a",
-        "q46": "a",
-        "q47": "a",
-        "q48": "a",
-        "q49": "a",
+        "q43": "d",
+        "q44": "d",
+        "q45": "b",
+        "q46": "b",
+        "q47": "d",
+        "q48": "b",
+        "q49": "c",
         "q50": "a"
         };
     </script>

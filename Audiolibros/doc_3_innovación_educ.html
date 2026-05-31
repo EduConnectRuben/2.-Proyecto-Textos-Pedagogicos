@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audiolibro - 3. Innovación educ</title>
+    
+    <!-- Metadatos y Open Graph para Redes Sociales -->
+    <meta name="description" content="2. Textos Pedagógicos - Material de Estudio Oficial para el Examen de Ascenso de Categoría 2026.">
+    <meta property="og:title" content="2. Textos Pedagógicos - EduConnectRuben">
+    <meta property="og:description" content="Estudia con Simuladores de Examen, Flashcards, Audiolibros y Audios Resumidos. ¡Prepárate para el Ascenso 2026!">
+    <meta property="og:image" content="https://proyecto-textos-pedagogicos.netlify.app/images/logo.png">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:url" content="https://proyecto-textos-pedagogicos.netlify.app/">
+    <meta property="og:type" content="website">
+    
+    <!-- PWA Settings -->
+    <meta name="theme-color" content="#2e7d32">
+    <link rel="manifest" href="../instalar/manifest.json">
+    
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../preguntas.css">
+    <style>
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .hero-title { font-size: 1.8rem !important; }
+            .hero-subtitle { font-size: 1rem !important; }
+            .header-title { font-size: 1.1rem !important; }
+            .header-subtitle { font-size: 0.9rem !important; }
+            .footer-text { font-size: 0.85rem !important; line-height: 1.5; padding: 0 10px; }
+            .logo-header { width: 45px !important; height: 45px !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="../lectura.css">
+</head>
+<body>
+    
+    <header style="background: linear-gradient(135deg, #2e7d32, #4CAF50); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <a href="https://api.whatsapp.com/send/?phone=59174420831&text=Hola%2C%0A%0AEstoy%20muy%20interesado%20en%20los%20cursos%20y%20tutor%C3%ADas%20que%20ofrecen.%20%C2%BFPodr%C3%ADan%20proporcionarme%20m%C3%A1s%20informaci%C3%B3n%20al%20respecto%2C%20por%20favor%3F%20%0A%0A%C2%A1Gracias%21" target="_blank" style="text-decoration: none; display: flex; align-items: center; gap: 10px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="../icons/whatsapp.png" alt="Llamanos" style="width: 35px; height: 35px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
+            </a>
+        </div>
+        <div style="text-align: center; color: white; flex: 1; padding: 0 10px;">
+            <h1 class="header-title" style="margin: 0; font-size: 1.6rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); font-weight: 800;">ASCENSO DE CATEGORÍA - 2026</h1>
+            <h2 class="header-subtitle" style="margin: 5px 0 0 0; font-size: 1.2rem; font-weight: 500; letter-spacing: 1px;">"EduConnectRuben"</h2>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img class="logo-header" src="../icons/logoRuben.png" alt="Logo" style="width: 55px; height: 55px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+        </div>
+    </header>
+    
+    <div style="background: linear-gradient(to right, #e8f5e9, #c8e6c9); color: #1b5e20; padding: 8px 0; font-size: 1.3rem; font-weight: bold; overflow: hidden; white-space: nowrap; box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); border-bottom: 2px solid #a5d6a7;">
+        <span style="display: inline-block; padding-left: 100%; animation: scroll-left 25s linear infinite; letter-spacing: 1px;">
+            📚 Material de Estudio Oficial &nbsp; &nbsp; &nbsp; &nbsp; - &nbsp; &nbsp; &nbsp; &nbsp; 📝 Simuladores de Examen &nbsp; &nbsp; &nbsp; &nbsp; - &nbsp; &nbsp; &nbsp; &nbsp; 🎧 Audios Resumidos &nbsp; &nbsp; &nbsp; &nbsp; - &nbsp; &nbsp; &nbsp; &nbsp; 🎓 Ascenso de Categoría 2026
+        </span>
+    </div>
+    <style>
+        @keyframes scroll-left {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+    </style>
+    
+    
+    <nav class="navbar" id="navbar" style="background: #1b5e20; padding: 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 9999;">
+        <div style="display: flex; justify-content: center; max-width: 1200px; margin: 0 auto; width: 100%;">
+
+            <div class="dropdown" style="flex: 1; text-align: center;">
+                <button onclick="toggleDropdown(this)" style="width: 100%; background: transparent; color: white; padding: 15px; font-weight: bold; font-size: 1.1rem; border: none; cursor: pointer; transition: background 0.3s;">
+                    📖 Audiolibros
+                </button>
+                <div class="dropdown-content" style="text-align: left;">
+                    <a href="../Audiolibros/doc_1_tp_desarrollo_e_innovación.html">1. T.P. Desarrollo e innovación</a>
+                    <a href="../Audiolibros/doc_2_tp_estilos_y_métodos.html">2. T.P. Estilos y métodos</a>
+                    <a href="../Audiolibros/doc_3_innovación_educ.html">3. Innovación educ</a>
+                    <a href="../Audiolibros/doc_4_neurociencia.html">4. NEUROCIENCIA</a>
+                </div>
+            </div>
+
+            <div class="dropdown" style="flex: 1; text-align: center;">
+                <button onclick="toggleDropdown(this)" style="width: 100%; background: transparent; color: white; padding: 15px; font-weight: bold; font-size: 1.1rem; border: none; cursor: pointer; transition: background 0.3s;">
+                    📝 Simuladores
+                </button>
+                <div class="dropdown-content" style="text-align: left;">
+                    <a href="../Simuladores/doc_1_tp_desarrollo_e_innovación.html">1. T.P. Desarrollo e innovación</a>
+                    <a href="../Simuladores/doc_2_tp_estilos_y_métodos.html">2. T.P. Estilos y métodos</a>
+                    <a href="../Simuladores/doc_3_innovación_educ.html">3. Innovación educ</a>
+                    <a href="../Simuladores/doc_4_neurociencia.html">4. NEUROCIENCIA</a>
+                </div>
+            </div>
+
+            <div class="dropdown" style="flex: 1; text-align: center;">
+                <button onclick="toggleDropdown(this)" style="width: 100%; background: transparent; color: white; padding: 15px; font-weight: bold; font-size: 1.1rem; border: none; cursor: pointer; transition: background 0.3s;">
+                    🎧 Audios Resumidos
+                </button>
+                <div class="dropdown-content" style="text-align: left;">
+                    <a href="../Audios-Resumidos/doc_1_tp_desarrollo_e_innovación.html">1. T.P. Desarrollo e innovación</a>
+                    <a href="../Audios-Resumidos/doc_2_tp_estilos_y_métodos.html">2. T.P. Estilos y métodos</a>
+                    <a href="../Audios-Resumidos/doc_3_innovación_educ.html">3. Innovación educ</a>
+                    <a href="../Audios-Resumidos/doc_4_neurociencia.html">4. NEUROCIENCIA</a>
+                </div>
+            </div>
+
+            <div class="dropdown" style="flex: 1; text-align: center;">
+                <button onclick="toggleDropdown(this)" style="width: 100%; background: transparent; color: white; padding: 15px; font-weight: bold; font-size: 1.1rem; border: none; cursor: pointer; transition: background 0.3s;">
+                    🗂️ Flashcards
+                </button>
+                <div class="dropdown-content" style="text-align: left;">
+                    <a href="../Flashcards/doc_1_tp_desarrollo_e_innovación.html">1. T.P. Desarrollo e innovación</a>
+                    <a href="../Flashcards/doc_2_tp_estilos_y_métodos.html">2. T.P. Estilos y métodos</a>
+                    <a href="../Flashcards/doc_3_innovación_educ.html">3. Innovación educ</a>
+                    <a href="../Flashcards/doc_4_neurociencia.html">4. NEUROCIENCIA</a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <script>
+        function toggleDropdown(btn) {
+            document.querySelectorAll('.dropdown-content').forEach(d => {
+                if(d !== btn.nextElementSibling) d.classList.remove('show');
+            });
+            btn.nextElementSibling.classList.toggle('show');
+        }
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown button')) {
+                document.querySelectorAll('.dropdown-content.show').forEach(d => d.classList.remove('show'));
+            }
+        }
+    </script>
+    <style>
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown:hover > button { background: rgba(255,255,255,0.1) !important; }
+        .dropdown-content { display: none; position: absolute; background-color: #f9f9f9; min-width: 300px; max-width: 400px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1000; border-radius: 0 0 10px 10px; overflow: hidden; }
+        .dropdown-content a { color: #333; padding: 12px 16px; text-decoration: none; display: block; border-bottom: 1px solid #eee; transition: background 0.2s; white-space: normal; }
+        .dropdown-content a:hover { background-color: #e8f5e9; color: #2e7d32; font-weight: bold; }
+        .dropdown-content.show { display: block; }
+        body { display: flex; flex-direction: column; min-height: 100vh; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f6;}
+    </style>
+    
+    <main class="content" style="flex: 1; padding: 30px 15px; max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box;">
+        
+    <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); max-width: 900px; margin: 0 auto; margin-bottom: 80px; border-top: 5px solid #2e7d32;">
+        <h1 style="color: #2e7d32; text-align: center; margin-bottom: 30px; border-bottom: 2px solid #e8f5e9; padding-bottom: 15px;">📖 Audiolibro: 3. Innovación educ</h1>
+        <div id="texto-container" style="font-size: 1.2rem; line-height: 1.8; color: #333; text-align: justify; padding: 20px; border-radius: 10px; background: #f9fdf9; border-left: 4px solid #4CAF50;">
+            <p style='margin-bottom: 15px;'><h3>1. Epistemología de la Innovación en Educación</h3></p>
+<p style='margin-bottom: 15px;'><p>La innovación educativa no es sinónimo absoluto de tecnología. Si bien el componente digital es crucial en el siglo XXI, la <strong>innovación pedagógica real</strong> se define como la introducción intencionada, sistémica y planificada de una práctica, un método, una herramienta o una forma de pensar novedosa que transforma radicalmente los procesos de enseñanza-aprendizaje con el propósito expreso de mejorar la calidad educativa.</p></p>
+<p style='margin-bottom: 15px;'><p>Innovar implica cuestionar el <em>statu quo</em>. Significa romper con la arquitectura tradicional del aula frontal (bancos en fila, profesor al frente) y avanzar hacia aulas dinámicas y modulares donde los estudiantes debaten, construyen y aplican de manera colaborativa. Es un acto de valentía institucional, pues significa abandonar la seguridad de "lo que siempre se ha hecho".</p></p>
+<p style='margin-bottom: 15px;'><h3>2. Barreras y Agentes de la Innovación</h3></p>
+<p style='margin-bottom: 15px;'><p>Para que la innovación se sostenga en el tiempo y no sea solo un evento fugaz, requiere una cultura institucional que la abrace. Las principales resistencias suelen encontrarse en:</p></p>
+<p style='margin-bottom: 15px;'><ul></p>
+<p style='margin-bottom: 15px;'>    <li><strong>La Cultura Escolar Tradicional:</strong> Entornos que penalizan el error limitan la creatividad. En la innovación, el error es el motor del aprendizaje.</li></p>
+<p style='margin-bottom: 15px;'>    <li><strong>Saturación Administrativa:</strong> La sobrecarga burocrática del docente, que le quita tiempo para planificar estrategias diferentes.</li></p>
+<p style='margin-bottom: 15px;'>    <li><strong>Actitud Docente:</strong> El profesor es el <em>agente de cambio definitivo</em>. Sin embargo, puede haber resistencia tecnológica, miedo a perder autoridad ante alumnos "nativos digitales", o apatía debido a la falta de incentivos.</li></p>
+<p style='margin-bottom: 15px;'></ul></p>
+<p style='margin-bottom: 15px;'><p>Para derribar estas barreras es imprescindible fomentar un liderazgo pedagógico distribuido, promover redes de aprendizaje entre docentes (comunidades de práctica), y garantizar formación continua, donde las escuelas se conviertan ellas mismas en "organizaciones que aprenden".</p></p>
+<p style='margin-bottom: 15px;'><h3>3. Tendencias Disruptivas y Metodologías Activas</h3></p>
+<p style='margin-bottom: 15px;'><p>El paradigma contemporáneo se apoya en enfoques que descolocan la jerarquía tradicional. Destacan profundamente:</p></p>
+<p style='margin-bottom: 15px;'><ul></p>
+<p style='margin-bottom: 15px;'>    <li><strong>Flipped Classroom (Aula Invertida):</strong> Revoluciona el uso del tiempo. El contenido teórico, que requiere cognición de bajo orden (recordar, comprender), se traslada fuera del aula mediante recursos multimedia (videos, podcasts, lecturas) asimilados al ritmo del alumno. El tiempo presencial en el aula, de gran valor, se reserva para procesos cognitivos superiores (analizar, evaluar, crear) mediante talleres, debates y resolución de dudas con el apoyo inmediato del docente.</li></p>
+<p style='margin-bottom: 15px;'>    <li><strong>Gamificación:</strong> Consiste en aplicar mecánicas, dinámicas y estéticas propias de los juegos (misiones, avatares, sistemas de puntuación, narrativas inmersivas, insignias) a entornos no lúdicos como el aula. Su objetivo es incidir en la psicología del estudiante, hackeando su sistema de recompensas cerebrales (liberando dopamina) para lograr una motivación intrínseca sostenida y alta resiliencia frente a la frustración.</li></p>
+<p style='margin-bottom: 15px;'>    <li><strong>Aprendizaje Cooperativo:</strong> Va mucho más allá del simple "trabajo en grupo". Exige interdependencia positiva (el éxito individual depende del éxito del grupo), responsabilidad individual exigible, interacción promotora cara a cara y desarrollo profundo de habilidades interpersonales y de liderazgo.</li></p>
+<p style='margin-bottom: 15px;'></ul></p>
+<p style='margin-bottom: 15px;'><h3>4. De las TIC a las TEP (Tecnologías para el Empoderamiento y la Participación)</h3></p>
+<p style='margin-bottom: 15px;'><p>La integración tecnológica en el currículo ha tenido una evolución conceptual vital. En su fase inicial, hablábamos de <strong>TIC</strong> (Tecnologías de la Información y Comunicación) para acceder a internet. Luego pasamos a las <strong>TAC</strong> (Tecnologías del Aprendizaje y del Conocimiento), donde se usaban plataformas educativas, foros y simuladores con clara finalidad formativa. Hoy, el máximo nivel de innovación exige llegar a las <strong>TEP</strong>: cuando los alumnos no solo consumen conocimiento, sino que utilizan la red y las herramientas digitales para alzar su voz, liderar causas sociales, crear contenido de valor y ejercer una ciudadanía digital plena y crítica que interviene en el tejido sociopolítico de la comunidad.</p></p>
+        </div>
+    </div>
+    
+    <div id="botones" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 15px; background: rgba(27,94,32,0.9); padding: 15px 25px; border-radius: 50px; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.3); align-items: center; border: 2px solid #4CAF50;">
+        <button id="prev" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">⏮️</button>
+        <button id="play" style="background: #4CAF50; border: none; color: white; width: 50px; height: 50px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(76,175,80,0.4); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">▶️</button>
+        <button id="pauseResume" style="background: #ffb300; border: none; color: white; width: 50px; height: 50px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(255,179,0,0.4); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">⏸️</button>
+        <button id="stop" style="background: #d32f2f; border: none; color: white; width: 50px; height: 50px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(211,47,47,0.4); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">⏹️</button>
+        <button id="next" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">⏭️</button>
+    </div>
+    
+    <script src="../lectura.js"></script>
+    
+    </main>
+    
+    <footer style="background: linear-gradient(135deg, #2e7d32, #4CAF50); padding: 20px; text-align: center; color: white; margin-top: auto; box-shadow: 0 -4px 10px rgba(0,0,0,0.1);">
+        <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 15px;">
+            <a href="https://www.youtube.com/@educonnectruben-k5o9e" target="_blank" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><img src="../icons/youtube.png" alt="YouTube" style="width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></a>
+            <a href="https://www.tiktok.com/@educonnectruben?_t=ZM-8xOJEdqGXii&_r=1" target="_blank" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><img src="../icons/tiktok.png" alt="TikTok" style="width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></a>
+            <a href="https://api.whatsapp.com/send/?phone=59174420831&text=Hola%2C%0A%0AEstoy%20muy%20interesado%20en%20los%20cursos%20y%20tutor%C3%ADas%20que%20ofrecen.%20%C2%BFPodr%C3%ADan%20proporcionarme%20m%C3%A1s%20informaci%C3%B3n%20al%20respecto%2C%20por%20favor%3F%20%0A%0A%C2%A1Gracias%21" target="_blank" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><img src="../icons/whatsapp.png" alt="WhatsApp" style="width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></a>
+            <a href="https://www.facebook.com/people/EduConnect-Ruben/61577612011958/?mibextid=ZbWKwL" target="_blank" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"><img src="../icons/facebook.png" alt="Facebook" style="width: 40px; height: 40px; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></a>
+        </div>
+        <div class="footer-text" style="font-size: 1rem; opacity: 0.9; margin-top: 10px;">© 2026 Todos los derechos reservados. | EduConnectRuben</div>
+    </footer>
+    
+    
+    <!-- Registro de Service Worker PWA -->
+    <script src="../instalar/pwa.js" defer></script>
+</body>
+</html>
